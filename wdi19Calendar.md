@@ -1,10 +1,9 @@
+# Unit 1
 | event | link |
 | ----- | ---- |
 | WDI Classroom Culture | https://git.generalassemb.ly/atl-wdi/intro-to-wdi-culture |
-| Set up iCal | no link found |
 | Create GHE accounts, Slack Profiles, and GA-Grader Profile | no link found |
 | Requirements/Installfest | https://git.generalassemb.ly/atl-wdi/intro-to-wdi-installfest |
-| How To Submit Homework | no link found |
 | Homework: Introduction to VSCode | https://git.generalassemb.ly/atl-wdi/vs-code-intro-exercise |
 | Morning Exercise: HTML Review | https://git.generalassemb.ly/atl-wdi/html-and-css\n |
 | HTML & CSS Review - Spencer | https://git.generalassemb.ly/atl-wdi/html-and-css |
@@ -13,7 +12,6 @@
 | Morning Exercise: Typing Practice - Stan | https://git.generalassemb.ly/atl-wdi/typing-practice-exercise |
 | Intro to CLI - Noah | https://git.generalassemb.ly/atl-wdi/cli-intro |
 | Intro to Git/Github - Noah (Support: Cameron) | https://git.generalassemb.ly/atl-wdi/git-intro |
-| Submit Last Night's Homework | no link found |
 | Homework: Git Intro Exercise and A Smarter Way to Learn Javascript (ch. 1-5)  | https://git.generalassemb.ly/atl-wdi/git-intro-exercise  A |
 | Morning Exercise: Responsive Design | https://git.generalassemb.ly/atl-wdi/css-responsive-design |
 | Flexbox and Grid - Cameron | https://git.generalassemb.ly/atl-wdi/css-layout/blob/master/readme.md |
@@ -55,6 +53,11 @@
 | Project 1 Intro | https://git.generalassemb.ly/atl-wdi/unit-01-project |
 | Project 1 Presentations | no link found |
 | Project 1 Retrospective - Full IA Team | Project One Retrospective |
+
+
+# Unit 2
+| event | link |
+| ----- | ---- |
 | Intro To MongoDB - Noah | https://git.generalassemb.ly/nharvey/mongo-intro |
 | Lab: Mongo CLI | https://git.generalassemb.ly/nharvey/mongo-exercises |
 | Homework: Finish MongoDB CLI | https://git.generalassemb.ly/nharvey/mongo-exercises |
@@ -87,6 +90,10 @@
 | Project 2 | https://git.generalassemb.ly/atl-wdi/wdi-curriculum/tree/master/projects/unit_02 |
 | Project 2 Presentations | no link found |
 | Project 2 Retrospective - Full Team | no link found |
+
+# Unit 3
+| event | link |
+| ----- | ---- |
 | Intro To React.js - Noah | https://git.generalassemb.ly/nharvey/react-intro |
 | JSX & Props Overview / Gotchas - Spencer | https://git.generalassemb.ly/atl-wdi/jsx-lesson |
 | React & JSX Lab  | https://git.generalassemb.ly/atl-wdi/React-Pizza-Express |
@@ -115,6 +122,10 @@
 | Remote Prez Testing | Setup zoom and test laptops to make sure they work! |
 | Project 3 Presentations | https://git.generalassemb.ly/atl-wdi/project-03-react\n |
 | Project 3 Retro | no link found |
+
+# Unit 4
+| event | link |
+| ----- | ---- |
 | Homework: Python Starter | https://git.generalassemb.ly/atl-wdi/python-starter |
 | Morning Exercise - Ruchi Intro / Algorithms | no link found |
 | Intro To Python - Ruchi | https://git.generalassemb.ly/atl-wdi/intro-to-python |
