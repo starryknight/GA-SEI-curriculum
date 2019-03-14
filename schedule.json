@@ -1,0 +1,121 @@
+[
+  {
+    "sequence": "2.17.2",
+    "name": "js-node-lesson",
+    "url": "https://git.generalassemb.ly/atl-wdi/intro-to-node-and-npm"
+  },
+  {
+    "sequence": "2.17.3",
+    "name": "express-intro-lesson",
+    "url": "https://git.generalassemb.ly/atl-wdi/intro-to-express",
+    "depends": ["js-node-lesson"]
+  },
+  {
+    "sequence": "2.18.2",
+    "name": "express-routing-lesson",
+    "url": "https://git.generalassemb.ly/atl-wdi/express-routing",
+    "depends": ["express-intro-lesson"]
+  },
+  {
+    "sequence": "2.18.3",
+    "name": "express-views-lesson",
+    "url": "https://git.generalassemb.ly/atl-wdi/express-views",
+    "depends": ["express-intro-lesson"]
+  },
+  {
+    "sequence": "2.19.1",
+    "name": "sei-linkedLists-exercise",
+    "url": "https://git.generalassemb.ly/software-engineering-immersive/SEI-Course-Materials/tree/master/6_computer-science-materials/data-structures/linked-lists",
+    "depends": ["sei-introDataStructures-exercise"]
+  },
+  {
+    "sequence": "2.19.2",
+    "name": "js-dataModeling-exercise",
+    "url": "https://git.generalassemb.ly/atl-wdi/javascript-data-modeling-exercise",
+    "depends": ["sei-introAlgorithms-exercise"] 
+  },
+  {
+    "sequence": "2.19.3",
+    "name": "mongo-intro-lesson",
+    "url": "https://git.generalassemb.ly/nharvey/mongo-intro",
+    "depends": []
+  },
+  {
+    "sequence": "2.20.2",
+    "name": "mongoose-intro-lesson",
+    "url": "https://git.generalassemb.ly/atl-wdi/express-models",
+    "depends": ["express-intro-lesson", "mongo-intro-lesson"]
+  },
+  {
+    "sequence": "2.20.3",
+    "name": "mongoose-queries-lesson",
+    "url": "https://git.generalassemb.ly/atl-wdi/mongoose-queries",
+    "depends": ["mongoose-intro-lesson"]
+  },
+  {
+    "sequence": "2.21.1",
+    "name": "mongoose-seeding-lesson",
+    "url": "https://git.generalassemb.ly/atl-wdi/express-models#set-up-seed-file",
+    "depends": ["mongoose-queries-lesson"]
+  },
+  {
+    "sequence": "2.21.2",
+    "name": "express-codeAlong-lesson",
+    "url": "",
+    "depends": ["express-controllers-lesson", "express-routing-lesson", "mongoose-queries-lesson", "mongoose-seeding-lesson"]
+  },
+  {
+    "sequence": "2.21.4",
+    "name": "express-donut-shop-exercise",
+    "url": "https://git.generalassemb.ly/atl-wdi/donut-shop-exercise",
+    "depends": ["express-controllers-lesson", "express-routing-lesson", "mongoose-queries-lesson", "mongoose-seeding-lesson"]
+  },
+  {
+    "sequence": "2.22.1",
+    "name": "heroku-intro-lesson",
+    "url": "https://git.generalassemb.ly/atl-wdi/node-heroku-lesson",
+    "depends": []
+  },
+  {
+    "sequence": "2.22.2",
+    "name": "express-authentication-lesson",
+    "url": "https://git.generalassemb.ly/atl-wdi/express-passport",
+    "depends": ["express-routing-lesson", "express-controllers-lesson"]
+  },
+  {
+    "sequence": "2.22.3",
+    "name": "express-authentication-exercise",
+    "url": "https://git.generalassemb.ly/atl-wdi/passport-local-lab",
+    "depends": ["express-authentication-lesson"]
+  },
+  {
+    "sequence": "2.23.1",
+    "name": "project-2",
+    "url": "https://git.generalassemb.ly/atl-wdi/wdi-curriculum/tree/master/projects/unit_02",
+    "depends": []
+  },
+  {
+    "sequence": "2.24.1",
+    "name": "project-2",
+    "url": "https://git.generalassemb.ly/atl-wdi/wdi-curriculum/tree/master/projects/unit_02",
+    "depends": []
+  },
+  {
+    "sequence": "2.25.1",
+    "name": "project-2",
+    "url": "https://git.generalassemb.ly/atl-wdi/wdi-curriculum/tree/master/projects/unit_02",
+    "depends": []
+  },
+  {
+    "sequence": "2.26.1",
+    "name": "project-2",
+    "url": "https://git.generalassemb.ly/atl-wdi/wdi-curriculum/tree/master/projects/unit_02",
+    "depends": []
+  },
+  {
+    "sequence": "2.27.1",
+    "name": "project-2-presentations",
+    "url": "https://git.generalassemb.ly/atl-wdi/wdi-curriculum/tree/master/projects/unit_02",
+    "depends": []
+  }
+]
