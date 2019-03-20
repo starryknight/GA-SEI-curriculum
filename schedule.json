@@ -1,5 +1,421 @@
 [
   {
+    "sequence": "0.0.0",
+    "name": "WDI Classroom Culture",
+    "url": "https://git.generalassemb.ly/atl-wdi/intro-to-wdi-culture",
+    "depends": [
+      
+    ]
+  },
+  {
+    "sequence": "0.0.0",
+    "name": "Create GHE accounts, Slack Profiles, and GA-Grader Profile",
+    "url": "no link found",
+    "depends": [
+      
+    ]
+  },
+  {
+    "sequence": "0.0.0",
+    "name": "Requirements/Installfest",
+    "url": "https://git.generalassemb.ly/atl-wdi/intro-to-wdi-installfest",
+    "depends": [
+      
+    ]
+  },
+  {
+    "sequence": "0.0.0",
+    "name": "Homework: Introduction to VSCode",
+    "url": "https://git.generalassemb.ly/atl-wdi/vs-code-intro-exercise",
+    "depends": [
+      
+    ]
+  },
+  {
+    "sequence": "0.0.0",
+    "name": "Morning Exercise: HTML Review",
+    "url": "https://git.generalassemb.ly/atl-wdi/html-and-css\n",
+    "depends": [
+      
+    ]
+  },
+  {
+    "sequence": "0.0.0",
+    "name": "HTML & CSS Review - Spencer",
+    "url": "https://git.generalassemb.ly/atl-wdi/html-and-css",
+    "depends": [
+      
+    ]
+  },
+  {
+    "sequence": "0.0.0",
+    "name": "Start Build A Static Site Lab",
+    "url": "https://git.generalassemb.ly/atl-wdi/Build-A-Static-Site",
+    "depends": [
+      
+    ]
+  },
+  {
+    "sequence": "0.0.0",
+    "name": "Homework: Build a Static Site, and A Smarter Way to Learn Javascript (ch. 5-10) ",
+    "url": "https://git.generalassemb.ly/atl-wdi/Build-A-Static-Site  A",
+    "depends": [
+      
+    ]
+  },
+  {
+    "sequence": "0.0.0",
+    "name": "Morning Exercise: Typing Practice - Stan",
+    "url": "https://git.generalassemb.ly/atl-wdi/typing-practice-exercise",
+    "depends": [
+      
+    ]
+  },
+  {
+    "sequence": "0.0.0",
+    "name": "Intro to CLI - Noah",
+    "url": "https://git.generalassemb.ly/atl-wdi/cli-intro",
+    "depends": [
+      
+    ]
+  },
+  {
+    "sequence": "0.0.0",
+    "name": "Intro to Git/Github - Noah (Support: Cameron)",
+    "url": "https://git.generalassemb.ly/atl-wdi/git-intro",
+    "depends": [
+      
+    ]
+  },
+  {
+    "sequence": "0.0.0",
+    "name": "Homework: Git Intro Exercise and A Smarter Way to Learn Javascript (ch. 1-5) ",
+    "url": "https://git.generalassemb.ly/atl-wdi/git-intro-exercise  A",
+    "depends": [
+      
+    ]
+  },
+  {
+    "sequence": "0.0.0",
+    "name": "Morning Exercise: Responsive Design",
+    "url": "https://git.generalassemb.ly/atl-wdi/css-responsive-design",
+    "depends": [
+      
+    ]
+  },
+  {
+    "sequence": "0.0.0",
+    "name": "Flexbox and Grid - Cameron",
+    "url": "https://git.generalassemb.ly/atl-wdi/css-layout/blob/master/readme.md",
+    "depends": [
+      
+    ]
+  },
+  {
+    "sequence": "0.0.0",
+    "name": "Portfolio Site Lab (Support: Cameron)",
+    "url": "https://git.generalassemb.ly/atl-wdi/portfolio-pages",
+    "depends": [
+      
+    ]
+  },
+  {
+    "sequence": "0.0.0",
+    "name": "Homework: Finish Portfolio Page + A Smarter Way To Learn Javascript (ch. 11-15)",
+    "url": "https://git.generalassemb.ly/atl-wdi/portfolio-pages  A",
+    "depends": [
+      
+    ]
+  },
+  {
+    "sequence": "0.0.0",
+    "name": "Morning Exercise: AirBnB Front Page - Stan",
+    "url": "https://git.generalassemb.ly/atl-wdi/css-airbnb-exercise",
+    "depends": [
+      
+    ]
+  },
+  {
+    "sequence": "0.0.0",
+    "name": "JS Data Types - Noah (Support: Stan)",
+    "url": "https://git.generalassemb.ly/atl-wdi/js-data-types",
+    "depends": [
+      
+    ]
+  },
+  {
+    "sequence": "0.0.0",
+    "name": "JS Data Types Practice (Support: Stan)",
+    "url": "https://git.generalassemb.ly/atl-wdi/Data-Types-Practice",
+    "depends": [
+      
+    ]
+  },
+  {
+    "sequence": "0.0.0",
+    "name": "Homework: Let's Learn Bootstrap and A Smarter Way to Learn Javascript (ch. 16-45)",
+    "url": "https://git.generalassemb.ly/atl-wdi/learn-bootstrap-exercise   A",
+    "depends": [
+      
+    ]
+  },
+  {
+    "sequence": "0.0.0",
+    "name": "Morning Exercise: Intro To Lightning Talks - Stan",
+    "url": "https://git.generalassemb.ly/atl-wdi/wdi-curriculum/tree/master/projects/lightning_talks/front_end",
+    "depends": [
+      
+    ]
+  },
+  {
+    "sequence": "0.0.0",
+    "name": "JS Control Flow (Conditionals and Loops) - Stan",
+    "url": "https://git.generalassemb.ly/atl-wdi/js-control-flow",
+    "depends": [
+      
+    ]
+  },
+  {
+    "sequence": "0.0.0",
+    "name": "ASCII Art Lab (Support: Stan)",
+    "url": "https://git.generalassemb.ly/atl-wdi/js-ascii-art-exercise",
+    "depends": [
+      
+    ]
+  },
+  {
+    "sequence": "0.0.0",
+    "name": "Homework: Control Flow Practice and A Smarter Way to Learn Javascript (ch. 46-50)",
+    "url": "https://git.generalassemb.ly/atl-wdi/control-flow-practice",
+    "depends": [
+      
+    ]
+  },
+  {
+    "sequence": "0.0.0",
+    "name": "Morning Exercise: Javascript - Intro to Pseudocode - Cameron",
+    "url": "https://git.generalassemb.ly/ga-wdi-lessons/pseudocode",
+    "depends": [
+      
+    ]
+  },
+  {
+    "sequence": "0.0.0",
+    "name": "JS Functions + Scope - Daniel (Support: Cameron)",
+    "url": "https://git.generalassemb.ly/atl-wdi/js-functions-and-scope",
+    "depends": [
+      
+    ]
+  },
+  {
+    "sequence": "0.0.0",
+    "name": "JS Debugging Lab",
+    "url": "https://git.generalassemb.ly/atl-wdi/js-debugging-errors-exercise",
+    "depends": [
+      
+    ]
+  },
+  {
+    "sequence": "0.0.0",
+    "name": "Homework: Function Drills and A Smarter Way to Learn Javascript (ch. 51-55)",
+    "url": "https://git.generalassemb.ly/atl-wdi/function-drills-exercise   A",
+    "depends": [
+      
+    ]
+  },
+  {
+    "sequence": "0.0.0",
+    "name": "Morning Exercise: Function Drills Review - Cameron",
+    "url": "no link found",
+    "depends": [
+      
+    ]
+  },
+  {
+    "sequence": "0.0.0",
+    "name": "Objects and Context - Cameron",
+    "url": "https://git.generalassemb.ly/atl-wdi/js-objects-and-context",
+    "depends": [
+      
+    ]
+  },
+  {
+    "sequence": "0.0.0",
+    "name": "Calculator (Support: Cameron)",
+    "url": "https://git.generalassemb.ly/atl-wdi/js-calculator-exercise",
+    "depends": [
+      
+    ]
+  },
+  {
+    "sequence": "0.0.0",
+    "name": "Homework: Objects In Space and A Smarter Way to Learn Javascript (ch. 56-60)",
+    "url": "https://git.generalassemb.ly/atl-wdi/objects-in-spaaaaacccceeeee-exercise  A",
+    "depends": [
+      
+    ]
+  },
+  {
+    "sequence": "0.0.0",
+    "name": "Morning Exercise: Intro to Code Katas: Edabit and CodeWars - Stan",
+    "url": "https://edabit.com  https://www.codewars.com/dashboard",
+    "depends": [
+      
+    ]
+  },
+  {
+    "sequence": "0.0.0",
+    "name": "Object Oriented Programming in JavaScript - Noah (Support: Stan)",
+    "url": "https://git.generalassemb.ly/atl-wdi/javascript-oop",
+    "depends": [
+      
+    ]
+  },
+  {
+    "sequence": "0.0.0",
+    "name": "OOP Lab",
+    "url": "https://git.generalassemb.ly/atl-wdi/javascript-oop",
+    "depends": [
+      
+    ]
+  },
+  {
+    "sequence": "0.0.0",
+    "name": "Homework: Tamogatchi and Finish A Smarter Way To Learn Javascript ",
+    "url": "https://git.generalassemb.ly/atl-wdi/tamogatchi-exercise  Finish(!!!)",
+    "depends": [
+      
+    ]
+  },
+  {
+    "sequence": "0.0.0",
+    "name": "Morning Exercise: Lightning Talk Presentations pt 1 - Stan",
+    "url": "no link found",
+    "depends": [
+      
+    ]
+  },
+  {
+    "sequence": "0.0.0",
+    "name": "JS DOM - Noah (Support: Stan)",
+    "url": "https://git.generalassemb.ly/atl-wdi/js-dom",
+    "depends": [
+      
+    ]
+  },
+  {
+    "sequence": "0.0.0",
+    "name": "JS Events - Noah (Support: Stan)",
+    "url": "https://git.generalassemb.ly/atl-wdi/js-events",
+    "depends": [
+      
+    ]
+  },
+  {
+    "sequence": "0.0.0",
+    "name": "Homework: Stopwatch, Pixart (Feedback)",
+    "url": "https://git.generalassemb.ly/atl-wdi/js-pixart  ----",
+    "depends": [
+      
+    ]
+  },
+  {
+    "sequence": "0.0.0",
+    "name": "Morning Exercise: Lightning Talk Presentations continued - Spencer",
+    "url": "no link found",
+    "depends": [
+      
+    ]
+  },
+  {
+    "sequence": "0.0.0",
+    "name": "jQuery DOM - Spencer",
+    "url": "https://git.generalassemb.ly/atl-wdi/intro-to-jquery",
+    "depends": [
+      
+    ]
+  },
+  {
+    "sequence": "0.0.0",
+    "name": "jQuery Lab (Support: Spencer)",
+    "url": "https://git.generalassemb.ly/atl-wdi/jQuery-todo-exercise  Shape",
+    "depends": [
+      
+    ]
+  },
+  {
+    "sequence": "0.0.0",
+    "name": "Homework: Prep for Diagnostic",
+    "url": "https://git.generalassemb.ly/atl-wdi/wdi-curriculum/blob/master/instructor_notes/agile/problem-modeling-and-user-stories.md",
+    "depends": [
+      
+    ]
+  },
+  {
+    "sequence": "0.0.0",
+    "name": "Morning Exercise: Lightning Talk Presentations continued - Cameron",
+    "url": "no link found",
+    "depends": [
+      
+    ]
+  },
+  {
+    "sequence": "0.0.0",
+    "name": "ATM Diagnostic - Cameron",
+    "url": "https://git.generalassemb.ly/atl-wdi/atm-lab",
+    "depends": [
+      
+    ]
+  },
+  {
+    "sequence": "0.0.0",
+    "name": "ATM Diagnostic",
+    "url": "no link found",
+    "depends": [
+      
+    ]
+  },
+  {
+    "sequence": "0.0.0",
+    "name": "Homework: Building a Bigger Project",
+    "url": "https://www.flowji.com/using-trello-to-manage-your-website-project/  https://git.generalassemb.ly/atl-wdi/wdi-curriculum/blob/master/instructor_notes/agile/problem-modeling-and-user-stories.md",
+    "depends": [
+      
+    ]
+  },
+  {
+    "sequence": "0.0.0",
+    "name": "Project 1 Review",
+    "url": "https://git.generalassemb.ly/atl-wdi/unit-01-project",
+    "depends": [
+      
+    ]
+  },
+  {
+    "sequence": "0.0.0",
+    "name": "Project 1 Intro",
+    "url": "https://git.generalassemb.ly/atl-wdi/unit-01-project",
+    "depends": [
+      
+    ]
+  },
+  {
+    "sequence": "0.0.0",
+    "name": "Project 1 Presentations",
+    "url": "no link found",
+    "depends": [
+      
+    ]
+  },
+  {
+    "sequence": "0.0.0",
+    "name": "Project 1 Retrospective - Full IA Team",
+    "url": "Project One Retrospective",
+    "depends": [
+      
+    ]
+  },
+  {
     "sequence": "2.17.2",
     "name": "js-node-lesson",
     "url": "https://git.generalassemb.ly/atl-wdi/intro-to-node-and-npm"
