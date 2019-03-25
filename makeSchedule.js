@@ -4,7 +4,7 @@ const fs = require('fs');
 //parses calendar fromJSON
 const parseLessons = (calendarJSON) => { 
   let lessons = JSON.parse(calendarJSON);
-  return lessons.map(l => new Lesson(new Sequence(l.sequence), l.name, l.url, l.depends));
+  return lessons.map(l => new Lesson(makeSequenceFromString(l.sequence), l.name, l.url, l.depends));
 
 };
 
@@ -29,28 +29,18 @@ function SequenceFormatException(str) {
   this.toString = function () { this.value + ' ' + this.message };
 }
 
-function Sequence(str) {
-  let pattern = /^(\d+).(\d+).(\d+)$/
+const makeSequenceFromString = (str) => {
+  let pattern = /^(\d+).(\d+).(\d+)(.(\d+))?$/
 
   let result = pattern.exec(str);
 
   if(result)
   {
-    this.unit  = Number.parseInt(result[1], 10);
-    this.day   = Number.parseInt(result[2], 10); 
-    this.block = Number.parseInt(result[3], 10);
-
-    this.toString = function() {
-      return `${this.unit}.${this.day}.${this.block}`;
-    }
-
-    this.compareSequence = function(b) {
-      return Math.sign(
-        4*Math.sign(this.unit - b.unit) 
-        + 2*Math.sign(this.day - b.day) 
-        + Math.sign(this.block - b.block)
-      );
-    }
+    return new Sequence(Number.parseInt(result[1], 10),
+      Number.parseInt(result[2], 10),
+      Number.parseInt(result[3], 10),
+      result[5] ? Number.parseInt(result[5], 10) : 1
+    );
   }
   else
   {
@@ -58,9 +48,33 @@ function Sequence(str) {
   }
 }
 
+function Sequence(unit, day, block, subblock) {
+    this.unit = unit;
+    this.day = day; 
+    this.block = block;
+    this.subblock = subblock;
+
+    this.toString = function() {
+      return makeSequenceString(this.unit, this.day, this.block, this.subblock);
+    }
+
+    this.compareSequence = function(b) {
+      return Math.sign(
+        8*Math.sign(this.unit - b.unit)
+        + 4*Math.sign(this.day - b.day)
+        + 2*Math.sign(this.block - b.block)
+        + Math.sign(this.subblock - b.subblock)
+      );
+    }
+}
+
+const makeSequenceString = (unit, day, block, subblock = 1) => {
+  return `${unit}.${day}.${block}.${subblock}`;
+}
+
 const sequenceCompare = (a,b) => a.compareSequence(b);
 
-function Lesson(sequence = new Sequence('0.0.0'), name = 'TBD', url = '', depends = []) {
+function Lesson(sequence = new Sequence(0,0,0,1), name = 'TBD', url = '', depends = []) {
   this.sequence = sequence; 
   this.name = name;
   this.url = url;
@@ -102,24 +116,78 @@ function* allSequences(nDays = [15, 15, 15, 15], startBlock = 1, startDay = 1, s
     {
       day++;
       for(let block of blockGen(startBlock))
-        yield `${unit}.${day}.${block}`;
+        yield new Sequence(unit, day, block, 1);
     }
 }
 
 const defaultWorkDaysPerUnit = [16, 13, 14, 18];
 
+const isWednesday = (sequence) => {
+  return sequence.day % 5 == 3;
+};
+
+const isOutcomesSequence = (sequence) => {
+  return isWednesday(sequence) 
+    && sequence.subblock < 2
+    && sequence.block == 3;
+};
+
+const isStudyDaySequence = (sequence) => {
+  return isWednesday(sequence) 
+    && sequence.block > 1
+    && !isOutcomesSequence(sequence);
+};
+
+const makeStudyDayLesson = (lesson) => {
+  lesson.name = lesson.name == "TBD" 
+    ? "study-day" 
+    : lesson.name + " - CONFLICT: study-day";
+
+  return lesson;
+};
+
+const withStudyDay = (lesson) => {
+  return isStudyDaySequence(lesson.sequence)
+    ? makeStudyDayLesson(lesson)
+    : lesson;
+};
+
+const makeOutcomesLesson = (lesson) => {
+  lesson.name = lesson.name == "TBD" 
+    ? "outcomes" 
+    : lesson.name + " - CONFLICT: outcomes";
+
+  return lesson;
+};
+
+const withOutcomes = (lesson) => {
+  return isOutcomesSequence(lesson.sequence)
+    ? makeOutcomesLesson(lesson)
+    : lesson;
+};
+
 const makeAllLessons = (lessons) => {
-  let lessonMap = asSequenceObj(lessons);
+  let sortedLessons = lessons.sort(lessonCompare);
 
-  for(let seq of allSequences(defaultWorkDaysPerUnit))
-  {
-    if(!lessonMap[seq])
-    {
-      lessonMap[seq] = new Lesson(new Sequence(seq));
+  let nextLesson = sortedLessons.shift();
+
+  let allLessons = [];
+
+  for(let seq of allSequences(defaultWorkDaysPerUnit)) {
+
+    let l = {};
+
+    if(!nextLesson || nextLesson.sequence.compareSequence(seq) != 0) {
+      l = new Lesson(seq);
+    } else {
+      l = nextLesson;
+      nextLesson = sortedLessons.shift();
     }
-  }
 
-  return Object.values(lessonMap);
+    allLessons.push(withStudyDay(withOutcomes(l)));
+  }
+  
+  return allLessons;
 };
 
 const lessonsToMarkDownTable = (lessons) => {
@@ -127,7 +195,7 @@ const lessonsToMarkDownTable = (lessons) => {
     + "\n\n_Note: see below the table for details on Sequence_"
     + "\n\n<!-- __DO NOT MANUALLY EDIT__ Instead use `index.js` -->"
     + "\n\n<!-- Generated on: " + new Date() + " -->"
-    + "\n\nSequence (Unit.Day.Block) | Link"
+    + "\n\nSequence (Unit.Day.Block.Subblock) | Link"
     + lessons.reduce((str, lesson) => str + ((str === '' ? '' : '\n') + lessonToMarkdownTableRow(lesson)), '\n--- | ---')
     + "\n\n### Sequences "
     + "\n\nSequences are semantic strings describing when a part of the course is to occur. The format is: `Unit.Day.Block` where:"
@@ -138,6 +206,7 @@ const lessonsToMarkDownTable = (lessons) => {
     + "\nBlock | Scale: 1-4, the time block the lesson is taught in"
     + "\n\nWhere block is has the following values"
     + "\n\nBlock Number | Meaning"
+    + "\n\nSubblock | 1-2 the first and second halves of a block (rarely used)"
     + "\n--- | ---"
     + "\n1 | Morning Excersises"
     + "\n2 | Session 1"
@@ -153,7 +222,7 @@ if(scheduleJSONFilePath)
     .then(lessons => 
       console.log(
         lessonsToMarkDownTable(
-          makeAllLessons(lessons).sort(lessonCompare)
+          makeAllLessons(lessons)
         )
       )
     );
