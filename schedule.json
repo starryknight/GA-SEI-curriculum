@@ -189,30 +189,6 @@
     ]
   },
   {
-    "sequence": "1.8.2",
-    "name": "js-oop-lesson",
-    "url": "https://git.generalassemb.ly/atl-wdi/javascript-oop",
-    "depends": [
-      
-    ]
-  },
-  {
-    "sequence": "1.8.3",
-    "name": "js-oop-practice",
-    "url": "https://git.generalassemb.ly/atl-wdi/javascript-oop",
-    "depends": [
-      
-    ]
-  },
-  {
-    "sequence": "1.8.4",
-    "name": "js-oop-exercise",
-    "url": "https://git.generalassemb.ly/atl-wdi/tamogatchi-exercise",
-    "depends": [
-      
-    ]
-  },
-  {
     "sequence": "1.9.1",
     "name": "js-domIntro-exercise",
     "url": "",
@@ -465,6 +441,31 @@
       
     ]
   },
+  {
+    "sequence": "3.32.2",
+    "name": "js-oop-lesson",
+    "url": "https://git.generalassemb.ly/atl-wdi/javascript-oop",
+    "depends": [
+      
+    ]
+  },
+  {
+    "sequence": "3.32.3",
+    "name": "js-oop-practice",
+    "url": "https://git.generalassemb.ly/atl-wdi/javascript-oop",
+    "depends": [
+      
+    ]
+  },
+  {
+    "sequence": "3.32.4",
+    "name": "js-oop-exercise",
+    "url": "https://git.generalassemb.ly/atl-wdi/tamogatchi-exercise",
+    "depends": [
+      
+    ]
+  },
+
   {
     "sequence": "3.33.1",
     "name": "Morning Exercise: Map Practice - Stanley",

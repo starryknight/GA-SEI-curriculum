@@ -4,7 +4,7 @@ _Note: see below the table for details on Sequence_
 
 <!-- __DO NOT MANUALLY EDIT__ Instead use `index.js` -->
 
-<!-- Generated on: Wed Mar 27 2019 09:01:26 GMT-0400 (EDT) -->
+<!-- Generated on: Wed Mar 27 2019 15:26:22 GMT-0400 (EDT) -->
 
 Sequence (Unit.Day.Block.Subblock) | Link
 --- | ---
@@ -37,9 +37,9 @@ Sequence (Unit.Day.Block.Subblock) | Link
 1.7.3.1 | [js-objects-exercise](https://git.generalassemb.ly/atl-wdi/js-calculator-exercise)
 1.7.4.1 | [js-datastructure-exercise](https://git.generalassemb.ly/atl-wdi/objects-in-spaaaaacccceeeee-exercise)
 1.8.1.1 | [js-codeChallenges-exercise](https://edabit.com)
-1.8.2.1 | [js-oop-lesson - CONFLICT: study-day](https://git.generalassemb.ly/atl-wdi/javascript-oop)
-1.8.3.1 | [js-oop-practice - CONFLICT: outcomes](https://git.generalassemb.ly/atl-wdi/javascript-oop)
-1.8.4.1 | [js-oop-exercise - CONFLICT: study-day](https://git.generalassemb.ly/atl-wdi/tamogatchi-exercise)
+1.8.2.1 | [study-day]()
+1.8.3.1 | [outcomes]()
+1.8.4.1 | [study-day]()
 1.9.1.1 | [js-domIntro-exercise]()
 1.9.2.1 | [js-dom-lesson](https://git.generalassemb.ly/atl-wdi/js-dom)
 1.9.3.1 | [js-events-lesson](https://git.generalassemb.ly/atl-wdi/js-events)
@@ -133,9 +133,9 @@ Sequence (Unit.Day.Block.Subblock) | Link
 3.31.3.1 | [TBD]()
 3.31.4.1 | [Homework: React Hardware Store and React for Everyone](https://git.generalassemb.ly/atl-wdi/react-state-lesson/blob/master/hardware-store-shopping-cart.md---Optional---Watch:)
 3.32.1.1 | [TBD]()
-3.32.2.1 | [TBD]()
-3.32.3.1 | [TBD]()
-3.32.4.1 | [TBD]()
+3.32.2.1 | [js-oop-lesson](https://git.generalassemb.ly/atl-wdi/javascript-oop)
+3.32.3.1 | [js-oop-practice](https://git.generalassemb.ly/atl-wdi/javascript-oop)
+3.32.4.1 | [js-oop-exercise](https://git.generalassemb.ly/atl-wdi/tamogatchi-exercise)
 3.33.1.1 | [Morning Exercise: Map Practice - Stanley](https://git.generalassemb.ly/atl-wdi/function-practice-exercise)
 3.33.2.1 | [React Router - Stanley - CONFLICT: study-day](https://git.generalassemb.ly/atl-wdi/react-router-lesson)
 3.33.3.1 | [React Router Lab - Credits/Debits  - Stanley - CONFLICT: outcomes](https://git.generalassemb.ly/atl-wdi/react-router-lesson#lab-adding-debits-and-credits)
