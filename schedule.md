@@ -4,7 +4,7 @@ _Note: see below the table for details on Sequence_
 
 <!-- __DO NOT MANUALLY EDIT__ Instead use `index.js` -->
 
-<!-- Generated on: Sun Mar 24 2019 21:21:41 GMT-0400 (EDT) -->
+<!-- Generated on: Wed Mar 27 2019 09:01:26 GMT-0400 (EDT) -->
 
 Sequence (Unit.Day.Block.Subblock) | Link
 --- | ---
@@ -16,7 +16,7 @@ Sequence (Unit.Day.Block.Subblock) | Link
 1.2.2.1 | [cli-intro-lesson](https://git.generalassemb.ly/atl-wdi/cli-intro)
 1.2.3.1 | [git-intro-lesson](https://git.generalassemb.ly/atl-wdi/git-intro)
 1.2.4.1 | [git-intro-exercise](https://git.generalassemb.ly/atl-wdi/git-intro-exercise)
-1.3.1.1 | [html-css-reviewFlashCards](https://www.studystack.com/flashcard-3005168)
+1.3.1.1 | [logical-thinking-exercise](https://git.generalassemb.ly/atl-wdi/How-to-tie-a-shoe)
 1.3.2.1 | [html-review-lesson - CONFLICT: study-day](https://git.generalassemb.ly/atl-wdi/html-and-css)
 1.3.3.1 | [html-staticsite-exercise - CONFLICT: outcomes](https://git.generalassemb.ly/atl-wdi/Build-A-Static-Site)
 1.3.4.1 | [study-day]()
