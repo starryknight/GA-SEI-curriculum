@@ -4,7 +4,7 @@ _Note: see below the table for details on Sequence_
 
 <!-- __DO NOT MANUALLY EDIT__ Instead use `index.js` -->
 
-<!-- Generated on: Wed Mar 27 2019 15:26:22 GMT-0400 (EDT) -->
+<!-- Generated on: Mon Apr 01 2019 08:53:51 GMT-0400 (EDT) -->
 
 Sequence (Unit.Day.Block.Subblock) | Link
 --- | ---
@@ -28,7 +28,7 @@ Sequence (Unit.Day.Block.Subblock) | Link
 1.5.2.1 | [js-dataTypes-lesson](https://git.generalassemb.ly/atl-wdi/js-data-types)
 1.5.3.1 | [js-controlFlow-lesson](https://git.generalassemb.ly/atl-wdi/js-control-flow)
 1.5.4.1 | [js-controlFlow-exercise](https://git.generalassemb.ly/atl-wdi/js-ascii-art-exercise)
-1.6.1.1 | [TBD]()
+1.6.1.1 | [homework review]()
 1.6.2.1 | [js-functions-lesson](https://git.generalassemb.ly/atl-wdi/js-functions-and-scope)
 1.6.3.1 | [js-debugging-lab](https://git.generalassemb.ly/atl-wdi/js-debugging-errors-exercise)
 1.6.4.1 | [js-functionDrills-exercise](https://git.generalassemb.ly/atl-wdi/function-drills-exercise)
