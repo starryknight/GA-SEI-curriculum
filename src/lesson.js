@@ -85,3 +85,15 @@ const makeSequenceString = (unit, day, block, subblock = 1) => {
 }
 
 const sequenceCompare = (a,b) => a.compareSequence(b);
+
+module.exports = {
+  Lesson,
+  Sequence,
+  SequenceFormatException,
+  lessonCompare,
+  makeSequenceFromString,
+  makeSequenceString,
+  parseLessonsFromJSON,
+  readLessonsFile,
+  sequenceCompare,
+}

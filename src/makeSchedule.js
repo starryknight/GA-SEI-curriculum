@@ -1,5 +1,5 @@
 const { lessonsToMarkDownTable, makeAllLessons }  = require('./scheduler.js');
-const { readLessonsFile }  = require('./lessons.js');
+const { readLessonsFile }  = require('./lesson.js');
 
 let scheduleJSONFilePath = process.argv[2];
 

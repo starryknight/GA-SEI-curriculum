@@ -1,4 +1,4 @@
-const { Lesson, Sequence, lessonCompare, sequenceCompare }  = require('./lesson.js'); 
+const { Lesson, Sequence, lessonCompare, sequenceCompare } = require('./lesson.js'); 
 
 function* blockGen(startBlock = 1) {
   for(; startBlock <= 4; startBlock++)
@@ -50,7 +50,7 @@ const setConflictName = (conflictName, lesson) => {
   return lesson;
 };
 
-const withLesson = (isConflictSequence, setConflictName, leesson) => {
+const withLesson = (isConflictSequence, setConflictName, lesson) => {
   return isConflictSequence(lesson.sequence)
     ? setConflictName(lesson)
     : lesson;
@@ -62,7 +62,7 @@ const withOutcomes = (lesson) =>
 const withStudyDay = (lesson) => 
   withLesson(isStudyDaySequence, (l) => setConflictName("study-day", l), lesson);
 
-export const makeAllLessons = (lessons) => {
+const makeAllLessons = (lessons) => {
   let sortedLessons = lessons.sort(lessonCompare);
 
   let nextLesson = sortedLessons.shift();
@@ -92,7 +92,7 @@ const lessonToMarkdownTableRow = (lesson) => {
   return `${lesson.sequence.toString()} | [${lesson.name}](${lesson.url})`;
 };
 
-export const lessonsToMarkDownTable = (lessons) => {
+const lessonsToMarkDownTable = (lessons) => {
   return "# SEI Schedule"
     + "\n\n_Note: see below the table for details on Sequence_"
     + "\n\n<!-- __DO NOT MANUALLY EDIT__ Instead use `index.js` -->"
@@ -114,4 +114,9 @@ export const lessonsToMarkDownTable = (lessons) => {
     + "\n2 | Session 1"
     + "\n3 | Session 2"
     + "\n4 | Homework"
+};
+
+module.exports = {
+  lessonsToMarkDownTable,
+  makeAllLessons
 };
