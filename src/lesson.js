@@ -1,7 +1,7 @@
 //NOTE: since 2019-03-18, fs.promises is experimental
 const fs = require('fs');
 
-export function Lesson(sequence = new Sequence(0,0,0,1), name = 'TBD', url = '', depends = []) {
+function Lesson(sequence = new Sequence(0,0,0,1), name = 'TBD', url = '', depends = []) {
   this.sequence = sequence; 
   this.name = name;
   this.url = url;
@@ -12,16 +12,16 @@ export function Lesson(sequence = new Sequence(0,0,0,1), name = 'TBD', url = '',
   }
 };
 
-export const lessonCompare = (a,b) => a.compareLessonsBySequence(b);
+const lessonCompare = (a,b) => a.compareLessonsBySequence(b);
 
-export const parseLessonsFromJSON = (calendarJSON) => { 
+const parseLessonsFromJSON = (calendarJSON) => { 
   let lessons = JSON.parse(calendarJSON);
   return lessons.map(l => new Lesson(makeSequenceFromString(l.sequence), l.name, l.url, l.depends));
 
 };
 
 //reads calendar file. Transparent promise wrapper around readFile
-export const readLessonsFile = (filePath) => 
+const readLessonsFile = (filePath) => 
   new Promise(function(resolve, reject) {
     fs.readFile(filePath, (err, data) => {
       if(err) {
@@ -33,7 +33,7 @@ export const readLessonsFile = (filePath) =>
     });
   });
 
-export function Sequence(unit, day, block, subblock) {
+function Sequence(unit, day, block, subblock) {
     this.unit = unit;
     this.day = day; 
     this.block = block;
@@ -53,7 +53,7 @@ export function Sequence(unit, day, block, subblock) {
     }
 }
 
-export function SequenceFormatException(str) {
+function SequenceFormatException(str) {
   str = str.trim();
 
   this.value = str;
@@ -61,7 +61,7 @@ export function SequenceFormatException(str) {
   this.toString = function () { this.value + ' ' + this.message };
 }
 
-export const makeSequenceFromString = (str) => {
+const makeSequenceFromString = (str) => {
   let pattern = /^(\d+).(\d+).(\d+)(.(\d+))?$/
 
   let result = pattern.exec(str);
@@ -80,8 +80,8 @@ export const makeSequenceFromString = (str) => {
   }
 }
 
-export const makeSequenceString = (unit, day, block, subblock = 1) => {
+const makeSequenceString = (unit, day, block, subblock = 1) => {
   return `${unit}.${day}.${block}.${subblock}`;
 }
 
-export const sequenceCompare = (a,b) => a.compareSequence(b);
+const sequenceCompare = (a,b) => a.compareSequence(b);
