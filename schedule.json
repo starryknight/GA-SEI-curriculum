@@ -125,6 +125,14 @@
     "depends": [ "js-controlFlow-lesson" ]
   },
   {
+    "sequence": "1.6.1",
+    "name": "homework review",
+    "url": "",
+    "depends": [
+      
+    ]
+  },
+  {
     "sequence": "1.6.2",
     "name": "js-functions-lesson",
     "url": "https://git.generalassemb.ly/atl-wdi/js-functions-and-scope",
