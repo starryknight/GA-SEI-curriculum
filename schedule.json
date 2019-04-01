@@ -229,7 +229,7 @@
     ]
   },
   {
-    "sequence": "1.10.1",
+    "sequence": "1.10.2",
     "name": "jquery-intro-lesson",
     "url": "https://git.generalassemb.ly/atl-wdi/intro-to-jquery",
     "depends": [
@@ -237,7 +237,7 @@
     ]
   },
   {
-    "sequence": "1.10.2",
+    "sequence": "1.10.3",
     "name": "jquery-dom-exercise",
     "url": "https://git.generalassemb.ly/atl-wdi/jQuery-todo-exercise",
     "depends": [
