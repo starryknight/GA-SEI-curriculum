@@ -253,14 +253,6 @@
     ]
   },
   {
-    "sequence": "1.11.1",
-    "name": "brainTeaser-indexCard-exercise",
-    "url": "https://git.generalassemb.ly/atl-wdi/atm-lab",
-    "depends": [
-      
-    ]
-  },
-  {
     "sequence": "1.11.2",
     "name": "js-diagnostic-exercise",
     "url": "https://git.generalassemb.ly/atl-wdi/atm-lab",
