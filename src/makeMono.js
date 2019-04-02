@@ -2,9 +2,17 @@ const { exec } = require("child_process");
 const { readLessonsFile } = require('./lesson.js');
 
 const cloneLesson = (lesson) => {
-  exec(`git clone ${lesson.url} bin/${lesson.name}`, (err, stdout, stderr) => {
-    console.log(stdout);
-    console.log(stderr);
+  return new Promise((resolve, reject) => {
+    exec(`git clone ${lesson.url} bin/${lesson.name}`, (err, stdout, stderr) => {
+      if(err) {
+        exec(`mkdir bin/${lesson.name}`);
+        exec(`echo \'#${lesson.name}\n\n${lesson.url}' >> ${lesson.name}/readme.md`);
+      }
+
+      lesson.url = `./${lesson.name}`;
+
+      resolve(lesson);
+    });
   });
 };
 
