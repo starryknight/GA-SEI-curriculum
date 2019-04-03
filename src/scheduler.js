@@ -63,24 +63,32 @@ const withStudyDay = (lesson) =>
   withLesson(isStudyDaySequence, (l) => setConflictName("study-day", l), lesson);
 
 const makeAllLessons = (lessons) => {
-  let sortedLessons = lessons.sort(lessonCompare);
+  let mappedLessons = lessons.reduce((ll, l) => { 
+    let k = l.sequence.toStringNoSubblock();
 
-  let nextLesson = sortedLessons.shift();
+    if(!ll[k])
+      ll[k] = [l];
+    else
+      ll[k].push(l); 
+
+    return ll;
+  }, {});
 
   let allLessons = [];
 
   for(let seq of allSequences(defaultWorkDaysPerUnit)) {
 
-    let l = {};
+    let l = [];
+    let k = seq.toStringNoSubblock();
 
-    if(!nextLesson || nextLesson.sequence.compareSequence(seq) != 0) {
-      l = new Lesson(seq);
-    } else {
-      l = nextLesson;
-      nextLesson = sortedLessons.shift();
-    }
+    if(mappedLessons[k])
+      l.push(...mappedLessons[k])
+    else
+      l.push(new Lesson(seq));
 
-    allLessons.push(withStudyDay(withOutcomes(l)));
+    //l.forEach(k => console.log(k))
+
+    allLessons.push(l.map(x => withStudyDay(withOutcomes(x))));
   }
   
   return allLessons;

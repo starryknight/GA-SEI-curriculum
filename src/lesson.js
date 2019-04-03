@@ -43,6 +43,10 @@ function Sequence(unit, day, block, subblock) {
       return makeSequenceString(this.unit, this.day, this.block, this.subblock);
     }
 
+    this.toStringNoSubblock = function() {
+      return makeSequenceString(this.unit, this.day, this.block);
+    }
+
     this.compareSequence = function(b) {
       return Math.sign(
         8*Math.sign(this.unit - b.unit)
@@ -51,11 +55,17 @@ function Sequence(unit, day, block, subblock) {
         + Math.sign(this.subblock - b.subblock)
       );
     }
+
+    this.compareSequenceIgnoreSubblock = function(b) {
+      return Math.sign(
+        4*Math.sign(this.unit - b.unit)
+        + 2*Math.sign(this.day - b.day)
+        + Math.sign(this.block - b.block)
+      );
+    }
 }
 
 function SequenceFormatException(str) {
-  str = str.trim();
-
   this.value = str;
   this.message = 'sequence should match /^(\d+).(\d+).(\d+)$/';
   this.toString = function () { this.value + ' ' + this.message };
