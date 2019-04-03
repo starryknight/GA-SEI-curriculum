@@ -75,23 +75,21 @@ const makeAllLessons = (lessons) => {
   }, {});
 
   let allLessons = [];
+  let l;
 
   for(let seq of allSequences(defaultWorkDaysPerUnit)) {
 
-    let l = [];
     let k = seq.toStringNoSubblock();
 
     if(mappedLessons[k])
-      l.push(...mappedLessons[k])
+      l = mappedLessons[k];
     else
-      l.push(new Lesson(seq));
+      l = [new Lesson(seq)];
 
-    //l.forEach(k => console.log(k))
-
-    allLessons.push(l.map(x => withStudyDay(withOutcomes(x))));
+    allLessons = allLessons.concat(l.map(x => withStudyDay(withOutcomes(x))));
   }
-  
-  return allLessons;
+
+  return allLessons.sort(lessonCompare);
 };
 
 const defaultWorkDaysPerUnit = [16, 13, 14, 18];
