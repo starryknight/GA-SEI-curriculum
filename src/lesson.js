@@ -33,6 +33,13 @@ const readLessonsFile = (filePath) =>
     });
   });
 
+const jsonFriendlyLesson = (lesson) => {
+  let x = {...lesson};
+  x.sequence = x.sequence.toString();
+
+  return x;
+};
+
 function Sequence(unit, day, block, subblock) {
     this.unit = unit;
     this.day = day; 
@@ -106,4 +113,5 @@ module.exports = {
   parseLessonsFromJSON,
   readLessonsFile,
   sequenceCompare,
+  jsonFriendlyLesson
 }
