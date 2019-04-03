@@ -1,0 +1,36 @@
+#!/usr/bin/env fish
+
+set out "./bin"
+set src "./src"
+
+mkdir -p $out
+
+function cloneRepo 
+  git clone $argv[2] $out/$argv[1]
+end
+
+function makeLessonDir 
+  set outDir $out/$argv[1]
+  mkdir $outDir
+  echo -e "#" $argv[1] "\n\n" $argv[2] > $outDir/readme.md
+end
+
+function parseLine 
+  set line (string split ' ' $argv[1])
+
+  if test $line[1] = "git"
+    echo "git" $line[2]
+    cloneRepo $line[2] $line[3]
+  else
+    echo "dir" $line[2]
+    makeLessonDir $line[2] $line[3]
+  end
+end
+
+node $src/makeMono.js $argv[1] 1> newSchedule.md 2> actions 
+
+if test ! $status -eq 0
+  cat actions
+else
+  cat actions | while read -l a; parseLine $a; end
+end
