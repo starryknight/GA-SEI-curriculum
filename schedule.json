@@ -199,7 +199,7 @@
   {
     "sequence": "1.9.1",
     "name": "js-domIntro-exercise",
-    "url": "",
+    "url": "https://git.generalassemb.ly/atl-wdi/js-domIntro-exercise",
     "depends": [
       
     ]
