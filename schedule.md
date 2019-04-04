@@ -4,7 +4,7 @@ _Note: see below the table for details on Sequence_
 
 <!-- __DO NOT MANUALLY EDIT__ Instead use `index.js` -->
 
-<!-- Generated on: Mon Apr 01 2019 11:18:38 GMT-0400 (EDT) -->
+<!-- Generated on: Wed Apr 03 2019 20:50:04 GMT-0400 (EDT) -->
 
 Sequence (Unit.Day.Block.Subblock) | Link
 --- | ---
@@ -40,7 +40,7 @@ Sequence (Unit.Day.Block.Subblock) | Link
 1.8.2.1 | [study-day]()
 1.8.3.1 | [outcomes]()
 1.8.4.1 | [study-day]()
-1.9.1.1 | [js-domIntro-exercise]()
+1.9.1.1 | [js-domIntro-exercise](https://git.generalassemb.ly/atl-wdi/js-domIntro-exercise)
 1.9.2.1 | [js-dom-lesson](https://git.generalassemb.ly/atl-wdi/js-dom)
 1.9.3.1 | [js-events-lesson](https://git.generalassemb.ly/atl-wdi/js-events)
 1.9.4.1 | [js-dom-exercise](https://git.generalassemb.ly/atl-wdi/js-pixart)
