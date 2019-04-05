@@ -7,6 +7,7 @@ mkdir -p $out
 
 function cloneRepo 
   git clone $argv[2] $out/$argv[1]
+  rm -rf $out/$argv[1]/.git
 end
 
 function makeLessonDir 
@@ -27,10 +28,12 @@ function parseLine
   end
 end
 
-node $src/makeMono.js $argv[1] 1> newSchedule.md 2> actions 
+set tempFile (mktemp "/tmp/makeMono.X")
+
+node $src/makeMono.js $argv[1] 1> newSchedule.md 2> $tempFile
 
 if test ! $status -eq 0
-  cat actions
+  cat $tempFile
 else
-  cat actions | while read -l a; parseLine $a; end
+  cat $tempFile | while read -l a; parseLine $a; end
 end
