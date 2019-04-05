@@ -30,7 +30,7 @@ end
 
 set tempFile (mktemp "/tmp/makeMono.X")
 
-node $src/makeMono.js $argv[1] 1> newSchedule.md 2> $tempFile
+node $src/makeMono.js $argv[1] 1> $out/schedule.md 2> $tempFile
 
 if test ! $status -eq 0
   cat $tempFile
