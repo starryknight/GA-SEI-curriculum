@@ -245,14 +245,6 @@
     ]
   },
   {
-    "sequence": "1.10.4",
-    "name": "planning-userStories-practice",
-    "url": "https://git.generalassemb.ly/atl-wdi/wdi-curriculum/blob/master/instructor_notes/agile/problem-modeling-and-user-stories.md",
-    "depends": [
-      
-    ]
-  },
-  {
     "sequence": "1.11.1",
     "name": "brainTeaser-indexCard-exercise",
     "url": "https://git.generalassemb.ly/atl-wdi/atm-lab",
