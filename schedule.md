@@ -4,7 +4,7 @@ _Note: see below the table for details on Sequence_
 
 <!-- __DO NOT MANUALLY EDIT__ Instead use `index.js` -->
 
-<!-- Generated on: Wed Apr 03 2019 20:50:04 GMT-0400 (EDT) -->
+<!-- Generated on: Fri Apr 05 2019 14:48:27 GMT-0400 (EDT) -->
 
 Sequence (Unit.Day.Block.Subblock) | Link
 --- | ---
@@ -47,7 +47,7 @@ Sequence (Unit.Day.Block.Subblock) | Link
 1.10.1.1 | [TBD]()
 1.10.2.1 | [jquery-intro-lesson](https://git.generalassemb.ly/atl-wdi/intro-to-jquery)
 1.10.3.1 | [jquery-dom-exercise](https://git.generalassemb.ly/atl-wdi/jQuery-todo-exercise)
-1.10.4.1 | [planning-userStories-practice](https://git.generalassemb.ly/atl-wdi/wdi-curriculum/blob/master/instructor_notes/agile/problem-modeling-and-user-stories.md)
+1.10.4.1 | [TBD]()
 1.11.1.1 | [brainTeaser-indexCard-exercise](https://git.generalassemb.ly/atl-wdi/atm-lab)
 1.11.2.1 | [js-diagnostic-exercise](https://git.generalassemb.ly/atl-wdi/atm-lab)
 1.11.3.1 | [TBD]()
