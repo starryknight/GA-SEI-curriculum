@@ -40,6 +40,13 @@ const jsonFriendlyLesson = (lesson) => {
   return x;
 };
 
+const printLessons = (lessons) => {
+  lessons
+  .forEach(l =>
+    console.log(`${l.sequence.toString()} ${l.name} ${l.url}`)
+  );
+};
+
 function Sequence(unit, day, block, subblock) {
     this.unit = unit;
     this.day = day; 
@@ -113,5 +120,6 @@ module.exports = {
   parseLessonsFromJSON,
   readLessonsFile,
   sequenceCompare,
-  jsonFriendlyLesson
+  jsonFriendlyLesson,
+  printLessons
 }
