@@ -1,6 +1,6 @@
 const { exec } = require("child_process");
 const { readLessonsFile, jsonFriendlyLesson } = require('./lesson.js');
-const { makeAllLessons, lessonsToMarkDownTable } = require('./scheduler.js');
+const { makeAllLessons } = require('./scheduler.js');
 
 const makeLessonURLLocal = (lesson) => {
   lesson.url = `./${lesson.name}`;
@@ -24,11 +24,15 @@ readLessonsFile(process.argv[2])
   .then(ll => {
     let lessons = ll.filter(l => l.sequence.unit == 1 || l.sequence.unit == 2)
 
+    //print actions for bash script
     lessons.forEach(l => console.error(printLessonAction(l)));
 
+    //print new schedule.json
     console.log(
-      lessonsToMarkDownTable(
-        makeAllLessons(lessons.map(makeLessonURLLocal)).map(jsonFriendlyLesson)
+      JSON.stringify(
+       makeAllLessons(lessons.map(makeLessonURLLocal)).map(jsonFriendlyLesson),
+       null, 
+       4
       )
     );
   });
