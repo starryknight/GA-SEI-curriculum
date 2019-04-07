@@ -25,7 +25,7 @@ readLessonsFile(process.argv[2])
     let lessons = ll.filter(l => l.sequence.unit == 1 || l.sequence.unit == 2)
 
     //print actions for bash script
-    lessons.forEach(l => console.error(printLessonAction(l)));
+    lessons.filter(l => l.url.trim()).forEach(l => console.error(printLessonAction(l)));
 
     //print new schedule.json
     console.log(
