@@ -34,10 +34,12 @@ const readLessonsFile = (filePath) =>
   });
 
 const jsonFriendlyLesson = (lesson) => {
-  let x = {...lesson};
-  x.sequence = x.sequence.toString();
+  return {
+    name: lesson.name, 
+    sequence: lesson.sequence.toString(), 
+    depends: lesson.depends
+  };
 
-  return x;
 };
 
 const printLessons = (lessons) => {
