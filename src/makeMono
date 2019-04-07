@@ -5,14 +5,14 @@ set src "./src"
 
 mkdir -p $out
 
-function cloneRepo 
-  git clone $argv[2] $out/$argv[1]
+function cloneRepo
+  git clone --quiet $argv[2] $out/$argv[1]
   rm -rf $out/$argv[1]/.git
 end
 
 function makeLessonDir 
   set outDir $out/$argv[1]
-  mkdir $outDir
+  mkdir -p $outDir
   echo -e "#" $argv[1] "\n\n" $argv[2] > $outDir/readme.md
 end
 
@@ -20,17 +20,15 @@ function parseLine
   set line (string split ' ' $argv[1])
 
   if test $line[1] = "git"
-    echo "git" $line[2]
     cloneRepo $line[2] $line[3]
   else
-    echo "dir" $line[2]
     makeLessonDir $line[2] $line[3]
   end
 end
 
-set tempFile (mktemp "/tmp/makeMono.X")
+set tempFile (mktemp "/tmp/makeMono.XXX")
 
-node $src/makeMono.js $argv[1] 1> $out/schedule.md 2> $tempFile
+node $src/makeMono.js $argv[1] 2> $tempFile
 
 if test ! $status -eq 0
   cat $tempFile
