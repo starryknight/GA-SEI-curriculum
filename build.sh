@@ -6,7 +6,11 @@
 # starting a new cohort.
 
 function buildScheduleMarkdown() {
-  node ./src/makeSchedule.js ./schedule.json > schedule.md
+  node ./src/buildSchedule ./schedule.json ./schedule.md
 }
 
 buildScheduleMarkdown
+
+schedule.md: ./schedule.json 
+
+all: schedule.md

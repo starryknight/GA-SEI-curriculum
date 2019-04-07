@@ -94,35 +94,6 @@ const makeAllLessons = (lessons) => {
 
 const defaultWorkDaysPerUnit = [16, 13, 14, 18];
 
-const lessonToMarkdownTableRow = (lesson) => {
-  return `${lesson.sequence.toString()} | [${lesson.name}](${lesson.url})`;
-};
-
-const lessonsToMarkDownTable = (lessons) => {
-  return "# SEI Schedule"
-    + "\n\n_Note: see below the table for details on Sequence_"
-    + "\n\n<!-- __DO NOT MANUALLY EDIT__ Instead use `index.js` -->"
-    + "\n\n<!-- Generated on: " + new Date() + " -->"
-    + "\n\nSequence (Unit.Day.Block.Subblock) | Link"
-    + lessons.reduce((str, lesson) => str + ((str === '' ? '' : '\n') + lessonToMarkdownTableRow(lesson)), '\n--- | ---')
-    + "\n\n### Sequences "
-    + "\n\nSequences are semantic strings describing when a part of the course is to occur. The format is: `Unit.Day.Block` where:"
-    + "\n\nSequence Part | Meaning"
-    + "\n--- | ---"
-    + "\nUnit | Scale: 1-4, the unit the lesson is taught in"
-    + "\nDay | Scale: 1-infinity, the day with respect to the start of the course the lesson is taught in"
-    + "\nBlock | Scale: 1-4, the time block the lesson is taught in"
-    + "\n\nWhere block is has the following values"
-    + "\n\nBlock Number | Meaning"
-    + "\n\nSubblock | 1-2 the first and second halves of a block (rarely used)"
-    + "\n--- | ---"
-    + "\n1 | Morning Excersises"
-    + "\n2 | Session 1"
-    + "\n3 | Session 2"
-    + "\n4 | Homework"
-};
-
 module.exports = {
-  lessonsToMarkDownTable,
   makeAllLessons
 };
