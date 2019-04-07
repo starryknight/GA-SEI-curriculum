@@ -1,5 +1,5 @@
-const { makeAllLessons, printLessons }  = require('./scheduler.js');
-const { readLessonsFile }  = require('./lesson.js');
+const { makeAllLessons }  = require('./scheduler.js');
+const { readLessonsFile, printLessons }  = require('./lesson.js');
 
 let scheduleJSONFilePath = process.argv[2];
 
