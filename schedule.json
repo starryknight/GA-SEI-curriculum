@@ -348,7 +348,7 @@
   {
     "sequence": "2.21.1",
     "name": "mongoose-seeding-lesson",
-    "url": "https://git.generalassemb.ly/atl-wdi/express-models#set-up-seed-file",
+    "url": "https://git.generalassemb.ly/atl-wdi/express-models",
     "depends": ["mongoose-queries-lesson"]
   },
   {
