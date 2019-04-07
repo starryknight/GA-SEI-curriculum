@@ -1,4 +1,15 @@
-schedule.md: ./schedule.json ./src/buildSchedule
-  node ./src/buildSchedule ./schedule.json ./schedule.md
+.PHONY=clean
+out=./bin
+target=$(out)/schedule.md
 
-all: schedule.md
+all: $(target)
+
+clean: 
+	rm -r $(out)
+
+$(out):
+	mkdir -p $@
+
+$(target): ./schedule.json ./src/buildSchedule $(out)
+	./src/buildSchedule ./schedule.json > $(out)/schedule.md
+
