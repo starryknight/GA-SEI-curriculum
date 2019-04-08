@@ -708,7 +708,7 @@
   },
   {
     "sequence": "4.47.2",
-    "name": "Django Intro - Noah",
+    "name": "django-intro-lesson",
     "url": "https://git.generalassemb.ly/atl-wdi/intro-to-django/blob/master/notes.md",
     "depends": [
       
@@ -716,7 +716,7 @@
   },
   {
     "sequence": "4.47.3",
-    "name": "Django Models and Migrations - Ruchi",
+    "name": "django-models-lesson",
     "url": "https://git.generalassemb.ly/atl-wdi/django-models",
     "depends": [
       
@@ -724,7 +724,7 @@
   },
   {
     "sequence": "4.47.4",
-    "name": "Homework: DjangoGirls Tutorial",
+    "name": "django-intro-practice",
     "url": "https://tutorial.djangogirls.org/en/django/",
     "depends": [
       
@@ -732,7 +732,7 @@
   },
   {
     "sequence": "4.48.1",
-    "name": "Morning Exercise - Crack the Coding Interview (BUILD THIS)",
+    "name": "react-review-exercise",
     "url": "https://git.generalassemb.ly/atl-wdi/wdi-curriculum/tree/master/morning_exercises/react/react-refresh",
     "depends": [
       
@@ -740,7 +740,7 @@
   },
   {
     "sequence": "4.48.4",
-    "name": "Homework: Python Debugging Lab",
+    "name": "python-debugging-exercise",
     "url": "https://git.generalassemb.ly/atl-wdi/hogwarts",
     "depends": [
       
@@ -748,15 +748,7 @@
   },
   {
     "sequence": "4.49.1",
-    "name": "Morning Exercise - Nostal-dja",
-    "url": "https://git.generalassemb.ly/atl-wdi/nostal-dja",
-    "depends": [
-      
-    ]
-  },
-  {
-    "sequence": "4.49.2",
-    "name": "Nostal-dja - (Noah, Ruchi) - Independent Work / Small Groups",
+    "name": "django-intro-exercise",
     "url": "https://git.generalassemb.ly/atl-wdi/nostal-dja",
     "depends": [
       
@@ -764,7 +756,7 @@
   },
   {
     "sequence": "4.49.3",
-    "name": "Django Auth - Noah",
+    "name": "django-auth-lesson",
     "url": "https://git.generalassemb.ly/atl-wdi/django-auth",
     "depends": [
       
@@ -772,7 +764,7 @@
   },
   {
     "sequence": "4.49.4",
-    "name": "Homework: Nostal-dja",
+    "name": "django-intro-exercise",
     "url": "https://git.generalassemb.ly/atl-wdi/nostal-dja",
     "depends": [
       
@@ -780,7 +772,7 @@
   },
   {
     "sequence": "4.50.1",
-    "name": "Morning Exercise - Deploying To Heroku",
+    "name": "django-heroku-lesson",
     "url": "https://git.generalassemb.ly/atl-wdi/Django-Heroku-Deploy",
     "depends": [
       
@@ -788,7 +780,7 @@
   },
   {
     "sequence": "4.50.2",
-    "name": "Django REST Framework - Noah",
+    "name": "django-rest-lesson",
     "url": "https://git.generalassemb.ly/atl-wdi/django-rest-framework",
     "depends": [
       
@@ -796,7 +788,7 @@
   },
   {
     "sequence": "4.50.4",
-    "name": "Homework: React Refresh (Build This)",
+    "name": "react-refresh-exercise",
     "url": "Finish Todo List React App",
     "depends": [
       
@@ -804,7 +796,7 @@
   },
   {
     "sequence": "4.51.1",
-    "name": "React/Python Codealong - (Noah) - Small Groups",
+    "name": "django-react-exercise",
     "url": "https://git.generalassemb.ly/atl-wdi/django-reddit-clone",
     "depends": [
       
