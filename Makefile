@@ -1,8 +1,8 @@
 .PHONY=clean
 out=./bin
-target=$(out)/schedule.md
+scheduleMarkdown=$(out)/schedule.md
 
-all: $(target)
+all: $(scheduleMarkdown)
 
 clean: 
 	rm -r $(out)
@@ -10,6 +10,5 @@ clean:
 $(out):
 	mkdir -p $@
 
-$(target): ./schedule.json ./src/buildSchedule $(out)
-	./src/buildSchedule ./schedule.json > $(out)/schedule.md
-
+$(scheduleMarkdown): ./schedule.json ./src/makeSchedule $(out)
+	./src/makeSchedule ./schedule.json > $(out)/schedule.md
