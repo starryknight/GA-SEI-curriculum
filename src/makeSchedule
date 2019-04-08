@@ -11,7 +11,7 @@ echo    "<!-- Generated on: " (date) " -->"
 echo -e "\nSequence (Unit.Day.Block.Subblock) | Link"
 echo    "--- | ---"
 
-node ./src/printLessonNames.js $argv[1] | grep "^1\|^2" | while read -l l; makeMardownRow $l; end
+node ./src/printLessonNames.js $argv[1] | while read -l l; makeMardownRow $l; end
 
 echo -e "\n### Sequences "
 echo    "Sequences are semantic strings describing when a part of the course is to occur. The format is: `Unit.Day.Block` where:"
