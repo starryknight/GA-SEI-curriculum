@@ -2,7 +2,7 @@
 
 function makeMardownRow
   set lesson (string split ' ' $argv[1])
-  echo "$lesson[1] | [$lesson[2]]($lesson[3])"
+  echo "$lesson[1] | [$lesson[2]]($lesson[2])"
 end
 
 echo    "_Note: see below the table for details on Sequence_"
