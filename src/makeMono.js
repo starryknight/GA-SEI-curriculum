@@ -17,8 +17,10 @@ const printLessonAction = (lesson) => isGitLesson(lesson)
 readLessonsFile(process.argv[2])
   .then(lessons => {
 
-    //print actions for bash script
-    lessons.filter(l => l.url.trim() === "").forEach(l => console.error(printLessonAction(l)));
+    //print actions for bash script only for units 1 and 2
+    lessons
+      .filter(l => l.url.trim() !== "" && (l.sequence.unit == 1 || l.sequence.unit == 2))
+      .forEach(l => console.error(printLessonAction(l)));
 
     //print new schedule.json
     console.log(
