@@ -402,8 +402,16 @@
     ]
   },
   {
-    "sequence": "3.30.3",
-    "name": "JSX & Props Overview / Gotchas - Spencer",
+    "sequence": "3.30.3.1",
+    "name": "react-jsx-lesson",
+    "url": "https://git.generalassemb.ly/atl-wdi/jsx-lesson",
+    "depends": [
+      
+    ]
+  },
+  {
+    "sequence": "3.30.3.2",
+    "name": "react-props-lesson",
     "url": "https://git.generalassemb.ly/atl-wdi/jsx-lesson",
     "depends": [
       
@@ -411,7 +419,7 @@
   },
   {
     "sequence": "3.30.4",
-    "name": "React & JSX Lab ",
+    "name": "react-jsx-exercise",
     "url": "https://git.generalassemb.ly/atl-wdi/React-Pizza-Express",
     "depends": [
       
@@ -419,7 +427,7 @@
   },
   {
     "sequence": "3.31.1",
-    "name": "Morning Exercise: Thinking In React",
+    "name": "react-thinking-practice",
     "url": "https://reactjs.org/docs/thinking-in-react.html",
     "depends": [
       
@@ -435,7 +443,7 @@
   },
   {
     "sequence": "3.31.4",
-    "name": "Homework: React Hardware Store and React for Everyone",
+    "name": "react-state-practice",
     "url": "https://git.generalassemb.ly/atl-wdi/react-state-lesson/blob/master/hardware-store-shopping-cart.md---Optional---Watch:",
     "depends": [
       
@@ -468,7 +476,7 @@
 
   {
     "sequence": "3.33.1",
-    "name": "Morning Exercise: Map Practice - Stanley",
+    "name": "js-map-practice",
     "url": "https://git.generalassemb.ly/atl-wdi/function-practice-exercise",
     "depends": [
       
@@ -476,7 +484,7 @@
   },
   {
     "sequence": "3.33.2",
-    "name": "React Router - Stanley",
+    "name": "react-router-lesson",
     "url": "https://git.generalassemb.ly/atl-wdi/react-router-lesson",
     "depends": [
       
@@ -484,23 +492,15 @@
   },
   {
     "sequence": "3.33.3",
-    "name": "React Router Lab - Credits/Debits  - Stanley",
+    "name": "react-router-exercise",
     "url": "https://git.generalassemb.ly/atl-wdi/react-router-lesson#lab-adding-debits-and-credits",
     "depends": [
       
     ]
   },
   {
-    "sequence": "3.33.4",
-    "name": "Homework: React Router Lab - Stock Tracker (Part 1)",
-    "url": "https://git.generalassemb.ly/atl-wdi/react-router-lab",
-    "depends": [
-      
-    ]
-  },
-  {
     "sequence": "3.34.1",
-    "name": "React Lifecycle Methods",
+    "name": "react-lifecycle-practice",
     "url": "https://git.generalassemb.ly/atl-wdi/wdi-curriculum/blob/master/instructor_notes/react/react-component-lifecycle.md",
     "depends": [
       
@@ -508,7 +508,7 @@
   },
   {
     "sequence": "3.34.2",
-    "name": "Intro to AJAX - Noah",
+    "name": "ajax-intro-lesson",
     "url": "https://git.generalassemb.ly/jamieking/react-ajax-lesson",
     "depends": [
       
@@ -516,7 +516,7 @@
   },
   {
     "sequence": "3.34.3",
-    "name": "Ajax/React Codealong / Lab - Noah",
+    "name": "ajax-codealong-lesson",
     "url": "https://git.generalassemb.ly/jamieking/react-ajax-lesson",
     "depends": [
       
@@ -524,7 +524,7 @@
   },
   {
     "sequence": "3.34.4",
-    "name": "Homework: React TVMaze",
+    "name": "react-ajax-exercise",
     "url": "https://git.generalassemb.ly/atl-wdi/react-tvmaze",
     "depends": [
       
@@ -532,7 +532,7 @@
   },
   {
     "sequence": "3.35.1",
-    "name": "Morning Exercise: Find and Filter Practice - Stanley",
+    "name": "js-filter-practice",
     "url": "https://git.generalassemb.ly/atl-wdi/function-practice-exercise",
     "depends": [
       
@@ -540,7 +540,7 @@
   },
   {
     "sequence": "3.35.2",
-    "name": "React + Express + Heroku Deployment Codealong (Back End) - Spencer",
+    "name": "react-heroku-lesson",
     "url": "https://git.generalassemb.ly/atl-wdi/react-fullstack-lesson",
     "depends": [
       
@@ -548,7 +548,7 @@
   },
   {
     "sequence": "3.35.4",
-    "name": "Homework: Continue React Router Lab - Stock Tracker (Part 2)",
+    "name": "react-router-exercise",
     "url": "https://git.generalassemb.ly/atl-wdi/react-router-lab",
     "depends": [
       
@@ -556,7 +556,7 @@
   },
   {
     "sequence": "3.36.1",
-    "name": "Morning Exercise: React-Review Q&A",
+    "name": "react-review",
     "url": "React-Review",
     "depends": [
       
@@ -564,7 +564,7 @@
   },
   {
     "sequence": "3.36.2",
-    "name": "React Bog App",
+    "name": "react-diagnostic-exercise",
     "url": "https://git.generalassemb.ly/atl-wdi/react-bog-app",
     "depends": [
       
@@ -572,7 +572,7 @@
   },
   {
     "sequence": "3.37.1",
-    "name": "Agile Development - Noah",
+    "name": "agile-intro-practice",
     "url": "https://git.generalassemb.ly/atl-wdi/sdlc-agile-lesson",
     "depends": [
       
@@ -588,7 +588,7 @@
   },
   {
     "sequence": "3.43.1",
-    "name": "Project 3 Presentations",
+    "name": "project-3-presentations",
     "url": "https://git.generalassemb.ly/atl-wdi/project-03-react",
     "depends": [
       
@@ -596,7 +596,7 @@
   },
   {
     "sequence": "4.44.1",
-    "name": "Project 3 Retro",
+    "name": "project-3-retro",
     "url": "",
     "depends": [
       
@@ -604,7 +604,7 @@
   },
   {
     "sequence": "4.44.2.1",
-    "name": "Homework: Python Starter",
+    "name": "python-install-lesson",
     "url": "https://git.generalassemb.ly/atl-wdi/python-starter",
     "depends": [
       
@@ -612,7 +612,7 @@
   },
   {
     "sequence": "4.44.2.2",
-    "name": "Intro To Python - Ruchi",
+    "name": "python-intro-lesson",
     "url": "https://git.generalassemb.ly/atl-wdi/intro-to-python",
     "depends": [
       
@@ -620,7 +620,7 @@
   },
   {
     "sequence": "4.44.3",
-    "name": "Capitals Lab - Noah",
+    "name": "python-intro-exercise",
     "url": "https://git.generalassemb.ly/atl-wdi/state-capitals",
     "depends": [
       
@@ -628,7 +628,7 @@
   },
   {
     "sequence": "4.44.4",
-    "name": "Homework:Python Koans",
+    "name": "python-intro-practice",
     "url": "https://git.generalassemb.ly/atl-wdi/python-koans",
     "depends": [
       
@@ -636,7 +636,7 @@
   },
   {
     "sequence": "4.45.1",
-    "name": "Morning Exercise: Edabit",
+    "name": "edabit",
     "url": "https://edabit.com/",
     "depends": [
       
@@ -644,7 +644,7 @@
   },
   {
     "sequence": "4.45.2",
-    "name": "OOP in Python - Ruchi",
+    "name": "python-oop-lesson",
     "url": "https://git.generalassemb.ly/atl-wdi/python-oop",
     "depends": [
       
@@ -652,7 +652,7 @@
   },
   {
     "sequence": "4.45.4",
-    "name": "Homework: Codebar",
+    "name": "python-oop-practice",
     "url": "https://git.generalassemb.ly/dc-wdi-python-django/codebar",
     "depends": [
       
@@ -660,7 +660,7 @@
   },
   {
     "sequence": "4.46.1",
-    "name": "Morning Exercise: Edabit",
+    "name": "eddabit",
     "url": "https://edabit.com/",
     "depends": [
       
@@ -668,7 +668,7 @@
   },
   {
     "sequence": "4.46.2",
-    "name": "SQL Install and Basics - Ruchi",
+    "name": "sql-intro-lesson",
     "url": "https://git.generalassemb.ly/atl-wdi/sql-intro",
     "depends": [
       
@@ -676,7 +676,7 @@
   },
   {
     "sequence": "4.46.3.1",
-    "name": "Relationships in SQL - Ruchi",
+    "name": "sql-modeling-lesson",
     "url": "https://git.generalassemb.ly/atl-wdi/sql-intro",
     "depends": [
       
@@ -684,7 +684,7 @@
   },
   {
     "sequence": "4.46.3.2",
-    "name": "SQL Joins - Ruchi",
+    "name": "sql-joins-lesson",
     "url": "https://git.generalassemb.ly/atl-wdi/sql-intro",
     "depends": [
       
@@ -692,7 +692,7 @@
   },
   {
     "sequence": "4.46.4",
-    "name": "Homework: SQL Practice",
+    "name": "sql-intro-exercise",
     "url": "https://git.generalassemb.ly/atl-wdi/wdi-curriculum/blob/master/homework/sql",
     "depends": [
       
