@@ -7,5 +7,5 @@ all: $(scheduleMarkdown)
 $(out):
 	mkdir -p $@
 
-$(scheduleMarkdown): ./schedule.json ./src/makeSchedule $(out)
+$(scheduleMarkdown): ./sequences/schedule.json ./src/makeSchedule $(out)
 	./src/makeSchedule ./sequences/schedule.json > $(out)/schedule.md
