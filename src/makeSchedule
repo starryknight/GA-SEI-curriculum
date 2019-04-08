@@ -9,6 +9,7 @@ echo    "_Note: see below the table for details on Sequence_"
 echo    "<!-- __DO NOT MANUALLY EDIT__ Instead use `index.js` -->"
 echo    "<!-- Generated on: " (date) " -->"
 echo -e "\nSequence (Unit.Day.Block.Subblock) | Link"
+echo    "--- | ---"
 
 node ./src/printLessonNames.js $argv[1] | grep "^1\|^2" | while read -l l; makeMardownRow $l; end
 

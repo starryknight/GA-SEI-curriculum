@@ -2,12 +2,6 @@ const { exec } = require("child_process");
 const { readLessonsFile, jsonFriendlyLesson } = require('./lesson.js');
 const { makeAllLessons } = require('./scheduler.js');
 
-const makeLessonURLLocal = (lesson) => {
-  lesson.url = `./${lesson.name}`;
-
-  return lesson;
-};
-
 const isGitLesson = (lesson) => 
   lesson.url.indexOf("git") !== -1
   && lesson.url.indexOf("/master") === -1;
@@ -21,16 +15,15 @@ const printLessonAction = (lesson) => isGitLesson(lesson)
   : printNonGit(lesson);
 
 readLessonsFile(process.argv[2])
-  .then(ll => {
-    let lessons = ll.filter(l => l.sequence.unit == 1 || l.sequence.unit == 2)
+  .then(lessons => {
 
     //print actions for bash script
-    lessons.filter(l => l.url.trim()).forEach(l => console.error(printLessonAction(l)));
+    lessons.filter(l => l.url.trim() === "").forEach(l => console.error(printLessonAction(l)));
 
     //print new schedule.json
     console.log(
       JSON.stringify(
-       makeAllLessons(lessons.map(makeLessonURLLocal)).map(jsonFriendlyLesson),
+       lessons.map(jsonFriendlyLesson),
        null, 
        4
       )
