@@ -19,4 +19,4 @@ To build the schedule:
 1. All software code is licensed under GNU GPLv3. For commercial use or
     alternative licensing, please contact legal@ga.co.
 
-[scheduleFile]: schedule.md
+[scheduleFile]: sequences/schedule.md
