@@ -2,16 +2,18 @@
 
 # Software Engineering Immersive (SEI) Curriculum 
 
-## Course Schedule
+* [Course Schedule][scheduleFile]. 
+* [Submitting Assignments][assignmentInstFile]
 
-The course schedule can be found in the [schedule.md][scheduleFile]. 
+To submit assignments see 
 
-### Building Course Schedule
+## Building Course Schedule
 
 To build the schedule: 
 
-1. (optional) modify `schedule.json`
-1. run `$ ./build.sh`
+1. `make`
+1. `cp bin/schedule.md sequences/schedule.md`
+1. modify `schedule.json` to update schedule 
 
 ## [License](LICENSE)
 
@@ -19,4 +21,5 @@ To build the schedule:
 1. All software code is licensed under GNU GPLv3. For commercial use or
     alternative licensing, please contact legal@ga.co.
 
-[scheduleFile]: schedule.md
+[scheduleFile]: sequences/schedule.md
+[assignmentInstFile]: assignment-instructions.md
