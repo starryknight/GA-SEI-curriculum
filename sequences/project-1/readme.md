@@ -131,58 +131,13 @@ work**
 * Add avatar choices for the player
 * Implement multiple games on your site
 
+## Getting Started
 
-## Make a new repo!  Before you begin, make a new github repo for your project.
-**Do not** begin your project within the class repo.
-
-## Technical Requirements
-
-Your app must:
-
-* Render a game in the browser
-* Use Javascript or jQuery for DOM manipulation
-* Switch turns between two players and/or use some A.I. to control the game.
-* Design logic for winning & visually display which player won
-* Include separate HTML / CSS / JavaScript files
-* Write high quality code:
-  - Follow accepted naming conventions
-  - Consistent indentation
-  - Well-structured and readable code
-  - Semantic naming of variables, functions, CSS classes, etc.
-  - Short and clear functions that _do one thing_
-  - Efficient code- if you have your MVP, refactor
-  - DRY (Don't Repeat Yourself) code
-* Deploy your game online, where the rest of the world can access it. 
-* We suggest you deploy your project to [Github
-  Pages](https://pages.github.com/) or [Netlify
-  Drop](https://app.netlify.com/drop).
-
-## How to Get Started
-
-* First design your _MVP_ (Minimum Viable Product). Have a plan for completing
-  an MVP before getting too involved with _advanced_ features.
-* Use _Trello_ to prioritize your User Stories / features. Focus on what is
-  most important / critical to success.
-* _Timebox_ any experimental or optional ideas, features, or technologies.
-  Remember that good _time management_ is key!
-* Commit your code early and often with good commit messages.
-* Use Git Branching for experimenting with different ideas and technologies.
-
-## Attendance, expectations of time commitment
-
-Students are required to be in class working on their project during regular
-class hours. You are encouraged to continue working on your projects into the
-evenings on- and off-campus.
-
-## Standups
-
-We encourage you to hold your stand-ups in the mornings when you start working
-to help you all keep each other accountable and help each other out. When you
-start working each day, reach out on Slack and see if anyone is around to hold
-a standup!
-
-If you have ideas on how you can help a fellow-student with work that they are
-stuck on, please follow-up with information AFTER the stand up.
+* Define your Minimum Viable Product
+* Create your wireframes
+* Whiteboard high-level app design
+* Create your storyboard / issues list
+* Deploy your application
 
 ## Getting Help
 
@@ -197,7 +152,7 @@ channels first.
 4. Use the debugging channel on Slack
 5. See an instructor personally
 
-## How to ask for help
+### How to ask for help
 
 *COMMIT/PUSH OFTEN! Your code on GitHub should be up to date. Submitting an
 issue and linking your classmates to old, out-of-date code will hinder the
@@ -223,27 +178,8 @@ process.*
   - After going through all of these steps, what is your question? ("It's not
     working!" isn't a question.)
 
-
-## Project Feedback + Evaluation
-
-Your project will be evaluated by your instructional team in order to provide
-you with useful feedback. The following criteria will be used for the
-evaluation:
-
-* __Project Workflow__: Did you complete the user stories, wireframes, task
-  tracking, README, and/or ERDs, as specified above? Did you use source control
-  as expected (30+ commits) for the phase of the program you’re in (detailed
-  above)?
-* __Technical Requirements__: Did you deliver a project that met all the
-  technical requirements? Given what the class has covered so far, did you
-  build something that was reasonably complex?
-* __Creativity__: Did you add a personal spin or creative element into your
-  project submission? Did you deliver something of value to the end user?
-* __Deployment__: Did you deploy your application to a public url using Netlify
-  Drop or something equivalent?
-
 ## Useful Resources
-​
-* **[MDN Javascript Docs](https://developer.mozilla.org/en-US/docs/Web/JavaScript)** _(a great reference for all things Vanilla Javascript)_
-* **[jQuery Docs](http://api.jquery.com)** _(if you're using jQuery)_
-* **[GitHub Pages](https://pages.github.com)** _(for hosting your game)_
+
+* [MDN Javascript Docs](https://developer.mozilla.org/en-US/docs/Web/JavaScript)
+* [jQuery Docs](http://api.jquery.com)
+* [GitHub Pages](https://pages.github.com)
