@@ -31,10 +31,10 @@ You must meet all of the following requirements to pass project 1.
 ## Planning / Process / Submission
 
 - [ ] At least 30 git commits
-- [ ] Has Trello board
-- [ ] Trello board or Github Projects are used throughout project week
+- [ ] Project board (Trello or Github Projects and Issues) are used throughout project week
+- [ ] Project board must have a minimum of 3 columns noting to-do, doing, and done tasks
 - [ ] Has Readme file
-- [ ] Readme file has links to: deployed app  
-- [ ] Readme file has links to trello board
+- [ ] Readme file has link to deployed app  
+- [ ] Readme file has link to project board
 - [ ] Readme file has whiteboarding image
 - [ ] Readme file has wireframe images
