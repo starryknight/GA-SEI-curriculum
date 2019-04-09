@@ -1,9 +1,10 @@
 //NOTE: since 2019-03-18, fs.promises is experimental
 const fs = require('fs');
 
-function Lesson(sequence = new Sequence(0,0,0,1), name = 'TBD', depends = []) {
+function Lesson(sequence = new Sequence(0,0,0,1), name = 'TBD', url = '', depends = []) {
   this.sequence = sequence; 
   this.name = name;
+  this.url = url;
   this.depends = depends;
 
   this.compareLessonsBySequence = function(b) {
@@ -15,7 +16,7 @@ const lessonCompare = (a,b) => a.compareLessonsBySequence(b);
 
 const parseLessonsFromJSON = (calendarJSON) => { 
   let lessons = JSON.parse(calendarJSON);
-  return lessons.map(l => new Lesson(makeSequenceFromString(l.sequence), l.name, l.depends));
+  return lessons.map(l => new Lesson(makeSequenceFromString(l.sequence), l.name, l.url, l.depends));
 
 };
 
@@ -44,7 +45,7 @@ const jsonFriendlyLesson = (lesson) => {
 const printLessons = (lessons) => {
   lessons
   .forEach(l =>
-    console.log(`${l.sequence.toString()} ${l.name}`)
+    console.log(`${l.sequence.toString()} ${l.name} ${l.url}`)
   );
 };
 
