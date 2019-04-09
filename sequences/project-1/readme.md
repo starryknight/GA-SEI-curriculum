@@ -12,6 +12,10 @@
 Create a web application using HTML, CSS, and JS that creates a playable game
 that you choose from the list below.
 
+# Project Rubric
+
+Please see the [rubric](rubric.md)
+
 # Project Games
 
 ## Jeopardy
@@ -143,14 +147,16 @@ work**
 
 ### Process Guidelines for Getting Help
 
+When you need help please follow the following steps:
+
+1. Seek out help online
+1. Seek out help with your peers
+1. Use the debugging channel on Slack
+1. See an instructor personally
+
 Please note __the following are guidelines__ do have exceptions. Your
 instructors are approachable, however be sure to follow the appropriate
 channels first.
-
-1. Seek out help online
-3. Seek out help with your peers
-4. Use the debugging channel on Slack
-5. See an instructor personally
 
 ### How to ask for help
 
