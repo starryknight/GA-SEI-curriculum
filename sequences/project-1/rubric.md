@@ -32,7 +32,7 @@ You must meet all of the following requirements to pass project 1.
 
 - [ ] At least 30 git commits
 - [ ] Has Trello board
-- [ ] Trello board is used throughout project week
+- [ ] Trello board or Github Projects are used throughout project week
 - [ ] Has Readme file
 - [ ] Readme file has links to: deployed app  
 - [ ] Readme file has links to trello board
