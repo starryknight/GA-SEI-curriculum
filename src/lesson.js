@@ -49,14 +49,13 @@ const printLessons = (lessons) => {
   );
 };
 
-function Sequence(unit, day, block, subblock) {
+function Sequence(unit, day, block) {
     this.unit = unit;
     this.day = day; 
     this.block = block;
-    this.subblock = subblock;
 
     this.toString = function() {
-      return makeSequenceString(this.unit, this.day, this.block, this.subblock);
+      return makeSequenceString(this.unit, this.day, this.block);
     }
 
     this.toStringNoSubblock = function() {
@@ -65,10 +64,9 @@ function Sequence(unit, day, block, subblock) {
 
     this.compareSequence = function(b) {
       return Math.sign(
-        8*Math.sign(this.unit - b.unit)
-        + 4*Math.sign(this.day - b.day)
-        + 2*Math.sign(this.block - b.block)
-        + Math.sign(this.subblock - b.subblock)
+        4*Math.sign(this.unit - b.unit)
+        + 2*Math.sign(this.day - b.day)
+        + Math.sign(this.block - b.block)
       );
     }
 
@@ -106,8 +104,8 @@ const makeSequenceFromString = (str) => {
   }
 }
 
-const makeSequenceString = (unit, day, block, subblock = 1) => {
-  return `${unit}.${day}.${block}.${subblock}`;
+const makeSequenceString = (unit, day, block) => {
+  return `${unit}.${day}.${block}`;
 }
 
 const sequenceCompare = (a,b) => a.compareSequence(b);
