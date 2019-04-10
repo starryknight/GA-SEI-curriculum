@@ -65,8 +65,6 @@ function Sequence(unit, day, block) {
         + Math.sign(this.block - b.block)
       );
     }
-
-  }
 }
 
 function SequenceFormatException(str) {
