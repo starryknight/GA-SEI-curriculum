@@ -3,6 +3,7 @@ const { Lesson, Sequence, lessonCompare, sequenceCompare } = require('./lesson.j
 const NBLOCKS = 6;
 const NDAYS = 60;
 const NUNITS = 4;
+const DEFAULTWORKDAYSPERUNIT = [16, 13, 14, 18];
 
 function* blockGen() {
   for(let startBlock = 1; startBlock <= NBLOCKS; startBlock++)
@@ -72,7 +73,7 @@ const withStudyDay = (lesson) =>
 
 const makeAllLessons = (lessons) => {
   let mappedLessons = lessons.reduce((ll, l) => { 
-    let k = l.sequence.toStringNoSubblock();
+    let k = l.sequence.toString();
 
     if(!ll[k])
       ll[k] = [l];
@@ -85,7 +86,7 @@ const makeAllLessons = (lessons) => {
   let allLessons = [];
   let l;
 
-  for(let seq of allSequences(defaultWorkDaysPerUnit)) {
+  for(let seq of allSequences(DEFAULTWORKDAYSPERUNIT)) {
 
     let k = seq.toStringNoSubblock();
 
@@ -99,8 +100,6 @@ const makeAllLessons = (lessons) => {
 
   return allLessons.sort(lessonCompare);
 };
-
-const defaultWorkDaysPerUnit = [16, 13, 14, 18];
 
 module.exports = {
   makeAllLessons
