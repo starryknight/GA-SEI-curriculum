@@ -4,31 +4,7 @@ const NBLOCKS = 6;
 const NUNITS = 4;
 const DEFAULTWORKDAYSPERUNIT = [16, 13, 14, 18];
 
-function* blockGen() {
-  for(let startBlock = 1; startBlock <= NBLOCKS; startBlock++)
-    yield startBlock;
-}
 
-function* dayGen(ndays) {
-  for(let startDay = 1; startDay <= ndays; startDay++)
-    yield startDay;
-}
-
-function* unitGen() {
-  for(let startUnit = 1; startUnit <= NUNITS; startUnit++)
-    yield startUnit;
-}
-
-function* allSequences(daysPerUnit = [15, 15, 15, 15]) {
-  let day = 0;
-  for(let unit of unitGen())
-    for(let d of dayGen(daysPerUnit[unit-1]))
-    {
-      day++;
-      for(let block of blockGen())
-        yield new Sequence(unit, day, block, 1);
-    }
-}
 
 /*
  * startDayOffset is the weekday (0-4 <=> M-F) of day one of the course.
