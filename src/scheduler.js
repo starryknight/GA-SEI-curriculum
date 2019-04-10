@@ -1,24 +1,28 @@
 const { Lesson, Sequence, lessonCompare, sequenceCompare } = require('./lesson.js'); 
 
-function* blockGen(startBlock = 1) {
-  for(; startBlock <= 4; startBlock++)
+const NBLOCKS = 6;
+const NDAYS = 60;
+const NUNITS = 4;
+
+function* blockGen() {
+  for(let startBlock = 1; startBlock <= NBLOCKS; startBlock++)
     yield startBlock;
 }
 
-function* dayGen(nDays = 60) {
-  for(let startDay = 1; startDay <= nDays; startDay++)
+function* dayGen() {
+  for(let startDay = 1; startDay <= NDAYS; startDay++)
     yield startDay;
 }
 
-function* unitGen(startUnit = 1) {
-  for(; startUnit <= 4; startUnit++)
+function* unitGen() {
+  for(let startUnit = 1; startUnit <= NUNITS; startUnit++)
     yield startUnit;
 }
 
-function* allSequences(nDays = [15, 15, 15, 15], startBlock = 1, startDay = 1, startUnit = 1) {
+function* allSequences(daysPerUnit = [15, 15, 15, 15]) {
   let day = 0;
   for(let unit of unitGen(startUnit))
-    for(let d of dayGen(nDays[unit-1]))
+    for(let d of dayGen(daysPerUnit[unit-1]))
     {
       day++;
       for(let block of blockGen(startBlock))
@@ -26,19 +30,23 @@ function* allSequences(nDays = [15, 15, 15, 15], startBlock = 1, startDay = 1, s
     }
 }
 
-const isWednesday = (sequence) => {
-  return sequence.day % 5 == 3;
+/*
+ * startDayOffset is the weekday (0-4 <=> M-F) of day one of the course.
+ * The default assumes the first day of a course is on Monday
+ */
+const isWednesday = (sequence, startDayOffset = 0) => {
+  return (sequence.day + startDayOffset) % 5 == 3;
 };
 
 const isOutcomesSequence = (sequence) => {
   return isWednesday(sequence) 
-    && sequence.subblock < 2
-    && sequence.block == 3;
+    && (sequence.block == 4
+      || sequence.block == 5);
 };
 
 const isStudyDaySequence = (sequence) => {
   return isWednesday(sequence) 
-    && sequence.block > 1
+    && sequence.block >= 1
     && !isOutcomesSequence(sequence);
 };
 

@@ -58,10 +58,6 @@ function Sequence(unit, day, block) {
       return makeSequenceString(this.unit, this.day, this.block);
     }
 
-    this.toStringNoSubblock = function() {
-      return makeSequenceString(this.unit, this.day, this.block);
-    }
-
     this.compareSequence = function(b) {
       return Math.sign(
         4*Math.sign(this.unit - b.unit)
@@ -70,13 +66,7 @@ function Sequence(unit, day, block) {
       );
     }
 
-    this.compareSequenceIgnoreSubblock = function(b) {
-      return Math.sign(
-        4*Math.sign(this.unit - b.unit)
-        + 2*Math.sign(this.day - b.day)
-        + Math.sign(this.block - b.block)
-      );
-    }
+  }
 }
 
 function SequenceFormatException(str) {
