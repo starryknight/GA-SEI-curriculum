@@ -1,7 +1,6 @@
 const { Lesson, Sequence, lessonCompare, sequenceCompare } = require('./lesson.js'); 
 
 const NBLOCKS = 6;
-const NDAYS = 60;
 const NUNITS = 4;
 const DEFAULTWORKDAYSPERUNIT = [16, 13, 14, 18];
 
@@ -10,8 +9,8 @@ function* blockGen() {
     yield startBlock;
 }
 
-function* dayGen() {
-  for(let startDay = 1; startDay <= NDAYS; startDay++)
+function* dayGen(ndays) {
+  for(let startDay = 1; startDay <= ndays; startDay++)
     yield startDay;
 }
 
@@ -22,11 +21,11 @@ function* unitGen() {
 
 function* allSequences(daysPerUnit = [15, 15, 15, 15]) {
   let day = 0;
-  for(let unit of unitGen(startUnit))
+  for(let unit of unitGen())
     for(let d of dayGen(daysPerUnit[unit-1]))
     {
       day++;
-      for(let block of blockGen(startBlock))
+      for(let block of blockGen())
         yield new Sequence(unit, day, block, 1);
     }
 }
@@ -88,7 +87,7 @@ const makeAllLessons = (lessons) => {
 
   for(let seq of allSequences(DEFAULTWORKDAYSPERUNIT)) {
 
-    let k = seq.toStringNoSubblock();
+    let k = seq.toString();
 
     if(mappedLessons[k])
       l = mappedLessons[k];
