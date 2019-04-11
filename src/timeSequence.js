@@ -7,6 +7,12 @@ const dayToTime = (nBlocks) => (day) => (day-1) * nBlocks;
 
 const timeToUnit = (nBlocks, unitEndDays) => (t) => unitEndDays.findIndex(endDay => endDay - timeToDay(nBlocks)(t) <= 0)
 
+const allTimes = (nBlocks, unitEndDays) => 
+  function* () {
+    for(let t = 1; t < nBlocks* unitEndDays.pop(); t++)
+      yield t;
+  };
+
 const timeToSequence = (toUnit, toDay, toBlock) => (lesson, t) => {
   return new Sequence.Sequence(lesson, toUnit(t), toDay(t), toBlock(t));
 };
@@ -17,7 +23,6 @@ const nextSequence => (seqToT, tToSeq) => (seq) => tToSeq(seq.lesson, seqToT(seq
 
 const sequencesFromDuration = (nextSeq) => (seq, duration) => 
   [...new Array(duration)].map(_ => nextSeq(seq));
-
 
 module.exports = function(nBlocks, unitEndDays) {
   this.sequenceToTime = sequenceToTime(dayToTime(nBlocks));
