@@ -44,6 +44,8 @@ const makeAllSequences = (recuringSeqs) => (sequences) => {
       obj[k] = [seq];
     else
       obj[k].push(seq);
+
+    return obj;
   }, {})).map(seqs => checkConflictingSequences);
 };
 
