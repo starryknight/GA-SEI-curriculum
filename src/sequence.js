@@ -1,23 +1,4 @@
-const Lesson = require('./src/lesson.js');
-
-const blockTime = (nBlocks) => (t) => (t % nBlocks) + 1;
-const dayTime = (nBlocks) => (t) => Math.ceil(t/nBlocks)
-const unitTime = (nBlocks, unitEndDays) => (t) => unitEndDays.findIndex(endDay => endDay - dayTime(nBlocks)(t) <= 0)
-
-const allSequences = (unitEndDays = [], nBlocks) =>
-  function* (startUnit, startDay, startBlock) {
-  yield {unit: startUnit, day, block: startBlock};
-  }
-
-const nextSequence = (allSequenceGen, {...lesson, unit, day, block}) => {
-    let newSeq = allSequenceGen(unit,day,block).next().value;
-
-    return new Sequence(lesson, newSeq.unit, newSeq.day, newSeq.block);
-  };
-}
-
-
-function Sequence(lesson = new Lesson.Lesson(), unit, day, block) {
+function Sequence(lesson, unit, day, block) {
     this.unit = unit;
     this.day = day; 
     this.block = block;
@@ -50,8 +31,6 @@ const printSequences = (sequences) => sequences.forEach(printSequence);
 
 module.exports = {
   Sequence,
-  SequenceFormatException,
-  makeSequenceFromString,
   makeSequenceString,
   sequenceCompare,
   printSequence,

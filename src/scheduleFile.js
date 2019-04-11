@@ -2,7 +2,7 @@
 const fs = require('fs');
 const Sequence = require('./sequence.js');
 const Lesson = require('./lesson.js');
-
+const SequenceTimeApi = require('./src/timeSequence.js');
 
 function SequenceFormatException(str) {
   Error.call(this, str + 'sequence should match /^(\d+).(\d+).(\d+)$/');
@@ -27,32 +27,45 @@ const makeSequenceFromString = (lesson = new Lesson.Lesson(), str) => {
   }
 }
 
-const sequencesFromDuration(startSequence, duration) => {
-  //TODO: gen new sequences keeping starting block and day in mind
-  //for(let block of Sequence.blockGen(startSequence
-}
+/*
+ * Parses raw JSON data that has the following schema:
+ *
+ * { nBlocks: Number, 
+ *    unitEndDays: [Number], 
+ *    lessons: [{name: String, 
+ *      sequence: String, 
+ *      duration: Number, 
+ *      depends: [String]
+ *    }]
+ * }
+ */
+const parseSequencesFromJSON = (rawJSON) => {
+  let scheduleData = JSON.parse(rawJSON);
 
-const parseLessonsFromJSON = (rawJSON) => { 
-  let lessons = JSON.parse(rawJSON);
-  return lessons.reduce((sequences, lessonData) => 
-    sequences.concat(sequencesFromDuration(
-      makeSequenceFromString(new Lesson.Lesson(l.name, l.depends), l.sequence)
-    ))
+  let seqTimeApi = new SequenceTimeApi(scheduleData.nBlocks, scheduleData.unitEndDays);
+
+  return scheduleData.lessons.reduce((sequences, lessonData) => 
+    sequences.concat(seqTimeApi.sequencesFromDuration(
+      makeSequenceFromString(
+        new Lesson.Lesson(lessonData.name, lessonData.depends), lessonData.sequence
+      )
+    , lessonData.duration))
   , []);
 };
 
 //reads calendar file. Transparent promise wrapper around readFile
-const readLessonsFile = (filePath) => 
+const readScheduleJSONFile = (filePath) => 
   new Promise(function(resolve, reject) {
     fs.readFile(filePath, (err, data) => {
       if(err) {
         reject(err)
       } else {
-
-        resolve(parseLessonsFromJSON(data));
+        resolve(parseSequencesFromJSON(data));
       }
     });
   });
 
-
-
+module.exports = {
+  parseSequencesFromJSON,
+  readScheduleJSONFile
+}

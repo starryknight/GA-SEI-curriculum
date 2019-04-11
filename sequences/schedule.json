@@ -1,4 +1,6 @@
-[
+{ "nBlocks": 6,
+  "unitEndDays": [16, 29, 43, 60],
+  "lessons": [
     {
         "name": "orientation-intro",
         "sequence": "1.1.2",
@@ -572,7 +574,7 @@
     },
     {
         "name": "project-4-presentations",
-        "sequence": "4.61.1",
+        "sequence": "4.60.1",
         "depends": []
     }
 ]
