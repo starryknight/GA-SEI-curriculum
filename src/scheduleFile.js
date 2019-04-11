@@ -2,7 +2,8 @@
 const fs = require('fs');
 const Sequence = require('./sequence.js');
 const Lesson = require('./lesson.js');
-const SequenceTimeApi = require('./src/timeSequence.js');
+const SequenceTimeApi = require('./timeSequence.js');
+const SchedulerApi = require('./scheduler.js');
 
 function SequenceFormatException(str) {
   Error.call(this, str + 'sequence should match /^(\d+).(\d+).(\d+)$/');
@@ -30,8 +31,9 @@ const makeSequenceFromString = (lesson = new Lesson.Lesson(), str) => {
 /*
  * Parses raw JSON data that has the following schema:
  *
- * { nBlocks: Number, 
+ * {  nBlocks: Number, 
  *    unitEndDays: [Number], 
+ *    recurring: { name: String, block: Number}
  *    lessons: [{name: String, 
  *      sequence: String, 
  *      duration: Number, 
@@ -39,33 +41,35 @@ const makeSequenceFromString = (lesson = new Lesson.Lesson(), str) => {
  *    }]
  * }
  */
-const parseSequencesFromJSON = (rawJSON) => {
+const parseScheduleFromJSON = (rawJSON) => {
   let scheduleData = JSON.parse(rawJSON);
 
   let seqTimeApi = new SequenceTimeApi(scheduleData.nBlocks, scheduleData.unitEndDays);
+  let schedulerApi = new SchedulerApi(seqTimeApi.timeToSequence, seqTimeApi.allTimes, scheduleData.recurring);
 
-  return scheduleData.lessons.reduce((sequences, lessonData) => 
-    sequences.concat(seqTimeApi.sequencesFromDuration(
-      makeSequenceFromString(
-        new Lesson.Lesson(lessonData.name, lessonData.depends), lessonData.sequence
-      )
-    , lessonData.duration))
-  , []);
+  return schedulerApi.makeAllSequences(
+    scheduleData.lessons.reduce((sequences, lessonData) => 
+      sequences.concat(seqTimeApi.sequencesFromDuration(
+        makeSequenceFromString(
+          new Lesson.Lesson(lessonData.name, lessonData.depends), lessonData.sequence
+        )
+      , lessonData.duration ? lessonData.duration : 1))
+    , [])
+  );
 };
 
-//reads calendar file. Transparent promise wrapper around readFile
 const readScheduleJSONFile = (filePath) => 
   new Promise(function(resolve, reject) {
     fs.readFile(filePath, (err, data) => {
       if(err) {
         reject(err)
       } else {
-        resolve(parseSequencesFromJSON(data));
+        resolve(parseScheduleFromJSON(data));
       }
     });
   });
 
 module.exports = {
-  parseSequencesFromJSON,
+  parseScheduleFromJSON,
   readScheduleJSONFile
 }

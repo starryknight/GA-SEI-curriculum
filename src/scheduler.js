@@ -3,7 +3,7 @@ const Sequence = require('./sequence.js');
 
 const mergeConflictingSequences = (seqs) => {
   let newSeq = seqs.reduce((conflictSeq, seq) => {
-    conflictSeq.lesson.name += " " seq.lesson.name;
+    conflictSeq.lesson.name += " " + seq.lesson.name;
     return conflictSeq;
   }, seqs.shift());
 
@@ -11,6 +11,13 @@ const mergeConflictingSequences = (seqs) => {
 
   return newSeq;
 };
+
+const makeRecurringSequences = (recuringLessons, tToSeq) => (t) => 
+  recuringLessons.map(rl => 
+    (t % rl.block == 0)
+      ? tToSeq(new Lesson.Lesson(rl.name, []), t)
+      : []
+  );
 
 const recurringSequences = (makeRecuring, allTs) => {
   let seqs = [];
@@ -29,12 +36,6 @@ const checkConflictingSequences = (seqs) => {
     return mergeConflictingSequences(seqs);
 };
 
-const makeRecurringSequences = (recuringLessons, tToSeq) => (t) => 
-  recuringLessons.map(rl => 
-    if(t % rl.block == 0)
-      new tToSeq(new Lesson.Lesson(rl.name, []), t)
-  );
-
 const makeAllSequences = (recuringSeqs) => (sequences) => {
   return Object.values(sequences.concat(recuringSeqs).reduce((obj, seq) => { 
     let k = seq.toString();
@@ -46,7 +47,7 @@ const makeAllSequences = (recuringSeqs) => (sequences) => {
   }, {})).map(seqs => checkConflictingSequences);
 };
 
-module.exports = function(tToSeq, allTs, recurringLessons) {
+module.exports = function(tToSeq, allTs, recuringLessons) {
   this.makeRecurringSequences = makeRecurringSequences(recuringLessons, tToSeq);
   this.makeAllSequences = makeAllSequences(recurringSequences(this.makeRecurringSequences, allTs))
 }
