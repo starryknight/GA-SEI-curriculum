@@ -13,15 +13,15 @@ const mergeConflictingSequences = (seqs) => {
   return newSeq;
 };
 
-const makeRecurringSequences = (recuringLessons, tToSeq) => (t) => {
-  let seqs = [];
 
-  for(let rl in recuringLessons)
-    if(t % rl.block == 0)
-      seqs.push(tToSeq(new Lesson.Lesson(rl.name, []), t))
+const makeRecurringSequences = (recuringSeqs, lastTime, seqToTime, timeToSeq) =>
+  recuringLessons.reduce((seqs, rs) => {
 
-  return seqs;
-}
+    for(let t = seqToTime(rs); t <= lastTime; t+=5) {
+    }
+
+    return seqs;
+  }, []);
 
 const checkConflictingSequences = (seqs) => {
   if(seqs.length < 1)
@@ -47,7 +47,7 @@ const asObjects = (sequences) =>
 
 const makeAllSequences = (makeRecuring, allTs, tToSeq) => (sequences) => {
   let seqObj = asObjects(sequences);
-  
+
   for(let t of allTs()) {
     let seqs = makeRecuring(t);
 

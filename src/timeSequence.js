@@ -6,29 +6,61 @@ const timeToDay = (nBlocks) => (t) => Math.ceil(t/nBlocks);
 
 const timeToUnit = (toDay, unitEndDays) => (t) => unitEndDays.findIndex(endDay => toDay(t) <= endDay)+1
 
+const dayToTime = (nBlocks) => (day) => (day-1) * nBlocks;
+
 const allTimes = (nBlocks, unitEndDays) => 
   function* () {
     for(let t = 1; t <= nBlocks* unitEndDays[unitEndDays.length-1]; t++)
       yield t;
   };
 
-const timeToSequence = (toUnit, toDay, toBlock) => (lesson, t) => {
-  return new Sequence.Sequence(lesson, toUnit(t), toDay(t), toBlock(t));
-};
+const timeToSequenceString = (toUnit, toDay, toBlock) => (t) => 
+  `${toUnit(t)}.${toDay(t)}.${toBlock(t)}`;
 
-const sequenceToTime = (dToT) => (seq) => dToT(seq.day) + seq.block - 1;
+function SequenceFormatException(str) {
+  Error.call(this, str + 'sequence should match /^(\d+).(\d+).(\d+)$/');
+}
 
-const dayToTime = (nBlocks) => (day) => (day-1) * nBlocks;
+const timeFromString = () => (str) => {
+  let pattern = /^(\d+).(\d+).(\d+)$/;
 
-const nextSequence = (seqToT, tToSeq) => (seq) => tToSeq(seq.lesson, seqToT(seq)+1);
+  let result = pattern.exec(str);
+
+  if(result)
+  {
+    return new Sequence.Sequence(lesson, Number.parseInt(result[1], 10),
+      Number.parseInt(result[2], 10),
+      Number.parseInt(result[3], 10),
+      result[5] ? Number.parseInt(result[5], 10) : 1
+    );
+  }
+  else
+  {
+    throw new SequenceFormatException(str); 
+  }
+}
+
+
+
+const nextSequence = (step, seq) => new Sequence.Sequence(seq.lesson, seq.time+step) 
 
 const sequencesFromDuration = (nextSeq) => (seq, duration) => {
   let seqs = [seq];
 
   for(let i = 1; i < duration; i++)
-    seqs.push(nextSeq(seqs[i])); 
+    seqs.push(nextSeq(1, seqs[i])); 
 
   return seqs;
+};
+
+const recurringSequence = (nBlocks, lastBlock) => (seq) => {
+
+  let newSeqs = [seq];
+
+  while(newSeqs[newSeqs.length-1].time <= lastBlock)
+    newSeqs.push(nextSequence(5, newSeqs[newSeqs.length-1]));
+
+  return newSeqs;
 };
 
 module.exports = function(nBlocks, unitEndDays) {
