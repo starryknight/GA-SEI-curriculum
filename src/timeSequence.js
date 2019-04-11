@@ -1,3 +1,5 @@
+const Sequence = require('./sequence.js');
+
 const timeToBlock = (nBlocks) => (t) => (t % nBlocks) + 1;
 
 const timeToDay = (nBlocks) => (t) => Math.ceil(t/nBlocks);
@@ -6,7 +8,7 @@ const dayToTime = (nBlocks) => (day) => (day-1) * nBlocks;
 const timeToUnit = (nBlocks, unitEndDays) => (t) => unitEndDays.findIndex(endDay => endDay - timeToDay(nBlocks)(t) <= 0)
 
 const timeToSequence = (toUnit, toDay, toBlock) => (lesson, t) => {
-  return new Sequence(lesson, toUnit(t), toDay(t), toBlock(t));
+  return new Sequence.Sequence(lesson, toUnit(t), toDay(t), toBlock(t));
 };
 
 const sequenceToTime => (dToT) => (seq) => dToT(seq.day) + seq.block - 1;

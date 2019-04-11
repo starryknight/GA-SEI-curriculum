@@ -1,15 +1,14 @@
 const Lesson = require('./lesson.js');
 const Sequence = require('./sequence.js');
 
-const outComesSeq = (seqApi) => (t) => {
-  if(
-};
+const makeRecurringSequences = (recuringLessons, tToSeq) => (t) => 
+  recuringLessons.map(rl => 
+    if(t % rl.block == 0)
+      new tToSeq(new Lesson.Lesson(rl.name, []), t)
+  );
 
-const makeAllSequences = (seqApi) => (sequences) => {
+const makeAllSequences = (sequences) => {
   let seqObj = sequences.reduce((obj, seq) => { 
-
-    obj[seq.toString()] = seq;
-    return obj; 
   }, {});
   
 };
