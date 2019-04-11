@@ -51,11 +51,11 @@ const parseScheduleFromJSON = (rawJSON) => {
 
   return schedulerApi.makeAllSequences(
     scheduleData.lessons.reduce((sequences, lessonData) => 
-      sequences.concat(trace(seqTimeApi.sequencesFromDuration(
+      sequences.concat(seqTimeApi.sequencesFromDuration(
         makeSequenceFromString(
           new Lesson.Lesson(lessonData.name, lessonData.depends), lessonData.sequence
         )
-      , lessonData.duration ? lessonData.duration : 1)))
+      , lessonData.duration ? lessonData.duration : 1))
     , [])
   );
 };
