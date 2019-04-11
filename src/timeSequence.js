@@ -22,8 +22,14 @@ const dayToTime = (nBlocks) => (day) => (day-1) * nBlocks;
 
 const nextSequence = (seqToT, tToSeq) => (seq) => tToSeq(seq.lesson, seqToT(seq)+1);
 
-const sequencesFromDuration = (nextSeq) => (seq, duration) => 
-  [...new Array(duration)].map(_ => nextSeq(seq));
+const sequencesFromDuration = (nextSeq) => (seq, duration) => {
+  let seqs = [seq];
+
+  for(let i = 1; i < duration; i++)
+    seqs.push(nextSeq(seqs[i])); 
+
+  return seqs;
+};
 
 module.exports = function(nBlocks, unitEndDays) {
   this.dayToTime = dayToTime(nBlocks);

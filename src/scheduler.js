@@ -37,6 +37,7 @@ const checkConflictingSequences = (seqs) => {
 };
 
 const makeAllSequences = (recuringSeqs) => (sequences) => {
+  console.log(sequences.map(x => x.toString()));
   return Object.values(sequences.concat(recuringSeqs).reduce((obj, seq) => { 
     let k = seq.toString();
 
@@ -46,7 +47,7 @@ const makeAllSequences = (recuringSeqs) => (sequences) => {
       obj[k].push(seq);
 
     return obj;
-  }, {})).map(seqs => checkConflictingSequences);
+  }, {})).map(checkConflictingSequences).sort(Sequence.sequenceCompare);
 };
 
 module.exports = function(tToSeq, allTs, recuringLessons) {

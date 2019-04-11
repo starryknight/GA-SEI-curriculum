@@ -28,6 +28,8 @@ const makeSequenceFromString = (lesson = new Lesson.Lesson(), str) => {
   }
 }
 
+const trace = (x) => { console.log(x); return x; }
+
 /*
  * Parses raw JSON data that has the following schema:
  *
@@ -49,11 +51,11 @@ const parseScheduleFromJSON = (rawJSON) => {
 
   return schedulerApi.makeAllSequences(
     scheduleData.lessons.reduce((sequences, lessonData) => 
-      sequences.concat(seqTimeApi.sequencesFromDuration(
+      sequences.concat(trace(seqTimeApi.sequencesFromDuration(
         makeSequenceFromString(
           new Lesson.Lesson(lessonData.name, lessonData.depends), lessonData.sequence
         )
-      , lessonData.duration ? lessonData.duration : 1))
+      , lessonData.duration ? lessonData.duration : 1)))
     , [])
   );
 };
