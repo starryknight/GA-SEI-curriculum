@@ -4,7 +4,7 @@ const timeToBlock = (nBlocks) => (t) => (t % nBlocks) + 1;
 
 const timeToDay = (nBlocks) => (t) => Math.ceil(t/nBlocks);
 
-const timeToUnit = (toDay, unitEndDays) => (t) => unitEndDays.findIndex(endDay => toDay(trace(t)) <= endDay)+1
+const timeToUnit = (toDay, unitEndDays) => (t) => unitEndDays.findIndex(endDay => toDay(t) <= endDay)+1
 
 const allTimes = (nBlocks, unitEndDays) => 
   function* () {
@@ -21,8 +21,6 @@ const sequenceToTime = (dToT) => (seq) => dToT(seq.day) + seq.block - 1;
 const dayToTime = (nBlocks) => (day) => (day-1) * nBlocks;
 
 const nextSequence = (seqToT, tToSeq) => (seq) => tToSeq(seq.lesson, seqToT(seq)+1);
-
-const trace = (x) => { console.log(x); return x;}
 
 const sequencesFromDuration = (nextSeq) => (seq, duration) => 
   [...new Array(duration)].map(_ => nextSeq(seq));
