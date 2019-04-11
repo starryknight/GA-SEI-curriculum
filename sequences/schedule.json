@@ -1,5 +1,13 @@
 { "nBlocks": 6,
   "unitEndDays": [16, 29, 43, 60],
+  "recurring": [
+    { "name": "outcomes",
+      "block": 4
+    },
+    { "name": "study-day",
+      "block": 1
+    }
+  ],
   "lessons": [
     {
         "name": "orientation-intro",
@@ -577,4 +585,6 @@
         "sequence": "4.60.1",
         "depends": []
     }
-]
+  ]
+}
+
