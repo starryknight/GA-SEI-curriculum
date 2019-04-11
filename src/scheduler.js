@@ -4,6 +4,7 @@ const Sequence = require('./sequence.js');
 const mergeConflictingSequences = (seqs) => {
   let newSeq = seqs.reduce((conflictSeq, seq) => {
     conflictSeq.lesson.name += " " + seq.lesson.name;
+
     return conflictSeq;
   }, seqs.shift());
 
@@ -12,20 +13,15 @@ const mergeConflictingSequences = (seqs) => {
   return newSeq;
 };
 
-const makeRecurringSequences = (recuringLessons, tToSeq) => (t) => 
-  recuringLessons.map(rl => 
-    (t % rl.block == 0)
-      ? tToSeq(new Lesson.Lesson(rl.name, []), t)
-      : []
-  );
-
-const recurringSequences = (makeRecuring, allTs) => {
+const makeRecurringSequences = (recuringLessons, tToSeq) => (t) => {
   let seqs = [];
-  for(let t of allTs()) 
-    seqs.concat(makeRecuring(t))
+
+  for(let rl in recuringLessons)
+    if(t % rl.block == 0)
+      seqs.push(tToSeq(new Lesson.Lesson(rl.name, []), t))
 
   return seqs;
-};
+}
 
 const checkConflictingSequences = (seqs) => {
   if(seqs.length < 1)
@@ -36,9 +32,8 @@ const checkConflictingSequences = (seqs) => {
     return mergeConflictingSequences(seqs);
 };
 
-const makeAllSequences = (recuringSeqs) => (sequences) => {
-  console.log(sequences.map(x => x.toString()));
-  return Object.values(sequences.concat(recuringSeqs).reduce((obj, seq) => { 
+const asObjects = (sequences) => 
+  sequences.reduce((obj, seq) => {
     let k = seq.toString();
 
     if(!obj[k])
@@ -47,10 +42,30 @@ const makeAllSequences = (recuringSeqs) => (sequences) => {
       obj[k].push(seq);
 
     return obj;
-  }, {})).map(checkConflictingSequences).sort(Sequence.sequenceCompare);
+},{})
+
+
+const makeAllSequences = (makeRecuring, allTs, tToSeq) => (sequences) => {
+  let seqObj = asObjects(sequences);
+  
+  for(let t of allTs()) {
+    let seqs = makeRecuring(t);
+
+    if(seqs.length == 0)
+      seqs = [ tToSeq(new Lesson.Lesson(), t) ];
+
+    let k = seqs[0].toString();
+
+    if(!seqObj[k])
+      seqObj[k] = seqs;
+    else
+      seqObj[k].concat(seqs);
+  }
+  
+  return Object.values(seqObj).map(checkConflictingSequences).sort(Sequence.sequenceCompare);
 };
 
 module.exports = function(tToSeq, allTs, recuringLessons) {
   this.makeRecurringSequences = makeRecurringSequences(recuringLessons, tToSeq);
-  this.makeAllSequences = makeAllSequences(recurringSequences(this.makeRecurringSequences, allTs))
+  this.makeAllSequences = makeAllSequences(this.makeRecurringSequences, allTs, tToSeq);
 }

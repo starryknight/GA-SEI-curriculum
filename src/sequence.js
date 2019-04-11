@@ -24,7 +24,7 @@ const makeSequenceString = (unit, day, block) => {
 const sequenceCompare = (a,b) => a.compareSequence(b);
 
 const printSequence = (sequence) => {
-  console.log(`${sequence.toString()} ${sequence.lesson.name} ${sequence.lesson.url}`)
+  console.log(`${sequence.toString()} ${sequence.lesson.name} `)
 };
 
 const printSequences = (sequences) => sequences.forEach(printSequence);
