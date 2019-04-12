@@ -2,7 +2,9 @@
 
 function makeMardownRow
   set lesson (string split ' ' $argv[1])
-  echo "$lesson[1] | [$lesson[2]]($lesson[2])"
+  set url (echo $lesson[2] | sed -e 's/CONFLICT://g')
+
+  echo "$lesson[1] | [$lesson[2]]($url)"
 end
 
 echo    "_Note: see below the table for details on Sequence_"
