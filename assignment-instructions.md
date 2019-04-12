@@ -5,7 +5,7 @@
 ```
 mkdir sei-21
 cd sei-21
-curl https://raw.git.generalassemb.ly/atl-wdi/sei-curriculum/src/lessonClone > lessonClone
+curl "https://raw.git.generalassemb.ly/gist/nharvey/09ffe7ebb9939c5eeded3ece2ddbbb62/raw/26d0192789e6782427f7a86e0919d161ebc07050/lessonClone" > lessonClone
 chmod +x ./lessonClone
 ```
 
