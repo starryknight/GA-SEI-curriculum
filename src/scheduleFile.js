@@ -34,10 +34,10 @@ const allSequences = (recurInterval, stringToTime, jsonData) =>
   manyFromJSONData(
     sequenceIntervalFromJSONData(recurInterval, stringToTime), 
     jsonData.lessons
-  )/*.concat(manyFromJSONData(
+  ).concat(manyFromJSONData(
     recurringSequenceIntervalsFromJSONData(recurInterval, stringToTime), 
-    jsonData.lessons
-  ));*/
+    jsonData.recurring
+  ));
 
 /*
  * Parses raw JSON data that has the following schema:

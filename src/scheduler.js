@@ -2,11 +2,14 @@ const Lesson = require('./lesson.js');
 const Sequence = require('./sequence.js');
 
 const mergeConflictingSequences = (seqs) => {
+  let initSeq = {...seqs.shift()};
+  initSeq.lesson = {...initSeq.lesson};
+
   let newSeq = seqs.reduce((conflictSeq, seq) => {
-   conflictSeq.lesson.name += " " + seq.lesson.name;
+    conflictSeq.lesson.name += " " + seq.lesson.name;
 
     return conflictSeq;
-  }, seqs.shift());
+  }, initSeq);
 
   newSeq.lesson.name = "CONFLICT:" + newSeq.lesson.name;
 
