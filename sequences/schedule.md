@@ -1,6 +1,6 @@
 _Note: see below the table for details on Sequence_
 <!-- __DO NOT MANUALLY EDIT__ Instead use `index.js` -->
-<!-- Generated on:  Fri Apr 12 10:49:48 EDT 2019  -->
+<!-- Generated on:  Fri Apr 12 12:53:59 EDT 2019  -->
 
 Sequence (Unit.Day.Block.Subblock) | Link
 --- | ---
@@ -43,7 +43,7 @@ Sequence (Unit.Day.Block.Subblock) | Link
 1.10.1 | [TBD](TBD)
 1.10.2 | [jquery-intro-lesson](jquery-intro-lesson)
 1.10.3 | [jquery-dom-exercise](jquery-dom-exercise)
-1.10.4 | [planning-userStories-practice](planning-userStories-practice)
+1.10.4 | [TBD](TBD)
 1.11.1 | [TBD](TBD)
 1.11.2 | [js-diagnostic-exercise](js-diagnostic-exercise)
 1.11.3 | [TBD](TBD)

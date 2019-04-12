@@ -173,11 +173,6 @@
         "depends": []
     },
     {
-        "name": "planning-userStories-practice",
-        "sequence": "1.10.4",
-        "depends": []
-    },
-    {
         "name": "js-diagnostic-exercise",
         "sequence": "1.11.2",
         "depends": []
