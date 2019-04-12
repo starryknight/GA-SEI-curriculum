@@ -5,7 +5,7 @@ const Lesson = require('./lesson.js');
 const SequenceTimeApi = require('./timeSequence.js');
 const SchedulerApi = require('./scheduler.js');
 
-const lessonFromJSONData = (newSeq) => (jsonData) =>
+const lessonFromJSONData = (jsonData) =>
       new Lesson.Lesson(jsonData.name, jsonData.depends)
 
 const sequenceIntervalFromJSONData = (intervalFromDur, stringToTime) => (jsonData) => {
@@ -22,7 +22,8 @@ const recurringSequenceIntervalsFromJSONData = (recurInterval, stringToTime) => 
 
   return recurInterval(
     stringToTime(jsonData.sequence), 
-    jsonData.duration, jsonData.step
+    jsonData.duration, 
+    jsonData.step
   ).map(t => new Sequence.Sequence(l, t));
 };
 
@@ -36,7 +37,7 @@ const allSequences = (recurInterval, stringToTime, jsonData) =>
   ).concat(manyFromJSONData(
     recurringSequenceIntervalsFromJSONData(recurInterval, stringToTime), 
     jsonData.lessons
-  );
+  ));
 
 /*
  * Parses raw JSON data that has the following schema:
@@ -51,19 +52,10 @@ const allSequences = (recurInterval, stringToTime, jsonData) =>
  *    }]
  * }
  */
-const parseScheduleFromJSON = (rawJSON) => {
-  let scheduleData = JSON.parse(rawJSON);
-
-  let seqTimeApi = 
-    new SequenceTimeApi(scheduleData.nBlocks, scheduleData.unitEndDays);
-
-  let schedulerApi = 
-    new SchedulerApi(seqTimeApi.allTimes);
-
-  return schedulerApi.makeAllSequences(
-    allSequences(seqTimeApi.recuringIntervals, seqTimeApi.stringToTime, scheduleData);
+const makeAllSequencesFromJSONData = (timeApi, schedulerApi, jsonData) =>
+  schedulerApi.makeAllSequences(
+    allSequences(timeApi.recuringIntervals, timeApi.stringToTime, jsonData)
   );
-};
 
 const readScheduleJSONFile = (filePath) => 
   new Promise(function(resolve, reject) {
@@ -71,12 +63,27 @@ const readScheduleJSONFile = (filePath) =>
       if(err) {
         reject(err)
       } else {
-        resolve(parseScheduleFromJSON(data));
+        resolve(JSON.parse(data));
       }
     });
   });
 
-module.exports = {
-  parseScheduleFromJSON,
-  readScheduleJSONFile
+const makeTimeApiFromJSONData = (jsonData) => 
+    new SequenceTimeApi(jsonData.nBlocks, jsonData.unitEndDays);
+
+
+function makeApi(jsonData) {
+
+  this.timeApi = makeTimeApiFromJSONData(jsonData);
+
+  this.schedulerApi = new SchedulerApi(this.timeApi.allTimes);
+
+  this.allSequences = 
+    makeAllSequencesFromJSONData(this.timeApi, this.schedulerApi, jsonData);
+
+  console.log(this.allSequences);
+};
+
+module.exports = function (filePath) { 
+  return readScheduleJSONFile(filePath).then(d => new makeApi(d));
 }

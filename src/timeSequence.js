@@ -22,7 +22,7 @@ function SequenceFormatException(str) {
 }
 
 const stringToTime = (dayToTime) => (str) => {
-  let pattern = /^\d+.(\d+).(\d+)$/;
+  let pattern = /^(\d+).(\d+).(\d+)$/;
 
   let result = pattern.exec(str);
 

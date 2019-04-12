@@ -5,15 +5,12 @@ function Sequence(lesson, time) {
 
 const sequenceCompare = (a,b) => a.time <= b.time;
 
-const printSequence = (sequence) => {
-  console.log(`${sequence.toString()} ${sequence.lesson.name} `)
+const printSequence = (timeToString, sequence) => {
+  console.log(`${timeToString(sequence.time)} ${sequence.lesson.name} `)
 };
-
-const printSequences = (sequences) => sequences.forEach(printSequence);
 
 module.exports = {
   Sequence,
   sequenceCompare,
   printSequence,
-  printSequences
 }
