@@ -21,26 +21,21 @@ function SequenceFormatException(str) {
   Error.call(this, str + 'sequence should match /^(\d+).(\d+).(\d+)$/');
 }
 
-const timeFromString = () => (str) => {
-  let pattern = /^(\d+).(\d+).(\d+)$/;
+const stringToTime = (dayToTime) => (str) => {
+  let pattern = /^\d+.(\d+).(\d+)$/;
 
   let result = pattern.exec(str);
 
   if(result)
   {
-    return new Sequence.Sequence(lesson, Number.parseInt(result[1], 10),
-      Number.parseInt(result[2], 10),
-      Number.parseInt(result[3], 10),
-      result[5] ? Number.parseInt(result[5], 10) : 1
-    );
+    return dayToTime(Number.parseInt(result[2], 10))
+      + Number.parseInt(result[3], 10);
   }
   else
   {
     throw new SequenceFormatException(str); 
   }
 }
-
-
 
 const nextSequence = (step, seq) => new Sequence.Sequence(seq.lesson, seq.time+step) 
 
@@ -64,13 +59,14 @@ const recurringSequence = (nBlocks, lastBlock) => (seq) => {
 };
 
 module.exports = function(nBlocks, unitEndDays) {
-  this.dayToTime = dayToTime(nBlocks);
-  this.timeToDay = timeToDay(nBlocks);
-  this.timeToBlock = timeToBlock(nBlocks);
-  this.timeToUnit = timeToUnit(this.timeToDay, unitEndDays);
-  this.sequenceToTime = sequenceToTime(this.dayToTime);
-  this.timeToSequence = timeToSequence(this.timeToUnit, this.timeToDay, this.timeToBlock);
-  this.nextSequence = nextSequence(this.sequenceToTime, this.timeToSequence);
-  this.sequencesFromDuration = sequencesFromDuration(this.nextSequence);
   this.allTimes = allTimes(nBlocks, unitEndDays);
+  this.dayToTime = dayToTime(nBlocks);
+  this.nextSequence = nextSequence;
+  this.recurringSequence = recurringSequence(nBlocks, unitEndDays[unitEndDays-1])
+  this.sequencesFromDuration = sequencesFromDuration(this.nextSequence);
+  this.stringToTime = sequenceToTime(this.dayToTime);
+  this.timeToBlock = timeToBlock(nBlocks);
+  this.timeToDay = timeToDay(nBlocks);
+  this.timeToSequenceString = timeToSequenceString(this.timeToUnit, this.timeToDay, this.timeToBlock);
+  this.timeToUnit = timeToUnit(this.timeToDay, unitEndDays);
 };
