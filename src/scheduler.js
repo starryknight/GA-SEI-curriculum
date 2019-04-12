@@ -43,12 +43,11 @@ const fillHoles = (allTimes) => (seqObj) => {
   return seqObj;
 };
 
-const makeAllSequences = (fillHoles, checkConflicts) => (sequences) =>
+const makeAllSequences = (fillHoles) => (sequences) =>
   Object.values(fillHoles(asObjects(sequences)))
     .map(checkConflictingSequences)
     .sort(Sequence.sequenceCompare);
 
-module.exports = function(tToSeq, allTs, recuringLessons) {
-  this.makeRecurringSequences = makeRecurringSequences(recuringLessons, tToSeq);
-  this.makeAllSequences = makeAllSequences(this.makeRecurringSequences, allTs, tToSeq);
+module.exports = function(allTs) {
+  this.makeAllSequences = makeAllSequences(fillHoles(allTs));
 }
