@@ -44,8 +44,6 @@ const fillHoles = (allTimes) => (seqObj) => {
 };
 
 
-const trace = x => { console.log(x); return x;}
-
 const makeAllSequences = (fillHoles) => (sequences) =>
   Object.values(fillHoles(asObjects(sequences)))
     .map(checkConflictingSequences)

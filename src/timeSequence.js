@@ -1,6 +1,6 @@
 const Sequence = require('./sequence.js');
 
-const timeToBlock = (nBlocks) => (t) => (t % nBlocks);
+const timeToBlock = (nBlocks) => (t) => ((t-1) % nBlocks) + 1;
 
 const timeToDay = (nBlocks) => (t) => Math.ceil(t/nBlocks);
 

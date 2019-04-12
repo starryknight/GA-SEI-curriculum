@@ -30,8 +30,6 @@ const recurringSequenceIntervalsFromJSONData = (recurInterval, stringToTime) => 
 const manyFromJSONData = (f, jsonData) =>
   jsonData.map(f).reduce((xs, s) => xs.concat(s), []);
 
-const trace = x => { console.log(x); return x;}
-
 const allSequences = (recurInterval, stringToTime, jsonData) =>
   manyFromJSONData(
     sequenceIntervalFromJSONData(recurInterval, stringToTime), 
