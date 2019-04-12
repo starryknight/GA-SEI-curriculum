@@ -5,30 +5,23 @@ const Lesson = require('./lesson.js');
 const SequenceTimeApi = require('./timeSequence.js');
 const SchedulerApi = require('./scheduler.js');
 
-function SequenceFormatException(str) {
-  Error.call(this, str + 'sequence should match /^(\d+).(\d+).(\d+)$/');
-}
+const stringToSequence = (stringToTime) => (lesson, str) =>
+  new Sequence.Sequence(lesson, stringToTime(str))
 
-const makeSequenceFromString = (lesson = new Lesson.Lesson(), str) => {
-  let pattern = /^(\d+).(\d+).(\d+)(.(\d+))?$/;
+const lessonFromJSONData = (lessonData) =>
+  new Lesson.Lesson(lessonData.name, lessonData.depends)
 
-  let result = pattern.exec(str);
+const sequencesFromJSONData = (newSeq) => (lessonData) =>
+  sequencesFromDuration(
+    newSeq(lessonFromJSONData(lessonData), lessonData.sequence),
+    lessonData.duration ? lessonData.duration : 1
+  )
 
-  if(result)
-  {
-    return new Sequence.Sequence(lesson, Number.parseInt(result[1], 10),
-      Number.parseInt(result[2], 10),
-      Number.parseInt(result[3], 10),
-      result[5] ? Number.parseInt(result[5], 10) : 1
-    );
-  }
-  else
-  {
-    throw new SequenceFormatException(str); 
-  }
-}
+const sequencesFromJSONData = (newSeqs) => (jsonData) =>
+  jsonData.lessons.reduce((sequences, lessonData) => 
+    sequences.concat(newSeqs(lessonData))
+  , [])
 
-const trace = (x) => { console.log(x); return x; }
 
 /*
  * Parses raw JSON data that has the following schema:
@@ -46,18 +39,16 @@ const trace = (x) => { console.log(x); return x; }
 const parseScheduleFromJSON = (rawJSON) => {
   let scheduleData = JSON.parse(rawJSON);
 
-  let seqTimeApi = new SequenceTimeApi(scheduleData.nBlocks, scheduleData.unitEndDays);
-  let schedulerApi = new SchedulerApi(seqTimeApi.timeToSequence, seqTimeApi.allTimes, scheduleData.recurring);
+  let seqTimeApi = 
+    new SequenceTimeApi(scheduleData.nBlocks, scheduleData.unitEndDays);
 
-  return schedulerApi.makeAllSequences(
-    scheduleData.lessons.reduce((sequences, lessonData) => 
-      sequences.concat(seqTimeApi.sequencesFromDuration(
-        makeSequenceFromString(
-          new Lesson.Lesson(lessonData.name, lessonData.depends), lessonData.sequence
-        )
-      , lessonData.duration ? lessonData.duration : 1))
-    , [])
-  );
+  let schedulerApi = 
+    new SchedulerApi(seqTimeApi.timeToSequence, seqTimeApi.allTimes, scheduleData.recurring);
+
+  let newSequences = 
+    sequencesFromJSONData(stringToSequence(seqTimeApi.stringToTime));
+
+  return schedulerApi.makeAllSequences(sequencesFromJSONData(newSequences));
 };
 
 const readScheduleJSONFile = (filePath) => 
