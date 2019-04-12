@@ -3,7 +3,7 @@ const Sequence = require('./sequence.js');
 
 const mergeConflictingSequences = (seqs) => {
   let newSeq = seqs.reduce((conflictSeq, seq) => {
-    conflictSeq.lesson.name += " " + seq.lesson.name;
+   conflictSeq.lesson.name += " " + seq.lesson.name;
 
     return conflictSeq;
   }, seqs.shift());
@@ -42,6 +42,9 @@ const fillHoles = (allTimes) => (seqObj) => {
 
   return seqObj;
 };
+
+
+const trace = x => { console.log(x); return x;}
 
 const makeAllSequences = (fillHoles) => (sequences) =>
   Object.values(fillHoles(asObjects(sequences)))

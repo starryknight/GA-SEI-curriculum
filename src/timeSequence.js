@@ -10,7 +10,7 @@ const dayToTime = (nBlocks) => (day) => (day-1) * nBlocks;
 
 const allTimes = (nBlocks, unitEndDays) => 
   function* () {
-    for(let t = 1; t <= nBlocks* unitEndDays[unitEndDays.length-1]; t++)
+    for(let t = 1; t <= nBlocks*unitEndDays[unitEndDays.length-1]; t++)
       yield t;
   };
 
@@ -60,9 +60,9 @@ module.exports = function(nBlocks, unitEndDays) {
   this.dayToTime = dayToTime(nBlocks);
   this.intervalFromDuration = intervalFromDuration(nBlocks*unitEndDays[unitEndDays.length-1]);
   this.recuringIntervals = recuringIntervals(this.intervalFromDuration);
-  this.stringToTime = stringToTime(this.dayToTime);
   this.timeToBlock = timeToBlock(nBlocks);
   this.timeToDay = timeToDay(nBlocks);
-  this.timeToSequenceString = timeToSequenceString(this.timeToUnit, this.timeToDay, this.timeToBlock);
+  this.stringToTime = stringToTime(this.dayToTime);
   this.timeToUnit = timeToUnit(this.timeToDay, unitEndDays);
+  this.timeToString = timeToSequenceString(this.timeToUnit, this.timeToDay, this.timeToBlock);
 };

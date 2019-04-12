@@ -30,14 +30,16 @@ const recurringSequenceIntervalsFromJSONData = (recurInterval, stringToTime) => 
 const manyFromJSONData = (f, jsonData) =>
   jsonData.map(f).reduce((xs, s) => xs.concat(s), []);
 
+const trace = x => { console.log(x); return x;}
+
 const allSequences = (recurInterval, stringToTime, jsonData) =>
   manyFromJSONData(
-    recurringSequenceIntervalsFromJSONData(recurInterval, stringToTime), 
-    jsonData.recurring
-  ).concat(manyFromJSONData(
+    sequenceIntervalFromJSONData(recurInterval, stringToTime), 
+    jsonData.lessons
+  )/*.concat(manyFromJSONData(
     recurringSequenceIntervalsFromJSONData(recurInterval, stringToTime), 
     jsonData.lessons
-  ));
+  ));*/
 
 /*
  * Parses raw JSON data that has the following schema:
@@ -80,8 +82,6 @@ function makeApi(jsonData) {
 
   this.allSequences = 
     makeAllSequencesFromJSONData(this.timeApi, this.schedulerApi, jsonData);
-
-  console.log(this.allSequences);
 };
 
 module.exports = function (filePath) { 
