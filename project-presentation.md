@@ -32,6 +32,6 @@ Projects will be graded as follows:
    student.
 1. Druing the evaluation instructors will compare rubrics and determine final
    grades for each student
-1. After projects are graded each student have a private session with the
+1. After projects are graded each student will have a private session with the
    instructors where their grade will be presented
 1. After all projects have been graded grades will then be posted
