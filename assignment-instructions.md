@@ -3,8 +3,8 @@
 ## Install LessonClone
 
 ```
-mkdir sei-21-hw
-cd sei-21-hw
+mkdir sei-21
+cd sei-21
 curl https://raw.git.generalassemb.ly/atl-wdi/sei-curriculum/src/lessonClone > lessonClone
 chmod +x ./lessonClone
 ```
@@ -15,7 +15,7 @@ chmod +x ./lessonClone
 
     * download the lesson [lessonClone][lessonClone] script:
 
-        * `cd sei-21-hw`
+        * `cd sei-21`
         * `./lessonClone <lesson-name>`
         * `cd <lesson-name>`
 1.  Create a new github repo
