@@ -5,23 +5,38 @@ const Lesson = require('./lesson.js');
 const SequenceTimeApi = require('./timeSequence.js');
 const SchedulerApi = require('./scheduler.js');
 
-const stringToSequence = (stringToTime) => (lesson, str) =>
-  new Sequence.Sequence(lesson, stringToTime(str))
+const lessonFromJSONData = (newSeq) => (jsonData) =>
+      new Lesson.Lesson(jsonData.name, jsonData.depends)
 
-const lessonFromJSONData = (lessonData) =>
-  new Lesson.Lesson(lessonData.name, lessonData.depends)
+const sequenceIntervalFromJSONData = (intervalFromDur, stringToTime) => (jsonData) => {
+  let l = lessonFromJSONData(jsonData);
 
-const sequencesFromJSONData = (newSeq) => (lessonData) =>
-  sequencesFromDuration(
-    newSeq(lessonFromJSONData(lessonData), lessonData.sequence),
-    lessonData.duration ? lessonData.duration : 1
-  )
+  return intervalFromDur(
+    stringToTime(jsonData.sequence), 
+    jsonData.duration
+  ).map(t => new Sequence.Sequence(l, t));
+};
 
-const sequencesFromJSONData = (newSeqs) => (jsonData) =>
-  jsonData.lessons.reduce((sequences, lessonData) => 
-    sequences.concat(newSeqs(lessonData))
-  , [])
+const recurringSequenceIntervalsFromJSONData = (recurInterval, stringToTime) => (jsonData) => {
+  let l = lessonFromJSONData(jsonData);
 
+  return recurInterval(
+    stringToTime(jsonData.sequence), 
+    jsonData.duration, jsonData.step
+  ).map(t => new Sequence.Sequence(l, t));
+};
+
+const manyFromJSONData = (f, jsonData) =>
+  jsonData.map(f).reduce((xs, s) => xs.concat(s), []);
+
+const allSequences = (recurInterval, stringToTime, jsonData) =>
+  manyFromJSONData(
+    recurringSequenceIntervalsFromJSONData(recurInterval, stringToTime), 
+    jsonData.recurring
+  ).concat(manyFromJSONData(
+    recurringSequenceIntervalsFromJSONData(recurInterval, stringToTime), 
+    jsonData.lessons
+  );
 
 /*
  * Parses raw JSON data that has the following schema:
@@ -45,10 +60,9 @@ const parseScheduleFromJSON = (rawJSON) => {
   let schedulerApi = 
     new SchedulerApi(seqTimeApi.timeToSequence, seqTimeApi.allTimes, scheduleData.recurring);
 
-  let newSequences = 
-    sequencesFromJSONData(stringToSequence(seqTimeApi.stringToTime));
-
-  return schedulerApi.makeAllSequences(sequencesFromJSONData(newSequences));
+  return schedulerApi.makeAllSequences(
+    allSequences(seqTimeApi.recuringIntervals, seqTimeApi.stringToTime, scheduleData);
+  );
 };
 
 const readScheduleJSONFile = (filePath) => 
