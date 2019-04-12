@@ -14,15 +14,6 @@ const mergeConflictingSequences = (seqs) => {
 };
 
 
-const makeRecurringSequences = (recuringSeqs, lastTime, seqToTime, timeToSeq) =>
-  recuringLessons.reduce((seqs, rs) => {
-
-    for(let t = seqToTime(rs); t <= lastTime; t+=5) {
-    }
-
-    return seqs;
-  }, []);
-
 const checkConflictingSequences = (seqs) => {
   if(seqs.length < 1)
     return null;
@@ -34,7 +25,7 @@ const checkConflictingSequences = (seqs) => {
 
 const asObjects = (sequences) => 
   sequences.reduce((obj, seq) => {
-    let k = seq.toString();
+    let k = seq.time;
 
     if(!obj[k])
       obj[k] = [seq];
@@ -44,26 +35,18 @@ const asObjects = (sequences) =>
     return obj;
 },{})
 
+const fillHoles = (allTimes) => (seqObj) => {
+  for(let t of allTimes()) 
+    if(!seqObj[t])
+      seqObj[t] = [ new Sequence.Sequence(new Lesson.Lesson(), t) ]
 
-const makeAllSequences = (makeRecuring, allTs, tToSeq) => (sequences) => {
-  let seqObj = asObjects(sequences);
-
-  for(let t of allTs()) {
-    let seqs = makeRecuring(t);
-
-    if(seqs.length == 0)
-      seqs = [ tToSeq(new Lesson.Lesson(), t) ];
-
-    let k = seqs[0].toString();
-
-    if(!seqObj[k])
-      seqObj[k] = seqs;
-    else
-      seqObj[k].concat(seqs);
-  }
-  
-  return Object.values(seqObj).map(checkConflictingSequences).sort(Sequence.sequenceCompare);
+  return seqObj;
 };
+
+const makeAllSequences = (fillHoles, checkConflicts) => (sequences) =>
+  Object.values(fillHoles(asObjects(sequences)))
+    .map(checkConflictingSequences)
+    .sort(Sequence.sequenceCompare);
 
 module.exports = function(tToSeq, allTs, recuringLessons) {
   this.makeRecurringSequences = makeRecurringSequences(recuringLessons, tToSeq);

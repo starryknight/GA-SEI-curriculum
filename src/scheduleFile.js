@@ -58,7 +58,7 @@ const parseScheduleFromJSON = (rawJSON) => {
     new SequenceTimeApi(scheduleData.nBlocks, scheduleData.unitEndDays);
 
   let schedulerApi = 
-    new SchedulerApi(seqTimeApi.timeToSequence, seqTimeApi.allTimes, scheduleData.recurring);
+    new SchedulerApi(seqTimeApi.allTimes);
 
   return schedulerApi.makeAllSequences(
     allSequences(seqTimeApi.recuringIntervals, seqTimeApi.stringToTime, scheduleData);

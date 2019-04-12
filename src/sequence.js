@@ -3,7 +3,7 @@ function Sequence(lesson, time) {
     this.lesson = lesson;
 }
 
-const sequenceCompare = (a,b) => a.time <= b.time);
+const sequenceCompare = (a,b) => a.time <= b.time;
 
 const printSequence = (sequence) => {
   console.log(`${sequence.toString()} ${sequence.lesson.name} `)
