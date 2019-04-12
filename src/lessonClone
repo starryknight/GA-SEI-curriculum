@@ -18,3 +18,5 @@ echo $cloneDir >> .git/info/sparse-checkout
 git pull origin master
 
 rm -rf .git
+mv $cloneDir/* .
+rm -r sequences
