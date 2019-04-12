@@ -1,35 +1,37 @@
 # Project Presentations
 
-
 # Expectations
 
-* working during prez
-* professionalism
+* Project presentations should be done in a professional manner.
+* _Working on any assignment during the presentation will result in an automatic
+  failure of your project_.
 
 # Schedule
 
-1. morning prez - 9:30 - 12:30
-1. lunch 12:30 - 2 (1:30 for instructors)
-1. feedback / evalutation - 2 - 5
+Event | Time
+--- | ---
+presentations | 9:30 - 12:30
+lunch | 2 (1:30 for instructors)
+evalutation | 2 - 5
 
 # Presentation Format
 
-Total 5min
+Your presentation should be _no more than 5 minutes_. Here is the format:
 
-1. 1min intro (readme, shoutouts)
-1. 2min demo
-1. 2min code review
+Time | Presentation
+--- | ---
+1 min | intro (show readme and give shoutouts)
+3 min | demo
+5 min | code review
 
 # Grading Process
 
-1. copy `rubric.md`
-1. add checkmarks
-1. add notes
+Projects will be graded as follows: 
 
-1. compare rubrics
-1. mark pass/fail
-1. if fail -> bring in for meeting / review why they failed
-
-* Observe project during prez
-* review in the afternoon
-* upload grades in afternoon
+1. During presentations each instructor will mark a copy of the rubric for each
+   student.
+1. Druing the evaluation instructors will compare rubrics and determine final
+   grades for each student
+1. After projects are graded each student have a private session with the
+   instructors where their grade will be presented
+1. After all projects have been graded grades will then be posted
