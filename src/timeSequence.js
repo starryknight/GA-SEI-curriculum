@@ -1,6 +1,6 @@
 const Sequence = require('./sequence.js');
 
-const timeToBlock = (nBlocks) => (t) => (t % nBlocks) + 1;
+const timeToBlock = (nBlocks) => (t) => (t % nBlocks);
 
 const timeToDay = (nBlocks) => (t) => Math.ceil(t/nBlocks);
 
@@ -37,34 +37,30 @@ const stringToTime = (dayToTime) => (str) => {
   }
 }
 
-const nextSequence = (step, seq) => new Sequence.Sequence(seq.lesson, seq.time+step) 
+const intervalFromDuration = (lastTime) => (t0, duration) => 
+  [...Array(duration).keys()].map(t => t + t0).filter(t => t <= lastTime);
+  
+const recuringIntervals = (intervalFromDur) => (t0, duration, step) => {
+  let ts = [];
 
-const sequencesFromDuration = (nextSeq) => (seq, duration) => {
-  let seqs = [seq];
+  let interval = [];
 
-  for(let i = 1; i < duration; i++)
-    seqs.push(nextSeq(1, seqs[i])); 
+  do {
+    interval = intervalFromDur(t0, duration);
+    ts.push(interval);
+    t0 = t0+step;
+  }
+  while(interval.length > 0);
 
-  return seqs;
-};
-
-const recurringSequence = (nBlocks, lastBlock) => (seq) => {
-
-  let newSeqs = [seq];
-
-  while(newSeqs[newSeqs.length-1].time <= lastBlock)
-    newSeqs.push(nextSequence(5, newSeqs[newSeqs.length-1]));
-
-  return newSeqs;
+  return [].concat(...ts);
 };
 
 module.exports = function(nBlocks, unitEndDays) {
   this.allTimes = allTimes(nBlocks, unitEndDays);
   this.dayToTime = dayToTime(nBlocks);
-  this.nextSequence = nextSequence;
-  this.recurringSequence = recurringSequence(nBlocks, unitEndDays[unitEndDays-1])
-  this.sequencesFromDuration = sequencesFromDuration(this.nextSequence);
-  this.stringToTime = sequenceToTime(this.dayToTime);
+  this.intervalFromDuration = intervalFromDuration(nBlocks*unitEndDays[unitEndDays.length-1]);
+  this.recuringIntervals = recuringIntervals(this.intervalFromDuration);
+  this.stringToTime = stringToTime(this.dayToTime);
   this.timeToBlock = timeToBlock(nBlocks);
   this.timeToDay = timeToDay(nBlocks);
   this.timeToSequenceString = timeToSequenceString(this.timeToUnit, this.timeToDay, this.timeToBlock);
