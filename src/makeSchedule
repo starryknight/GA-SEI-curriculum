@@ -1,14 +1,15 @@
 #!/usr/bin/env fish
 
 function makeMardownRow
-  set lesson (string split ' ' $argv[1])
-  set url "$argv[2]"
+  set lesson (string split -m 1 ' ' (string trim $argv[1]))
+  set url $lesson[2]
+
   
-  if string match "conflict" (string lower $argv[2])
+  if test ! -d "sequences/$url"
     set url ""
   end
 
-  echo "$lesson[1] | [$lesson[2]]($url)"
+  echo $lesson[1] "|" "[$lesson[2]]($url)"
 end
 
 echo    "_Note: see below the table for details on Sequence_"
