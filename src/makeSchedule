@@ -1,27 +1,29 @@
-#!/usr/bin/env fish
+#!/usr/bin/env bash
 
-function makeMardownRow
-  set lesson (string split -m 1 ' ' (string trim $argv[1]))
-  set url $lesson[2]
+function makeMardownRow {
+  lesson=$1
 
+  shift
+
+  url="$@"
   
-  if test ! -d "sequences/$url"
-    set url ""
-  end
+  if test ! -d "sequences/$url"; then
+    url=""
+  fi
 
-  echo $lesson[1] "|" "[$lesson[2]]($url)"
-end
+  echo "$lesson | [$@]($url)"
+}
 
 echo    "_Note: see below the table for details on Sequence_"
-echo    "<!-- __DO NOT MANUALLY EDIT__ Instead use `index.js` -->"
-echo    "<!-- Generated on: " (date) " -->"
+echo    "<!-- __DO NOT MANUALLY EDIT__ Instead use \`index.js\` -->"
+echo    "<!-- Generated on: $(date) -->"
 echo -e "\nSequence (Unit.Day.Block.Subblock) | Link"
 echo    "--- | ---"
 
-node ./src/printLessonNames.js $argv[1] | while read -l l; makeMardownRow $l; end
+node ./src/printLessonNames.js "$1" | while read l; do makeMardownRow $l; done
 
 echo -e "\n### Sequences "
-echo    "Sequences are semantic strings describing when a part of the course is to occur. The format is: `Unit.Day.Block` where:"
+echo    "Sequences are semantic strings describing when a part of the course is to occur. The format is: \`Unit.Day.Block\` where:"
 echo -e "\nSequence Part | Meaning"
 echo    "--- | ---"
 echo    "Unit | Scale: 1-4, the unit the lesson is taught in"
