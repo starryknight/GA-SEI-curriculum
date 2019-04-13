@@ -2,6 +2,8 @@
 
 ## Install LessonClone
 
+__This is to only be done once for the entire course__
+
 ```
 mkdir sei-21
 cd sei-21
@@ -11,16 +13,16 @@ chmod +x ./lessonClone
 
 ## Create A New Repo For Your Homework
 
-1. See instructions for assignment.
 
-    * download the lesson [lessonClone][lessonClone] script:
+1. Download the lesson's repo (this is not a git clone)
 
         * `cd sei-21`
         * `./lessonClone <lesson-name>`
         * `cd <lesson-name>`
+        * `git init
 1.  Create a new github repo
 
-    * __DO NOT INITIALIZE WITH A README__
+    * __DO NOT INITIALIZE WITH A README DURING STEP 4__
     * https://help.github.com/en/articles/creating-a-new-repository
 1. Push to your new repo
     
