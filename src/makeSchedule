@@ -2,11 +2,7 @@
 
 function makeMardownRow
   set lesson (string split ' ' $argv[1])
-  set url "$argv[2]"
-  
-  if string match "conflict" (string lower $argv[2])
-    set url ""
-  end
+  set url (echo $lesson[2] | sed -e 's/CONFLICT://g')
 
   echo "$lesson[1] | [$lesson[2]]($url)"
 end
