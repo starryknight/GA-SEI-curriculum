@@ -290,21 +290,6 @@
         "depends": []
     },
     {
-        "name": "express-authentication-lesson",
-        "sequence": "2.22.2",
-        "depends": [
-            "express-routing-lesson",
-            "express-controllers-lesson"
-        ]
-    },
-    {
-        "name": "express-authentication-exercise",
-        "sequence": "2.22.3",
-        "depends": [
-            "express-authentication-lesson"
-        ]
-    },
-    {
         "name": "project-2",
         "sequence": "2.24.1",
         "depends": []
