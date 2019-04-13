@@ -1,6 +1,6 @@
 _Note: see below the table for details on Sequence_
 <!-- __DO NOT MANUALLY EDIT__ Instead use `index.js` -->
-<!-- Generated on:  Fri Apr 12 12:53:59 EDT 2019  -->
+<!-- Generated on:  Sat Apr 13 16:50:08 EDT 2019  -->
 
 Sequence (Unit.Day.Block.Subblock) | Link
 --- | ---
@@ -89,8 +89,8 @@ Sequence (Unit.Day.Block.Subblock) | Link
 2.21.3 | [TBD](TBD)
 2.21.4 | [express-donut-shop-exercise](express-donut-shop-exercise)
 2.22.1 | [heroku-intro-lesson](heroku-intro-lesson)
-2.22.2 | [express-authentication-lesson](express-authentication-lesson)
-2.22.3 | [express-authentication-exercise](express-authentication-exercise)
+2.22.2 | [TBD](TBD)
+2.22.3 | [TBD](TBD)
 2.22.4 | [TBD](TBD)
 2.23.1 | [TBD](TBD)
 2.23.2 | [study-day](study-day)
