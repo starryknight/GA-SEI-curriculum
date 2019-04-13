@@ -6,7 +6,7 @@ const mergeConflictingSequences = (seqs) => {
   initSeq.lesson = {...initSeq.lesson};
 
   let newSeq = seqs.reduce((conflictSeq, seq) => {
-    conflictSeq.lesson.name += " " + seq.lesson.name;
+    conflictSeq.lesson.name += "-" + seq.lesson.name;
 
     return conflictSeq;
   }, initSeq);
