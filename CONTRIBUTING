@@ -13,6 +13,7 @@
 1. Create small, logical commits. This will make reverting new features and
    merging easier.
 1. Create a pull request when you're done
+1. Fix any merge conflicts that may exist (see section on pull requests)
 
 # Branching
 
@@ -21,7 +22,6 @@
 Branches should follow the following pattern:
 
     <initials>-<feature-name>-<issue-number>
-
 for example:
 
     nh-new-awesome-lesson-73
@@ -43,7 +43,23 @@ When you're done working on a feature submit a pull request and request another
 team member to review your work. (For Instructor Assistants, please have a lead
 instructor review your work as well).
 
-* submitter fixes merge conflicts
-* try and have at least 1 reviewer
-* put "fixes #issue-number" in pr title
-* have LI merge 
+## Pull Request Titles
+
+When making a PR please start the title with the following pattern:
+
+    fixes #<issue-number>
+for example:
+
+    fixes #73
+This way when the PR gets merged Github can automagically close out the issue.
+
+Keep the following in mind when reviewing guidelines:
+
+## Merge Conflicts
+
+It is the feature branch owner's responsibility to fix any merge conflicts that
+may exist. This saves the person reviewing your work time and effort. A
+conflict should rarely occur unless your are not keeping your branch updated by
+periodically merging in upstream changes (via `git fetch upstream/master; git
+merge upstream/master` when checkedout in your feature branch).
+
