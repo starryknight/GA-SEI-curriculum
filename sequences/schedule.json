@@ -239,7 +239,7 @@
     },
     {
         "name": "mongo-intro-lesson",
-        "sequence": "2.19.3",
+        "sequence": "2.20.1",
         "depends": []
     },
     {
