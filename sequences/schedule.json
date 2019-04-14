@@ -211,14 +211,14 @@
     },
     {
         "name": "express-routing-lesson",
-        "sequence": "2.18.2",
+        "sequence": "2.19.2",
         "depends": [
             "express-intro-lesson"
         ]
     },
     {
         "name": "express-views-lesson",
-        "sequence": "2.18.3",
+        "sequence": "2.19.3",
         "depends": [
             "express-intro-lesson"
         ]
@@ -232,7 +232,7 @@
     },
     {
         "name": "js-dataModeling-exercise",
-        "sequence": "2.19.2",
+        "sequence": "2.19.4",
         "depends": [
             "sei-introAlgorithms-exercise"
         ]
