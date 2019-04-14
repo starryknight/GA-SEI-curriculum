@@ -231,6 +231,13 @@
         ]
     },
     {
+        "name": "sei-intro-lesson",
+        "sequence": "2.18.1",
+        "depends": [
+            "sei-introAlgorithms-exercise"
+        ]
+    },
+    {
         "name": "js-dataModeling-exercise",
         "sequence": "2.18.2",
         "depends": [
