@@ -211,7 +211,7 @@
     },
     {
         "name": "sei-linkedLists-exercise",
-        "sequence": "2.18.1",
+        "sequence": "2.18.4",
         "depends": [
             "sei-introDataStructures-exercise"
         ]
@@ -232,7 +232,7 @@
     },
     {
         "name": "js-dataModeling-exercise",
-        "sequence": "2.19.4",
+        "sequence": "2.18.2",
         "depends": [
             "sei-introAlgorithms-exercise"
         ]
