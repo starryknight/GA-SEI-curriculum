@@ -227,7 +227,6 @@
         "name": "js-dataModeling-exercise",
         "sequence": "2.18.2",
         "depends": [
-            "sei-introAlgorithms-exercise"
         ]
     },
     {
