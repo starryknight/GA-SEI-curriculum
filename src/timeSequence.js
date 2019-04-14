@@ -1,3 +1,19 @@
+/* Provides API for managing time in scheduling program
+ *
+ * including:
+ *
+ * * unit.day.block string <--> time conversion
+ * * day <--> time conversion (where day is a positive integer)
+ * * generate time intervals (sequences of times in incrementing order)
+ * * generate recurring time intervals that repeat at a given time step
+ *
+ * Note on time: 
+ *
+ * Time here is simply an abstract number line to help reify the concept of
+ * incrementing events. Literal time (hours minutes and seconds) is not what
+ * is being refered to here.
+ *
+ */
 const Sequence = require('./sequence.js');
 
 const timeToBlock = (nBlocks) => (t) => ((t-1) % nBlocks) + 1;
