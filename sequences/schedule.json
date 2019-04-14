@@ -210,6 +210,13 @@
         ]
     },
     {
+        "name": "sei-linkedLists-exercise",
+        "sequence": "2.18.1",
+        "depends": [
+            "sei-introDataStructures-exercise"
+        ]
+    },
+    {
         "name": "express-routing-lesson",
         "sequence": "2.19.2",
         "depends": [
@@ -221,13 +228,6 @@
         "sequence": "2.19.3",
         "depends": [
             "express-intro-lesson"
-        ]
-    },
-    {
-        "name": "sei-linkedLists-exercise",
-        "sequence": "2.19.1",
-        "depends": [
-            "sei-introDataStructures-exercise"
         ]
     },
     {
