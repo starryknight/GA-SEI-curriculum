@@ -243,9 +243,11 @@
         "depends": []
     },
     {
-        "name": "js-express-exercise",
-        "sequence": "2.19.4.1",
-        "depends": []
+        "name": "express-views-exercise",
+        "sequence": "2.19.4",
+        "depends": [
+          "express-views-lesson"
+        ]
     },
     {
         "name": "mongoose-intro-lesson",
