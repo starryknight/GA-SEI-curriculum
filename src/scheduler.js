@@ -1,3 +1,15 @@
+/* API that handles creating all sequences given a timeline and set of
+ * sequences.
+ *
+ * This serves to:
+ *
+ * * generate default sequences where no sequence was given
+ * * merge conflicting sequences such that the resulting lesson.name contains a
+ *   conflict message
+ * * sort sequences in time-incrementing order
+ *
+ */
+
 const Lesson = require('./lesson.js');
 const Sequence = require('./sequence.js');
 
