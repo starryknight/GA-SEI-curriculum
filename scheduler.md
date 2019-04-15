@@ -70,3 +70,24 @@ This is the main source of truth for how lessons are laid out. The schedule.json
 should contain all the data necessary to be consumed and generate any view of
 the course schedule, the dependencies between lessons, and any business logic that
 needs to be applied (such as recurring lessons, sequence conflicts etc.).
+
+# Schedule Generator Documentation
+
+For now refer to the source code for how the schedule generation is
+implemented. Below is a highlevel overview of the process used.
+
+## Process
+
+1. Read JSON file
+1. Parse schedule data
+
+  1. parse time data
+  1. parse recurring lessons
+  1. parse lessons
+1. Generate sequences (non-recurring)
+1. Generate recurring sequences
+1. Generate all sequences (and autofill missing lessons) from previous two
+   steps
+1. Merge conflicting lessons
+1. Print names of lessons
+1. Consume printed names and generate markdown file
