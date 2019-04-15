@@ -198,7 +198,12 @@
         "depends": []
     },
     {
-        "name": "js-node-lesson",
+        "name": "internet-intro-lesson",
+        "sequence": "2.17.2",
+        "depends": []
+    },
+    {
+        "name": "node-intro-lesson",
         "sequence": "2.17.2",
         "depends": []
     },
@@ -206,7 +211,7 @@
         "name": "express-intro-lesson",
         "sequence": "2.17.3",
         "depends": [
-            "js-node-lesson"
+            "node-intro-lesson"
         ]
     },
     {
