@@ -45,6 +45,18 @@ A sequence refers to the concept of ordering surrounding a lesson. Currently a
 sequence is simply a pairing of a given lesson, and a time (see note in
 `./src/timeSequence.js`)
 
+## Sequences In Schedule.md
+
+The sequences displayed in the `schedule.md` file are derived from the time
+of a sequence. Currently the displayed format is as follows:
+
+    unit.day.block
+Where block is an integeger refering to the different parts of a day.
+
+__DO NOT USE SEQUENCES IN ISSUES OR PR TITLES__ Sequences names that are
+displayed on the `schedule.md` file are subject to change (at least between
+cohorts).
+
 # Time
 
 Time (for our purposes) refers to a single point on a positive integer number
