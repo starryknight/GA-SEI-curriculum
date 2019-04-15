@@ -235,6 +235,13 @@
         "depends": []
     },
     {
+        "name": "express-views-exercise",
+        "sequence": "2.19.4",
+        "depends": [
+          "express-views-lesson"
+        ]
+    },
+    {
         "name": "mongoose-intro-lesson",
         "sequence": "2.20.2",
         "depends": [
