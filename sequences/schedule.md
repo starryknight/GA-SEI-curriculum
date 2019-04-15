@@ -1,6 +1,6 @@
 _Note: see below the table for details on Sequence_
 <!-- __DO NOT MANUALLY EDIT__ Instead use `index.js` -->
-<!-- Generated on: Sun Apr 14 15:08:27 EDT 2019 -->
+<!-- Generated on: Sun Apr 14 20:25:56 EDT 2019 -->
 
 Sequence (Unit.Day.Block.Subblock) | Link
 --- | ---
@@ -72,14 +72,14 @@ Sequence (Unit.Day.Block.Subblock) | Link
 2.17.2 | [js-node-lesson](js-node-lesson)
 2.17.3 | [express-intro-lesson](express-intro-lesson)
 2.17.4 | [TBD](TBD)
-2.18.1 | [sei-linkedLists-exercise](sei-linkedLists-exercise)
-2.18.2 | [study-day](study-day)
+2.18.1 | [TBD](TBD)
+2.18.2 | [CONFLICT:js-dataModeling-exercise study-day]()
 2.18.3 | [outcomes](outcomes)
 2.18.4 | [TBD](TBD)
 2.19.1 | [TBD](TBD)
 2.19.2 | [express-routing-lesson](express-routing-lesson)
 2.19.3 | [express-views-lesson](express-views-lesson)
-2.19.4 | [js-dataModeling-exercise](js-dataModeling-exercise)
+2.19.4 | [express-views-exercise](express-views-exercise)
 2.20.1 | [mongo-intro-lesson](mongo-intro-lesson)
 2.20.2 | [mongoose-intro-lesson](mongoose-intro-lesson)
 2.20.3 | [mongoose-queries-lesson](mongoose-queries-lesson)
