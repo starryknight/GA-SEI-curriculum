@@ -35,6 +35,14 @@ module.exports = {
 };
 ```
 
+## Sample Calculator
+
+* Addition
+* Subtraction
+* Multiplication
+* Division
+
+
 # Importing
 
 * you are importing an object
@@ -45,10 +53,6 @@ const X = require('./path/relative/to/this/file.js');
 const {a, b} = require('./path/relative/to/this/file.js');
 ```
 
-# Sample Calculator API 
+## Sample Import Calculator
 
-* Addition
-* Subtraction
-* Multiplication
-* Division
-
+# Write your own API
