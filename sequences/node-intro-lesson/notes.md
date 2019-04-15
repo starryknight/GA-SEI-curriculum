@@ -46,3 +46,9 @@ const {a, b} = require('./path/relative/to/this/file.js');
 ```
 
 # Sample Calculator API 
+
+* Addition
+* Subtraction
+* Multiplication
+* Division
+
