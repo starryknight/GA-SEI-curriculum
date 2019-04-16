@@ -193,7 +193,7 @@
         "depends": []
     },
     {
-        "name": "intro-api-lesson",
+        "name": "api-intro-lesson",
         "sequence": "2.17.1",
         "depends": []
     },
