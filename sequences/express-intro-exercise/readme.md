@@ -50,6 +50,7 @@ matching CRUD behavior.
 
 route | HTTP Verb | Response
 --- | --- | ---
+`/shops/new` | GET | a new coffee shop
 `/shops` | GET | list of all coffee shops
 `/shops/n` | GET | a single coffee shop at index `n`
 `/shops` | POST | index of a new shop added to list of shops (new shop in request should be body of a request; use `req.body`)
