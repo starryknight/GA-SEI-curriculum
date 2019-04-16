@@ -4,11 +4,6 @@
 - Export an API in a NodeJS module
 - Import and use an API using a NodeJS module
 
-# Key Terms
-
-* `module.exports`
-* `require()`
-
 # Modules 
 
 ## Why need them
@@ -53,6 +48,13 @@ const X = require('./path/relative/to/this/file.js');
 const {a, b} = require('./path/relative/to/this/file.js');
 ```
 
-## Sample Import Calculator
-
 # Write your own API
+
+Take the ATM Lab and write some functionality in a module and consume it in
+another.
+
+# Key Terms
+
+* `module.exports`
+* `require()`
+
