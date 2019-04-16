@@ -215,6 +215,13 @@
         ]
     },
     {
+        "name": "express-intro-exercise",
+        "sequence": "2.17.4",
+        "depends": [
+            "express-intro-lesson", "node-intro-lesson"
+        ]
+    },
+    {
         "name": "express-routing-lesson",
         "sequence": "2.19.2",
         "depends": [
