@@ -15,9 +15,16 @@ npm install express
 
 __DO NOT COMMIT `node_modules`__
 
+
+
 # Testing your code
 
-_After_ writing both your api and web server run `make` to test your web server
+_After_ writing both your api and web server 
+
+1. run `node ./server.js`
+1. In another terminal (make sure you're in the coffee-shop directory) run `make`
+
+Make sure you restart your server after updating your code!
 
 # Create API
 
