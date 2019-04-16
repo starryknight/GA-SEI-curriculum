@@ -64,3 +64,11 @@ route | HTTP Verb | Response
 `/shops/n` | PUT | replaces a shop (at index `n`) with the shop from the request body. Responds with index of replaced element.
 `/shops/n` | DELETE | length of list of shops after element at `n` is removed
 
+Use the `coffeeShops` global variable to store your coffeeShops.
+
+# Strech Goals
+
+1. Add some more methods to your API that modify the data inside of the coffee
+   shop (such as adding a menu item or changin the name)
+1. Write an HTTP request handler to provide an interface to that new API method
+   you just wrote.
