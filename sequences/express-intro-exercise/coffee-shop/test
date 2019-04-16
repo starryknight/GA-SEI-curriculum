@@ -1,0 +1,28 @@
+#!/usr/bin/env bash
+
+url="http://localhost:3000/shops"
+
+echo -e "\nNew Shop"
+newShop=$(curl -s -X GET "$url/new")
+echo "$newShop"
+
+echo -e "\nPOST new shop (should return new length)"
+curl -s -X POST $url --header "Content-Type: application/json" --data "$newShop"
+
+echo -e "\nPOST new shop (should return new length)"
+curl -s -X POST $url --header "Content-Type: application/json" --data "$newShop"
+
+echo -e "\nPOST new shop (should return new length)"
+curl -s -X POST $url --header "Content-Type: application/json" --data "$newShop"
+
+echo -e "\nGET all (list)"
+curl -s -X GET $url
+
+echo -e "\nGET at index 0"
+curl -s -X GET "http://localhost:3000/shops/0"
+
+echo -e "\nPUT at index 0"
+curl -s -X PUT "$url/0" --header "Content-Type: application/json" --data "$newShop"
+
+echo -e "\nDELETE at index 0"
+curl -s -X DELETE "$url/0"
