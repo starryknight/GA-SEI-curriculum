@@ -16,10 +16,10 @@ chmod +x ./lessonClone
 
 1. Download the lesson's repo (this is not a git clone)
 
-        * `cd sei-21`
-        * `./lessonClone <lesson-name>`
-        * `cd <lesson-name>`
-        * `git init
+     * `cd sei-21`
+     * `./lessonClone <lesson-name>`
+     * `cd <lesson-name>`
+     * `git init`
 1.  Create a new github repo
 
     * __DO NOT INITIALIZE WITH A README DURING STEP 4__
