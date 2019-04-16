@@ -5,9 +5,13 @@
 * Create an API that defines the behavior of a single concept
 * Create an HTTP server that uses an API to provide behavior to a web client
 
+
 # Setup
 
-run `npm init` to install node package dependencies
+```
+cd coffee-shop
+npm install express
+```
 
 __DO NOT COMMIT `node_modules`__
 
@@ -17,7 +21,7 @@ _After_ writing both your api and web server run `make` to test your web server
 
 # Create API
 
-Write an API that defines a set of functions that provide CRUD behavior for a
+Write an API in `coffeeShop.js` that defines a set of functions that provide CRUD behavior for a
 list of coffee shops.
 
 Each coffee shop should have the following schema: 
@@ -40,9 +44,9 @@ lsit of coffee shops, coffee shop | list of coffee shops
 
 # Create Web Server
 
-Write an HTTP server using express that uses the API you wrote. This HTTP
-server should have the following routes that provide the matching CRUD
-behavior.
+Write an HTTP server in `coffeeShopServer.js` using express that uses the API
+you wrote. This HTTP server should have the following routes that provide the
+matching CRUD behavior.
 
 route | HTTP Verb | Response
 --- | --- | ---
