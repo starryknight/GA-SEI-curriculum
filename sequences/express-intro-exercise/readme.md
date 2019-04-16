@@ -21,15 +21,16 @@ __DO NOT COMMIT `node_modules`__
 
 _After_ writing both your api and web server 
 
-1. run `node ./server.js`
-1. In another terminal (make sure you're in the coffee-shop directory) run `make`
+1. run `node ./coffeeShopServer.js`
+1. In another terminal (make sure you're in the coffee-shop directory) run
+   `make` (if you don't have make then run `./test` instead)
 
 Make sure you restart your server after updating your code!
 
 # Create API
 
-Write an API in `coffeeShop.js` that defines a set of functions that provide CRUD behavior for a
-list of coffee shops.
+Write an API in `coffeeShop.js` that defines a set of functions that provide
+CRUD behavior for a list of coffee shops.
 
 Each coffee shop should have the following schema: 
 
@@ -41,13 +42,12 @@ Each coffee shop should have the following schema:
 
 Your API should provide a set of functions that: 
 
-input | output
+parameters | return
 --- | ---
-list of coffee shops | all coffee shops
 list of coffee shops, index | a single coffee shop
 list of coffee shops, index, coffee shop | list of shops with element at index replaced with given coffee shop
 list of coffee shops, index | list of coffee shops with element at index removed
-lsit of coffee shops, coffee shop | list of coffee shops
+list of coffee shops, coffee shop | list of coffee shops
 
 # Create Web Server
 
