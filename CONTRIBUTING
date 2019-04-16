@@ -1,0 +1,65 @@
+# Contributing to sei-curriculum
+
+# Starting Out
+
+1. Read this guide
+1. Fork this repo (please do not work directly off of this repo)
+1. Set your upstream remote to point to this repo
+
+# Workflow
+
+1. Make sure your local master is up-to-date with upstream/master
+1. Create a branch using the naming conventions discussed below.
+1. Create small, logical commits. This will make reverting new features and
+   merging easier.
+1. Create a pull request when you're done
+1. Fix any merge conflicts that may exist (see section on pull requests)
+
+# Branching
+
+## Naming Conventions
+
+Branches should follow the following pattern:
+
+    <initials>-<feature-name>-<issue-number>
+for example:
+
+    nh-new-awesome-lesson-73
+
+This helps those who are reviewing your changes to know who is making the changes and 
+what issue you're working on.
+
+# Issues
+
+Issues should try and follow the following guidelines:
+
+* Keep 1 issue per logical problem
+* Provide more detail than the title.
+* Attach lables and/or milestones as when they apply
+
+# Pull Requests
+
+When you're done working on a feature submit a pull request and request another
+team member to review your work. (For Instructor Assistants, please have a lead
+instructor review your work as well).
+
+## Pull Request Titles
+
+When making a PR please start the title with the following pattern:
+
+    fixes #<issue-number>
+for example:
+
+    fixes #73
+This way when the PR gets merged Github can automagically close out the issue.
+
+Keep the following in mind when reviewing guidelines:
+
+## Merge Conflicts
+
+It is the feature branch owner's responsibility to fix any merge conflicts that
+may exist. This saves the person reviewing your work time and effort. A
+conflict should rarely occur unless your are not keeping your branch updated by
+periodically merging in upstream changes (via `git fetch upstream/master; git
+merge upstream/master` when checkedout in your feature branch).
+
