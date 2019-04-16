@@ -3,8 +3,8 @@ title: Intro to Express
 type: lesson
 duration: '2:00'
 creator:
-    name: Colin Hart, adapted by Maren Woodruff, Jamie King
-    class: ATL-WDI-11
+    name: Colin Hart, adapted by Maren Woodruff, Jamie King, Noah Harvey
+    class: ATL-SEI-21
 ---
 
 
@@ -15,7 +15,6 @@ creator:
 - Understand Express
 - Use `npm` to manage project dependencies
 - Use `require` to organize code
-- Install Nodemon
 - Understand request/response
 - Understand dynamic segments
 
@@ -51,8 +50,6 @@ With your buddy, discuss the following questions:
 <br />
 
 ## What is npm?
-
-&#x1F535; **YOU DO:** Take 5 minutes to read and watch this [video](https://docs.npmjs.com/getting-started/what-is-npm)
 
 > Summary: **npm** (node package manager), allows us to install dependencies for our Node.js application.
 
@@ -192,33 +189,6 @@ With the script above, we are telling the app that when a user goes to our home 
 
 <br />
 
-## Nodemon
-
-This is great!  But it is kind of a pain to have to restart the server every time we make changes to our files... 
-
-[Nodemon](http://nodemon.io/) is a very helpful npm module that will automatically restart your server when a file is saved.
-
-```bash
-$ npm install --global nodemon
-```
-
-> When using the `--global` flag (-g for short), we are specifying that nodemon will be installed "globally" (not per project) so that we can utilize nodemon across all of our node applications.
-
-<br />
-
-After installing, we start up our application a little bit differently. In the terminal type:
-
-```bash
-$ nodemon server.js
-```
-
-Instead of `node server.js`. 
-
-<br />
-
-Pretty easy, eh?
-
-<br />
 
 ## RECAP - What have we done so far?
 
