@@ -3,8 +3,8 @@ title: Intro to Express
 type: lesson
 duration: '2:00'
 creator:
-    name: Colin Hart, adapted by Maren Woodruff, Jamie King
-    class: ATL-WDI-11
+    name: Colin Hart, adapted by Maren Woodruff, Jamie King, Noah Harvey
+    class: ATL-SEI-21
 ---
 
 
@@ -15,7 +15,6 @@ creator:
 - Understand Express
 - Use `npm` to manage project dependencies
 - Use `require` to organize code
-- Install Nodemon
 - Understand request/response
 - Understand dynamic segments
 
@@ -51,8 +50,6 @@ With your buddy, discuss the following questions:
 <br />
 
 ## What is npm?
-
-&#x1F535; **YOU DO:** Take 5 minutes to read and watch this [video](https://docs.npmjs.com/getting-started/what-is-npm)
 
 > Summary: **npm** (node package manager), allows us to install dependencies for our Node.js application.
 
@@ -153,7 +150,7 @@ app.listen(port, function() {
 
 #### `require()`
 
-`require()` is a JS keyword with which we are going to become very, _very_ familiar. It is a Node.js feature that loads modules. We are "requiring" the Express module and saving all of that code to the variable `express` on line one. 
+`require()` is a JS function with which we are going to become very, _very_ familiar. It is a Node.js feature that loads modules. We are "requiring" the Express module and saving all of that code to the variable `express` on line one. 
 
 
 #### `const app = express()`
@@ -192,45 +189,6 @@ With the script above, we are telling the app that when a user goes to our home 
 
 <br />
 
-## Nodemon
-
-This is great!  But it is kind of a pain to have to restart the server every time we make changes to our files... 
-
-[Nodemon](http://nodemon.io/) is a very helpful npm module that will automatically restart your server when a file is saved.
-
-```bash
-$ npm install --global nodemon
-```
-
-> When using the `--global` flag (-g for short), we are specifying that nodemon will be installed "globally" (not per project) so that we can utilize nodemon across all of our node applications.
-
-<br />
-
-After installing, we start up our application a little bit differently. In the terminal type:
-
-```bash
-$ nodemon server.js
-```
-
-Instead of `node server.js`. 
-
-<br />
-
-Pretty easy, eh?
-
-<br />
-
-## RECAP - What have we done so far?
-
-We just built the foundation for our server and for your first web application!
-
-- We created a file (`server.js`) that contains instructions for the server (Node).
-    - **Node** is our server software that we have configured to run on a port to listen for incoming HTTP requests from the browser.
-- We installed **Express**, which is our lightweight JS framework, and was built to help simplify the job of building an application that can interact with HTTP requests coming from the internet.
-- We defined a single root/home route (`/`). When Node receives a request via `http://localhost:3000`, it will serve "Hello World" as a response. All of our local routes for this app will start with `http://localhost:3000`, as we have set our default port to 3000.
-- We also installed Nodemon which will automatically restart our node server whenever a change is detected, so we don't have to manually stop/restart our server every time a file changes.
-
-<br />
 
 &#x1F535; **YOU DO (15 minutes)**
 
@@ -265,6 +223,39 @@ app.get('/rihanna', (req, res) => {
 ---
 
 # Break Time
+
+# Rememeber the Calc App? Let's apply it to the ATM exercise
+
+What we already have:
+```javascript
+function constructNewAtm() {
+  return {
+    accountBalance: 3000,
+    accountName: "",
+    isValid: true
+  }
+};
+
+function deposit(bankAcc, amnt) {
+  bankAcc.accountBalance += amnt;
+
+  if (bankAcc.accountBalance < 0)
+    bankAcc.accountBalance = 0
+
+  return bankAcc;
+}
+
+function withdraw(atm, amnt) {
+  return deposit(atm, -amnt)
+}
+
+module.exports = {
+  deposit,
+  withdraw,
+  constructNewAtm
+}
+
+```
 
 <br />
 
@@ -497,29 +488,4 @@ app.get('/greeting', function(req, res){
 
 and you send a request to the URL `http://localhost:3000/greeting` which route will Express think you want? In this example, you want to make sure your "wildcard" `/:name` route comes **AFTER** `/greeting` so that Express will pattern match these correctly.
 
-<br />
 
-## Lab Time
-
-1. Make routes for `add, subtract, multiply, divide` that will take two numbers as query parameters `num1` and `num2` and perform the operation specified in the route and send those answers to the browser.
-
-For example, this will send the number `15` to the browser:
-
-```javascript
-/add?num1=5&num2=10
-```
-
-2. Add a fifth route `/math/:operator` that can do all four math operations using control flow.
-
-For example, this will send the number `20` to the browser:
-
-```javascript
-/math/multiply?num1=10&num2=2
-```
-
-```javascript
-if req.params.operator === 'add' 
-    then add num1 and num2 
-else if 
-    etc etc...
-```
