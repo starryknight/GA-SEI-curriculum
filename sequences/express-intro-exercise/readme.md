@@ -44,10 +44,10 @@ Your API should provide a set of functions that:
 
 parameters | return
 --- | ---
+list of coffee shops, coffee shop | index of newly added coffee shop
 list of coffee shops, index | a single coffee shop
 list of coffee shops, index, coffee shop | list of shops with element at index replaced with given coffee shop
 list of coffee shops, index | list of coffee shops with element at index removed
-list of coffee shops, coffee shop | list of coffee shops
 
 # Create Web Server
 
