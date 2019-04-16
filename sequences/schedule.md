@@ -1,6 +1,6 @@
 _Note: see below the table for details on Sequence_
 <!-- __DO NOT MANUALLY EDIT__ Instead use `index.js` -->
-<!-- Generated on: Tue Apr 16 08:48:31 EDT 2019 -->
+<!-- Generated on: Tue Apr 16 16:25:48 EDT 2019 -->
 
 Sequence (Unit.Day.Block.Subblock) | Link
 --- | ---
@@ -71,7 +71,7 @@ Sequence (Unit.Day.Block.Subblock) | Link
 2.17.1 | [api-intro-lesson](api-intro-lesson)
 2.17.2 | [CONFLICT:internet-intro-lesson node-intro-lesson]()
 2.17.3 | [express-intro-lesson](express-intro-lesson)
-2.17.4 | [TBD](TBD)
+2.17.4 | [express-intro-exercise](express-intro-exercise)
 2.18.1 | [TBD](TBD)
 2.18.2 | [CONFLICT:js-dataModeling-exercise study-day]()
 2.18.3 | [outcomes](outcomes)
