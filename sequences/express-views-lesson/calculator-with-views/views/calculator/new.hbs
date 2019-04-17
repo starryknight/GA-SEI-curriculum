@@ -1,0 +1,26 @@
+<form>
+    <input type="text" name="firstNumber" id="">
+    <input type="text" name="secondNumber" id="">
+    <br>
+    <br>
+    <input type="submit" value="add" onclick="add()">
+    <input type="submit" value="subtract" onclick="subtract()">
+    <input type="submit" value="multiply" onclick="multiply()">
+    <input type="submit" value="divide" onclick="divide()">
+
+</form>
+<script>
+    function add() {
+        document.querySelector('form').action = "add"
+    }
+    function subtract() {
+        document.querySelector('form').action = "subtract"
+    }
+    function multiply() {
+        document.querySelector('form').action = "multiply"
+    }
+    function divide() {
+        document.querySelector('form').action = "divide"
+    }
+
+</script>
