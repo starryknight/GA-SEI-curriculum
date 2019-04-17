@@ -27,6 +27,21 @@ _After_ writing both your api and web server
 
 Make sure you restart your server after updating your code!
 
+## Note on ./test
+
+`./test` is a bash script that runs curl commands for you. To verify your HTTP
+request handlers are working: look at the curl command and the output.
+
+Below is a sample output from the `./test` script.
+
+```
++ curl -s -w '\n' -X POST http://localhost:3000/shops --header 'Content-Type: application/json' --data '{"name":"","address":"","menuItems":[],"openingTime":0,"closingTime":0}'
+2
+```
+
+Here `2` is the output of the `POST` request being made. The string after
+`--data ` is the body of the request
+
 # Create API
 
 Write an API in `coffeeShop.js` that defines a set of functions that provide
