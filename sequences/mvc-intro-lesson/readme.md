@@ -1,48 +1,25 @@
 # Express: Routing and Controllers
 
-
-### Single Responsibility
-
-> "Every module or class should have responsibility over a single part of the functionality provided by the software, and that responsibility should be entirely encapsulated by the class." - https://en.wikipedia.org/wiki/Single_responsibility_principle
-
-We navigate the web using what is called the request-response cycle. Every time
-we navigate to a URL, click on a link, or submit a form, we are making a request
-to a server somewhere. That server processes that request and sends a response.
-The response will often be in the form of an HTML document that our browser will
-render, but can also be JSON or XML.
-
-When we build the server-side of a full-stack application, it's our job to
-figure out what requests our server can process and how our server should
-respond to a given request. Today, we're going to learn how handle requests and
-formulate a response using Express.
-
 ## Objectives
 
 By the end of this lesson, developers should be able to:
 
-- Describe routing as it relates to building full-stack web applications
-- Explain REST and RESTful routing
-- Fill in a RESTful route table
-- Define `GET`, `POST`, `PUT` and `DELETE` routes in an Express application
+- Give a reason why we neeed single responsibility
 - Explain how Routing and Controllers pertain to MVC and rMVC
 - Add both routes and controller actions to an Express application
 
-## Introduction
+# Single Responsibility
 
-Express is an extremely *flexible* web framework, meaning we can generally
-structure our application however we want and do (or not do) whatever we want.
-That flexibility is really powerful! It gives us the ability to think through
-the problem that we're trying to solve and solve them in the ways that we think
-is best.
+* Define responsibility: "response" and "able"
+* Can you say you are a responsibly pet owner if you do not able to respond to
+  the pet's needs? No! What causes you to not be able to respond? One is your
+  other responsibilities!
 
-It also means that we have to make a lot of decisions - decisions that people
-have made multiple times already. Does that sound DRY? Not really. So we will
-probably want to follow a pattern for building our application. Building web
-applications can be tricky and complicated and following patterns lets us reuse
-solutions to common problems. The pattern we're going to follow is called MVC,
-which stands for: **Model-View-Controller**.
+https://blog.cleancoder.com/uncle-bob/2014/05/08/SingleReponsibilityPrinciple.html
 
-### Recap of MVC
+* Each piece of your code must be responsible for one thing and one thing only
+
+### MVC
 
 The Model-View-Controller pattern is one of the most popular patterns for
 structuring web applications. Each of the three parts has a specific function:
