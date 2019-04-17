@@ -75,9 +75,9 @@ route | HTTP Verb | Response
 --- | --- | ---
 `/shops/new` | GET | a new coffee shop
 `/shops` | GET | list of all coffee shops
-`/shops/n` | GET | a single coffee shop at index `n`
+`/shops/:n` | GET | a single coffee shop at index `req.params.n`
 `/shops` | POST | index of a new shop added to list of shops (new shop in request should be body of a request; use `req.body`)
-`/shops/n` | PUT | replaces a shop (at index `n`) with the shop from the request body. Responds with index of replaced element.
+`/shops/:n` | PUT | replaces a shop (at index `req.params.n`) with the shop from the request body. Responds with index of replaced element.
 `/shops/n` | DELETE | length of list of shops after element at `n` is removed
 
 Use the `coffeeShops` global variable to store your coffeeShops.
