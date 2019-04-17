@@ -30,7 +30,7 @@ If this prints out `sei-21` then you're done with this step.
 1. Download the lesson's repo
 
   * `cd sei-21`
-  * `./lessonClone <lesson-name>`
+  * `./lessonClone <lesson-name>` for example (`./lessonClone git-intro-lesson`)
   * `cd <lesson-name>`
   * `git init`
   * `git remote add origin <url-of-new-repo>`
