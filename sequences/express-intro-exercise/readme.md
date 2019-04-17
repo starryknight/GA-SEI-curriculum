@@ -75,6 +75,8 @@ Write an HTTP server in `coffeeShopServer.js` using express that uses the API
 you wrote. This HTTP server should have the following routes that provide the
 matching CRUD behavior.
 
+__NOTE__: You'll need to create global variable to store the list of coffee shops in your `coffeeShopServer.js` file.
+
 route | HTTP Verb | Response
 --- | --- | ---
 `/shops/new` | GET | a new coffee shop
