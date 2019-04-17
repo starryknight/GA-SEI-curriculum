@@ -42,6 +42,10 @@ Below is a sample output from the `./test` script.
 Here `2` is the output of the `POST` request being made. The string after
 `--data ` is the body of the request
 
+## Populating your data
+
+`./test` makes a call to `/shops/new` and uses this and a POST request to `/shops` to populate your list of shops. _You do not need to populate your list of shops in your server file_.
+
 # Create API
 
 Write an API in `coffeeShop.js` that defines a set of functions that provide
