@@ -22,8 +22,8 @@ __DO NOT COMMIT `node_modules`__
 _After_ writing both your api and web server 
 
 1. run `node ./coffeeShopServer.js`
-1. In another terminal (make sure you're in the coffee-shop directory) run
-   `make` (if you don't have make then run `./test` instead)
+1. run `./test` (if you get a permission denied try `chmod +x ./test` and then
+   run `./test`). If you're wondering, `chmod` makes `test` executable.
 
 Make sure you restart your server after updating your code!
 
