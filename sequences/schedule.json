@@ -222,7 +222,14 @@
         ]
     },
     {
-        "name": "express-routing-lesson",
+        "name": "rest-intro-lesson",
+        "sequence": "2.19.2",
+        "depends": [
+            "express-intro-lesson"
+        ]
+    },
+    {
+        "name": "mvc-intro-lesson",
         "sequence": "2.19.2",
         "depends": [
             "express-intro-lesson"
