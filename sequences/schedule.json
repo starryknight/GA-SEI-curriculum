@@ -222,6 +222,13 @@
         ]
     },
     {
+        "name": "rest-intro-lesson",
+        "sequence": "2.19.2",
+        "depends": [
+            "express-intro-lesson"
+        ]
+    },
+    {
         "name": "js-promises-lesson",
         "sequence": "2.19.1",
         "depends": [
@@ -229,7 +236,7 @@
         ]
     },
     {
-        "name": "express-routing-lesson",
+        "name": "mvc-intro-lesson",
         "sequence": "2.19.2",
         "depends": [
             "express-intro-lesson"
