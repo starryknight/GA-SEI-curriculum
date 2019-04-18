@@ -5,7 +5,14 @@
 - Define what "state" is
 - Fill in a RESTful route table
 
-### Intro to REST
+# Background
+
+- `/first-post`
+- `/post/second`
+- `/the-third-post-I-ever-wrote`
+
+
+# Intro to REST
 
 In addition to requesting files on the file system - routes used to take what
 ever form the developer(s) pleased. You'd end up with some wacky URLs/paths:
@@ -73,14 +80,6 @@ by one of these.
 | `/resource/1` | `/:id` | `DELETE` | #delete | Delete a `resource`  |
 our Express app):
 
-```js
-const express = require('express')
-const app = express()
-const router = require('./router.js')
-
-app.use('/', router)
-```
-
 ## RESTful routing in Express
 
 Notice in the examples above that we're passing in a callback function to the
@@ -112,34 +111,3 @@ router.delete('/:id', todoController.delete)
 
 module.exports = router
 ```
-
-### What's Our Resource
-
-We want to think through our resource table and define the routes and actions
-that we'll need for each of our three resources:
-
-| URL | Path | Method  | Action | Description |
-| --- | --- | --- | --- | --- |
-| `/resource` | `/` | `GET` | #index | List all items of `resource` |
-| `/resource/new` | `/new` | `GET` | #new | Render form to create a new instance of `resource` |
-| `/resource` | `/` | `POST` | #create | Create new `resource` in the database |
-| `/resource/1` | `/:id` | `GET` | #show | Show a single `resource` |
-| `/resource/1/edit` | `/:id/edit` | `GET` | #edit | Render form to update a single `resource` |
-| `/resource/1` | `/:id` | `PATCH`/`PUT` | #update | Update `resource` in the database |
-| `/resource/1` | `/:id` | `DELETE` | #delete | Delete a `resource`  |
-
-Note: We may not need all of these for every one of our Controllers.
-
-### We Do: Define the Application Routes and Controller
-
-### Resource Table
-
-| URL | Path | Method  | Action | Description |
-| --- | --- | --- | --- | --- |
-| `/resource` | `/` | `GET` | #index | List all items of `resource` |
-| `/resource/new` | `/new` | `GET` | #new | Render form to create a new instance of `resource` |
-| `/resource` | `/` | `POST` | #create | Create new `resource` in the database |
-| `/resource/1` | `/:id` | `GET` | #show | Show a single `resource` |
-| `/resource/1/edit` | `/:id/edit` | `GET` | #edit | Render form to update a single `resource` |
-| `/resource/1` | `/:id` | `PATCH`/`PUT` | #update | Update `resource` in the database |
-| `/resource/1` | `/:id` | `DELETE` | #delete | Delete a `resource`  |
