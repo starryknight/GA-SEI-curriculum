@@ -24,14 +24,18 @@ https://blog.cleancoder.com/uncle-bob/2014/05/08/SingleReponsibilityPrinciple.ht
 
 ## Model 
 
-* The API we're working with
+* The API we've been working with! (pull up code)
 * It defines what data we're working with and how it's supposed to interact
   with the rest of the world
+
 
 ## View 
 
 * Manages how the data is displayed to the user
 
+For now we haven't been sending anything fancy, just JSON strings
+
 ## Controller
 
-* Manages the interaction between the view and the Model:w
+* Manages the interaction between the view and the Model (show code of HTTP
+  handler)
