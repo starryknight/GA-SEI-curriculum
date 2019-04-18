@@ -7,6 +7,7 @@
     <input type="submit" value="subtract" onclick="subtract()">
     <input type="submit" value="multiply" onclick="multiply()">
     <input type="submit" value="divide" onclick="divide()">
+    <input type="submit" value="list numbers" onclick="listNumbers()">
 
 </form>
 <script>
@@ -22,5 +23,7 @@
     function divide() {
         document.querySelector('form').action = "divide"
     }
-
+    function listNumbers() {
+        document.querySelector('form').action = "list"
+    }
 </script>

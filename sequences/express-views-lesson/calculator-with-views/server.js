@@ -9,6 +9,7 @@ app.get('/add',calculator.add);
 app.get('/subtract',calculator.subtract);
 app.get('/multiply',calculator.multiply);
 app.get('/divide',calculator.divide);
+app.get('/list',calculator.list);
 
 
 

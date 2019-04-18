@@ -33,6 +33,12 @@ const calculator = {
     res.render("../views/calculator/divide.hbs", {
       answer
     });
+  },
+  list: function (req, res) {
+    let answers =[]
+    answers.push({index:0,number:parseInt(req.query.firstNumber)})
+    answers.push({index:1,number:parseInt(req.query.secondNumber)})
+    res.render("../views/calculator/list.hbs",{answers});
   }
 };
 module.exports = calculator;
