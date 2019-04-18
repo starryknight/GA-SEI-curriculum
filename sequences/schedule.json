@@ -222,6 +222,13 @@
         ]
     },
     {
+        "name": "js-promises-lesson",
+        "sequence": "2.19.1",
+        "depends": [
+            ""
+        ]
+    },
+    {
         "name": "express-routing-lesson",
         "sequence": "2.19.2",
         "depends": [
