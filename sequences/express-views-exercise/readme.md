@@ -2,21 +2,17 @@
 
 # Homework : Pizza Express
 
-In this assignment, we will create a Pizza Express app, serving up pizzas in a jiffy! Create the pizza of your dreams.
+In this assignment, we continue working on your coffee shop app.
 
 ## Setup
 
-Make sure that you are on the `master` branch of your class repo.
-Then run `git pull upstream master` to pull the latest materials from the
-instructors' repository. You shouldn't hit a merge conflict here, but if you do,
-flag down an instructor right away.
-
 ## Exercise Objectives
 
-- gain practice installing [Express](http://expressjs.com/) and [Handlebars](http://Handlebarsjs.com/)
-- gain practice setting up an `express` application from scratch
-- gain meaningful experience with routing and views
+gain practice:
 
+* writing RESTful routes
+* Writing an application using MVC
+* using `handlebars` to create views
 
 ## Directions
 
