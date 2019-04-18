@@ -24,19 +24,19 @@ for getting that resource.
 
 | URL | Path | Method  | Action | Description |
 | --- | --- | --- | --- | --- |
-| `/resources` | `GET` | #index | List all items of `resource` |
-| `/resources/new` | `GET` | #new | Render form to create a new instance of `resource` |
-| `/resources` | `POST` | #create | Create new `resource` in the database |
-| `/resources/1` | `GET` | #show | Show a single `resource` |
-| `/resources/1/edit` | `GET` | #edit | Render form to update a single `resource` |
+| `/resources` | `GET` | index | List all items of `resource` |
+| `/resources` | `POST` | create | Create new `resource` in the database |
+| `/resources/1` | `GET` | show | Show a single `resource` |
 | `/resources/1` | `PATCH`/`PUT` | #update | Update `resource` in the database |
-| `/resources/1` | `DELETE` | #delete | Delete a `resource`  |
+| `/resources/1` | `DELETE` | delete | Delete a `resource`  |
+| `/resources/new` | `GET` | new | Render form to create a new instance of `resource` |
+| `/resources/1/edit` | `GET` | edit | Render form to update a single `resource` |
 
 ```js
 // routers/todo.js
 const express = require('express')
 const router = express.Router()
-const todoController = require('../controllers/todo.js')
+const Api = require('someApiFile.js')
 
 router.get('/resources',          Api.getAll)
 router.post('/resources/',        Api.addOne)
