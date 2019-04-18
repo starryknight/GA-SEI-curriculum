@@ -1,21 +1,32 @@
 const express = require('express')
 const app = express()
-const methodOverride = require('method-override')
-const logger = require('morgan')
-const bankController = require('./controllers/bankController.js')
+const bankApi = require('./api/bankApi.js')
 
 // Register middleware
 app.use(express.json())
-app.use(express.urlencoded({extended: true}))
-app.use(methodOverride('_method'))
 
-app.use(logger('dev'))
+let accounts = [];
 
-app.use(express.static(__dirname + '/public'))
+app.get('/accounts', (req, res) => {
+  res.send(bankApi.getAccounts(accounts))
+})
 
-app.set('view engine', 'hbs')
+app.get('/accounts/:accountId', (req, res) => {
+  res.send(bankApi.getAccountAtId(accounts, req.params.accountId));
+})
 
-app.use('/', bankController)
+app.post('/accounts', (req, res) => {
+  res.send(bankApi.addNewAccount(accounts, req.body))
+})
+
+app.put('/accounts/:accountId', (req, res) => {
+  res.send(bankApi.replaceAccountAt(accounts, req.params.accountId, req.body));
+})
+
+app.delete('/accounts/:accountId', (req, res) => {
+  res.send(bankApi.deleteAccountAt(accounts, req.params.accountId));
+})
+
 
 const PORT = process.env.PORT || 3000 
 

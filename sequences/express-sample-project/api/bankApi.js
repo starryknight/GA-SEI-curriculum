@@ -1,27 +1,33 @@
-const mongoose = require('../mongo/connection.js.js')
-const Schema = mongoose.Schema
+function getAccountAtId(accounts, id) {
+  return accountId[id];
+}
 
-const accountSchema = new Schema({
-    accountName: String,
-    isActive: {
-        type: Boolean,
-        default: true
-    },
-    currentBalance: {
-        type: Number,
-        default: 0
-    },
-    accountType: {
-        type: String,
-        enum: ['Checking', 'Savings']
-    },
-    authorId: mongoose.Types.ObjectId,
-    overdraftId: mongoose.Types.ObjectId
-})
+function getAccounts(accounts) {
+  return accounts;
+}
 
-const userSchema = new Schema({
-    name: String,
-})
+function addNewAccount(accounts, newAccount) {
+  accounts.push(newAccount);
 
-const Account = mongoose.model('Account', accountSchema)
-const User = mongoose.model('User', userSchema)
+  return accounts.length-1;
+}
+
+function replaceAccountAt(accounts, id, newAccount) {
+  accounts[id] = newAccount;
+
+  return accounts;
+}
+
+function deleteAccountAt(accounts, id) {
+  accounts.splice(id, 1);
+
+  return accounts;
+}
+
+module.exports = {
+  getAccountAtId,
+  getAccounts,
+  addNewAccount,
+  replaceAccountAt,
+  deleteAccountAt
+};
