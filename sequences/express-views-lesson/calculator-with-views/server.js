@@ -2,7 +2,7 @@ const express = require('express');
 const app = express();
 const hbs = require('hbs');
 const calculator = require('./calculator/index');
-app.set("view-engine","hbs");
+app.set("view engine","hbs");
 
 app.get('/',calculator.new);
 app.get('/add',calculator.add);
