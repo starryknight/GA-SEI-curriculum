@@ -5,29 +5,26 @@ const bankApi = require('./api/bankApi.js')
 // Register middleware
 app.use(express.json())
 
+//add middleware for handlebars here
+
+//global variable to store list of accounts
 let accounts = [];
 
-app.get('/accounts', (req, res) => {
-  res.send(bankApi.getAccounts(accounts))
-})
+//Write your HTTP request handlers using RESTful routes here
+//call methods in the bankApi as needed. Feel free to modify the API
+//as you see fit to accomplish the goals of the app
 
-app.get('/accounts/:accountId', (req, res) => {
-  res.send(bankApi.getAccountAtId(accounts, req.params.accountId));
-})
+//accounts GET (all)
 
-app.post('/accounts', (req, res) => {
-  res.send(bankApi.addNewAccount(accounts, req.body))
-})
+//accounts GET (single)
 
-app.put('/accounts/:accountId', (req, res) => {
-  res.send(bankApi.replaceAccountAt(accounts, req.params.accountId, req.body));
-})
+//accounts POST
 
-app.delete('/accounts/:accountId', (req, res) => {
-  res.send(bankApi.deleteAccountAt(accounts, req.params.accountId));
-})
+//accounts PUT (single)
 
+//accounts DELTE
 
+//keep these lines at the bottom of the file
 const PORT = process.env.PORT || 3000 
 
 app.listen(PORT, () => {
