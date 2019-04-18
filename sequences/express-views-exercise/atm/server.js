@@ -9,7 +9,12 @@ app.use(express.json())
 app.set('view engine', 'hbs')
 
 //global variable to store list of accounts
-let accounts = [];
+let accounts = [
+  { name: "checking",
+    balance: 100,
+    isActive: true
+  }
+];
 
 //Write your HTTP request handlers using RESTful routes here
 //call methods in the bankApi as needed. Feel free to modify the API
@@ -22,7 +27,14 @@ app.get("", (req, res) => { });
 
 //accounts GET (single)
 //Sends. back a single page with the details of a single acount displayed
-app.get("", (req, res) => {
+app.get("/accounts/:id", (req, res) => {
+
+  //get the account from the API (Model)
+  let account = bankApi.getAccountAtId(accounts, req.params.id);
+  
+  //create a View on the single account and send it to the user
+  //note: { account } the same as writing { account: account }
+  res.render("accounts/account", { account } ); 
 });
 
 //accounts POST

@@ -1,5 +1,5 @@
 function getAccountAtId(accounts, id) {
-  return accountId[id];
+  return accounts[id];
 }
 
 function getAccounts(accounts) {

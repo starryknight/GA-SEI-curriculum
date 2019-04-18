@@ -15,12 +15,12 @@ create a single page that manages a list of coffee shops.
 
 Your web page will need to:
 
-* provide a homepage 
+* provide a web page that lists all bank accounts 
 
 # Setup
 
 ```
-cd coffee-shop
+cd atm
 npm install
 ```
 
@@ -30,7 +30,7 @@ Write RESTFul routes in `server.js` that provides an HTTP controller to the
 bankAPI (the Model). See the comments in the file for which routes to create.
 
 __NOTE__ feel free to modify the Model API found in the `api/` directory if you
-need to change the functionality.
+need to change the functionality the API provides.
 
 ### Write Views
 
