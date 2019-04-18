@@ -6,6 +6,7 @@ const bankApi = require('./api/bankApi.js')
 app.use(express.json())
 
 //add middleware for handlebars here
+app.set('view engine', 'hbs')
 
 //global variable to store list of accounts
 let accounts = [];
@@ -14,12 +15,13 @@ let accounts = [];
 //call methods in the bankApi as needed. Feel free to modify the API
 //as you see fit to accomplish the goals of the app
 
-//accounts GET (all) send back a page with all of the accounts listed (only
-//show their names and balances)
+//accounts GET (all). 
+//Sends back a page with all of the accounts listed (only show their names and
+//balances)
 app.get("", (req, res) => { });
 
 //accounts GET (single)
-//send back a single page with the details of a single acount displayed
+//Sends. back a single page with the details of a single acount displayed
 app.get("", (req, res) => {
 });
 
