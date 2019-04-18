@@ -4,10 +4,9 @@
 
 ## Learning Objectives
 
-- Introduce databases, specifically non-relational databases
-- Setup local MongoDB server
-- Define what a document is in the context of MongoDB
-- CRUD documents using Mongo CLI
+- Explain why we use a DB 
+- Define what a Document-based database is
+- Draw and label a diagram showing the 3 parts of a MongoDB
 
 ## Framing
 
