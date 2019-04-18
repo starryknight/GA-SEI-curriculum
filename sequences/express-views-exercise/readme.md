@@ -10,13 +10,18 @@ gain practice:
 * Writing an application using MVC
 * using `handlebars` to create views
 
-In this assignment, we continue working on your coffee shop app. You will
-create a single page that manages a list of coffee shops.
+In this assignment, we continue working on your atm app. You will
+create a single page that manages a list of bank accounts.
 
 Your web page will need to:
 
-* provide a web page view that lists all bank accounts 
-* provide a web page view that shows details for a single account
+* provide a web page view that lists all bank accounts. This web page should:
+  * include a link for each item to go to a page for a single account.
+  * provide either a form for creating a new account or a link to a page that has such a form.
+  * include a link for each item to delete that account. (stretch goal)
+* provide a web page view for a single account. On this page please include:
+  * an HTML rendering of all the details for the account
+  * a form for updating the details for that account (stretch goal)
 
 # Setup
 
