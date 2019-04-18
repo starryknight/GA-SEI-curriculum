@@ -15,7 +15,8 @@ create a single page that manages a list of coffee shops.
 
 Your web page will need to:
 
-* provide a web page that lists all bank accounts 
+* provide a web page view that lists all bank accounts 
+* provide a web page view that shows details for a single account
 
 # Setup
 
@@ -32,9 +33,9 @@ bankAPI (the Model). See the comments in the file for which routes to create.
 __NOTE__ feel free to modify the Model API found in the `api/` directory if you
 need to change the functionality the API provides.
 
-### Write Views
+## Write Views
 
 Using handlebars write the views necessary to provide a web interface for
 interacting with the list of coffee shops.
 
-Put each view in the `./coffee-shops/views/` directory.
+Put each view in the `./atm/views/` directory.
