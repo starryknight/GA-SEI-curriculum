@@ -8,19 +8,17 @@
 - Setup local MongoDB server
 - Define what a document is in the context of MongoDB
 - CRUD documents using Mongo CLI
-<!--
-- Build a simple node CLI to query MongoDB
--->
 
 ## Framing
 
 Why use a database at all?
 
-What's a major shortcoming of our applications right now, in terms of user experience?
+What's a major shortcoming of our applications right now, in terms of user
+experience?
 
-When we quit or reload the page, any data / progress is lost! Right now, we can only store
-information in memory, which is wiped when we quit out of a program. We
-need a way to fix this.
+When we quit or reload the page, any data / progress is lost! Right now, we can
+only store information in memory, which is wiped when we quit out of a program.
+We need a way to fix this.
 
 Enter databases...
 
@@ -28,31 +26,26 @@ Enter databases...
 
 ## Databases (15 minutes / 0:15)
 
-A database is a tool for storing data. There are many ways to store data on a computer (e.g., writing to a text file, a binary file). Databases, however, offer a number of advantages...
+A database is a tool for storing data. There are many ways to store data on a
+computer (e.g., writing to a text file, a binary file). Databases, however,
+offer a number of advantages...
 
 **Permanence**: Once we write data to our database, we can be pretty sure it
 won't be lost (unless the server catches on fire).
 
-**Speed**: Databases are generally optimized to be fast at retrieving and updating information. Literally, DBs can be 100,000x faster than reading from a file. This is especially important at scale.
+**Speed**: Databases are generally optimized to be fast at retrieving and
+updating information. Literally, DBs can be 100,000x faster than reading from a
+file. This is especially important at scale.
 
-**Consistency**: Databases can enforce rules regarding consistency of data, especially when handling simultaneous requests to update information.
+**Consistency**: Databases can enforce rules regarding consistency of data,
+especially when handling simultaneous requests to update information.
 
-**Scalability**: Databases can handle lots of requests per second, and many DBs have ways to scale to massive loads by replicating / syncing information across multiple DBs.
+**Scalability**: Databases can handle lots of requests per second, and many DBs
+have ways to scale to massive loads by replicating / syncing information across
+multiple DBs.
 
-**Querying**: DBs make it easy to search, sort, filter and combine related data using a **Query Language**.
-
-<!-- Removed for now because we aren't introducing SQL until later. And there's no point in comparing something that doesn't exist yet.
-
-One type of database is the **relational** database, in which data is organized by columns and rows, much like an Excel spreadsheet. If you've ever heard of SQL, it's likely the most popular relational database ever.
-
-Today, we are going to explore non-relational databases.
-
-MongoDB is an open-source **document database** that provides:
--->
-
-- High Performance
-- High Availability
-- Automatic Scaling
+**Querying**: DBs make it easy to search, sort, filter and combine related data
+using a **Query Language**.
 
 **When dealing with less complex associations, non-relational databases can be more
 effective**. Mongo provides a more flexible, scalable solution for storing data.
@@ -61,19 +54,13 @@ effective**. Mongo provides a more flexible, scalable solution for storing data.
 
 While this is a bit technical, it's worth clarifying some terminology...
 
-<!--
-* **Database**: The actual set of data being stored. We may create multiple databases on our computer, often one for each application.
-* **Database Management System**: The software that lets a user interact (query) the data in a database. Examples are MongoDB, PostgreSQL, MySQL, etc.
-* **Database CLI**: A tool offered by most DBMSs that allows us to query the database from the command line. For MongoDB, we'll use `mongo`. We'll be mostly working in the CLI today.
--->
-
 Name                        | Description
 ----------------------------|-------------------------------------------------
 Database                    |  The actual data being stored. (think literal files)
 Database Management System  | The software tools to interact with your data (think Finder)
 Database CLI                |  A command line tool to interact with the data (think the terminal)
 
-## Document Database (10 min / 0:25)
+## Document Database
 
 ![Layout of mongodb](./images/mongoLayout.jpg)
 
@@ -92,25 +79,23 @@ A basic example of a `Person` document:
 
 What do you see in the data above?
 
-<!--
-**A record in MongoDB is a document.**
--->
-
 ### Structure of Document
 
 - a data structure composed of field (key) and value pairs
-- similar to JSON objects ([JavaScript Object Notation](https://www.mongodb.com/json-and-bson) is a JS object converted into text to be parsed easily by machines)
+- similar to JSON objects ([JavaScript Object
+  Notation](https://www.mongodb.com/json-and-bson) is a JS object converted
+  into text to be parsed easily by machines)
 - stored as BSON [(binary-encoded JSON)](http://bsonspec.org/ )
 
 #### [Primary key](http://docs.mongodb.org/manual/reference/glossary/#term-primary-key) (5 min / 1:25)
 
-- A record’s unique immutable identifier generated upon creation of a new instance.
-- In relational databases, the primary key is usually an *id* field, the value of which is typically an *Integer*.
-- In MongoDB, the *_id* field is usually a *[BSON](http://docs.mongodb.org/manual/reference/glossary/#term-bson) [ObjectId](http://docs.mongodb.org/manual/reference/glossary/#term-objectid)*.
-
-<!--
-- a document is analogous to rows in a table
--->
+- A record’s unique immutable identifier generated upon creation of a new
+  instance.
+- In relational databases, the primary key is usually an *id* field, the value
+  of which is typically an *Integer*.
+- In MongoDB, the *_id* field is usually a
+  *[BSON](http://docs.mongodb.org/manual/reference/glossary/#term-bson)
+  [ObjectId](http://docs.mongodb.org/manual/reference/glossary/#term-objectid)*.
 
 [Documentation Here] (https://docs.mongodb.com/manual/introduction/)
 
@@ -148,21 +133,19 @@ What do you see in the data above?
 
 MongoDB stores documents in collections.
 
-<!--
-- collections are analogous to tables in relational databases
--->
-
 - used to group documents that have a similiar purpose 
 - does **NOT** require its documents to have the same schema (format, shape)
 - can have multiple collections in a database
 
-Great, now that we have a high level understanding of what Mongo is and what purpose it serves, let's look at how to use it!
+Great, now that we have a high level understanding of what Mongo is and what
+purpose it serves, let's look at how to use it!
 
 ## Installation / Starting (10 min / 0:40)
 
 ### Don't Do This Unless mongoDB is not installed
 
-Check by running `mongo --version`. If you already have it installed you should see output like this...
+Check by running `mongo --version`. If you already have it installed you should
+see output like this...
 
 ```sh
 $ mongo --version
@@ -215,7 +198,9 @@ If you already have mongo installed, skip to the **Mongo Shell** section.
 
 ### Start Mongo:
 
-Brew includes a really great tool for databases and applications you need running in the background consistently.  In order to start our Mongo server, we will run the following command.
+Brew includes a really great tool for databases and applications you need
+running in the background consistently.  In order to start our Mongo server, we
+will run the following command.
 
 ```
 brew services start mongodb
@@ -280,14 +265,17 @@ Also:
 
 ## CLI: Creating a Database
 
-In the Mongo REPL, let's go ahead and create our first database, one which we will be using to store information about restaurants.
+In the Mongo REPL, let's go ahead and create our first database, one which we
+will be using to store information about restaurants.
 
-In order to create/connect to a new database, we have to tell mongo to `use` a specific database that we want to work with:
+In order to create/connect to a new database, we have to tell mongo to `use` a
+specific database that we want to work with:
 
 ```
 > use restaurant_db
 ```
-> **Note**: `use` will create the database it received as an argument if not already initialized and connect to it
+> **Note**: `use` will create the database it received as an argument if not
+> already initialized and connect to it
 
 Verify:
 
@@ -295,7 +283,9 @@ Verify:
 > db
 restaurant_db
 ```
-> **Note**: the `db` variable is provided by mongo and will point to the currently connected database
+> **Note**: the `db` variable is provided by mongo and will point to the
+>  currently connected database
+
 
 Common Gotcha - what happens when we run:
 
@@ -333,7 +323,8 @@ our database that our db will show up in `show dbs`.
 `.restaurants` is then referring to a collection in our `restaurant_db`. We
 use the `.insert()` to add the document inside the parentheses.
 
-> `restaurants` doesn't exist at first, but that's okay. It gets created automatically the first time we add a document to it.
+> `restaurants` doesn't exist at first, but that's okay. It gets created
+> automatically the first time we add a document to it.
 
 ### Verify the insert
 ```bash
@@ -342,7 +333,9 @@ use the `.insert()` to add the document inside the parentheses.
 restaurants
 ```
 
-`restaurants` was saved as a collection. A collection is really just a group of documents. If you want to explore all the things you can do with a collection, type `db.collection_name.help()`, or in this case: `db.restaurants.help()`
+`restaurants` was saved as a collection. A collection is really just a group of
+documents. If you want to explore all the things you can do with a collection,
+type `db.collection_name.help()`, or in this case: `db.restaurants.help()`
 
 Now type:
 
@@ -372,7 +365,9 @@ Returns documents with the following fields:
 ```
 
 New Record:
-- If the document passed to the `insert()` method does not contain the `_id` field the mongo shell automatically adds the field to the document and sets the field’s value to a generated `ObjectId`.
+- If the document passed to the `insert()` method does not contain the `_id`
+  field the mongo shell automatically adds the field to the document and sets
+  the field’s value to a generated `ObjectId`.
 
 New collection:
 - If you attempt to add documents to a collection that does not exist,
@@ -393,7 +388,8 @@ Drops the **current** database. Go ahead and drop your database now.
 
 ### Exercise (5 minutes): Add a few more restaurants.
 
-Using the Mongo Shell CLI, add at least 4 new restaurant documents to your `restaurants` collection.
+Using the Mongo Shell CLI, add at least 4 new restaurant documents to your
+`restaurants` collection.
 
 **ProTip**: I recommend you construct your statements in your editor and copy /
 paste. It will help you now & later.
@@ -476,11 +472,14 @@ In order to find all restaurants:
 > db.restaurants.find()
 ```
 
-> **Note**: we can format our output to be a little nicer on the eyes by chaining the `.pretty()` method to end of our query like so: `db.restaurants.find().pretty()`
+> **Note**: we can format our output to be a little nicer on the eyes by
+> chaining the `.pretty()` method to end of our query like so:
+> `db.restaurants.find().pretty()`
 
 ### Find by Conditions <!--(like SQL's `where`)-->
 
-We can add conditions to our query to target documents based on matching key-value pairs:
+We can add conditions to our query to target documents based on matching
+key-value pairs:
 
 ```js
 > db.restaurants.find({name: "Cookies Corner"});
@@ -501,7 +500,8 @@ http://docs.mongodb.org/manual/core/write-operations-introduction/
 )
 ```
 
-> **Note**: the first key value pair is the condition on which to find the document you'd like to update, the second
+> **Note**: the first key value pair is the condition on which to find the
+> document you'd like to update, the second
 is what values you'd like to set, and third is any additional options
 
 ### You do (15 min):
@@ -511,7 +511,8 @@ is what values you'd like to set, and third is any additional options
 Take time to think about and execute the appropriate commands so that you:
 
 - Update all restaurants to have a new key-value pair `{state: 'DC'}`
-- Add a property of `rating` to at least 2 documents and give it a numerical value between 1-5
+- Add a property of `rating` to at least 2 documents and give it a numerical
+  value between 1-5
 - Change the street `address` of a specific restaurant
 
 **Bonus**
@@ -528,7 +529,8 @@ Take time to think about and execute the appropriate commands so that you:
 )
 ```
 
-> **Note**: In order to update multiple documents at a time, make sure to pass the `multi` option as true, like so:
+> **Note**: In order to update multiple documents at a time, make sure to pass
+> the `multi` option as true, like so:
 
 ```js
 db.restaurants.update(
@@ -572,7 +574,9 @@ Verify:
 ### High Performance
 
 - Embedded documents and arrays reduce need for expensive joins (reduces I/O).
-- Indexes support faster queries and can include keys from embedded documents and arrays. (More info on MongoDB indexing [here](https://dev.to/akazia_it/introduction-to-mongodb-indexing).)
+- Indexes support faster queries and can include keys from embedded documents
+  and arrays. (More info on MongoDB indexing
+  [here](https://dev.to/akazia_it/introduction-to-mongodb-indexing).)
 
 ### High Availability
 
@@ -593,12 +597,6 @@ throughput deployments.
 
 > Interested in learning more about [No SQL?](https://www.mongodb.com/nosql-explained)
 
----
-<!-- ## Homework
-
-[Build a CLI Mongo App w/ Node](https://git.generalassemb.ly/dc-wdi-node-express/mongo-cli)
- -->
- 
 ## Helpful References
 
 - [Mongo to SQL Mapping Chart](http://docs.mongodb.org/manual/reference/sql-comparison/)
