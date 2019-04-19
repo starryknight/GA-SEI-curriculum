@@ -2,13 +2,13 @@
 
 ![logo](./images/mongodb-logo.jpg)
 
-## Learning Objectives
+# Learning Objectives
 
 - Explain why we use a DB 
 - Define what a Document-based database is
 - Draw and label a diagram showing the 3 parts of a MongoDB
 
-## Framing
+# Framing
 
 Why use a database at all?
 
@@ -23,7 +23,7 @@ Enter databases...
 
 ![Client, Server, DB Diagram](./images/clientServerDB.png)
 
-## Databases 
+# Databases 
 
 A database is a tool for storing data. There are many ways to store data on a
 computer (e.g., writing to a text file, a binary file). Databases, however,
@@ -49,21 +49,21 @@ using a **Query Language**.
 **When dealing with less complex associations, non-relational databases can be more
 effective**. Mongo provides a more flexible, scalable solution for storing data.
 
-### Terminology
+# Terminology
 
 While this is a bit technical, it's worth clarifying some terminology...
 
 Name                        | Description
 ----------------------------|-------------------------------------------------
-Database                    |  The actual data being stored. (think literal files)
-Database Management System  | The software tools to interact with your data (think Finder)
-Database CLI                |  A command line tool to interact with the data (think the terminal)
+Database                    | The actual data being stored.
+Database Management System  | The software tools to interact with your data 
+Database CLI                | A command line tool to interact with the data
 
-## Document Database
+## 3 Parts of Documentbased DB
 
 ![Layout of mongodb](./images/mongoLayout.jpg)
 
-### A Document
+# Documents
 
 A basic example of a `Person` document:
 
@@ -76,29 +76,26 @@ A basic example of a `Person` document:
 }
 ```
 
-What do you see in the data above?
-
-### Structure of Document
-
-- a data structure composed of field (key) and value pairs
+- a data structure composed of field (key) and value pairs (almost identical to a JS object)
 - similar to JSON objects ([JavaScript Object
   Notation](https://www.mongodb.com/json-and-bson) is a JS object converted
   into text to be parsed easily by machines)
-- stored as BSON [(binary-encoded JSON)](http://bsonspec.org/ )
+- stored as BSON [(binary-encoded JSON)](http://bsonspec.org/)
+- must have a field that is a primary key
 
-#### [Primary key](http://docs.mongodb.org/manual/reference/glossary/#term-primary-key) 
+## Primary Keys
+
+[Primary Key Documentation](http://docs.mongodb.org/manual/reference/glossary/#term-primary-key) 
 
 - A record's unique immutable identifier generated upon creation of a new
   instance.
-- In relational databases, the primary key is usually an *id* field, the value
-  of which is typically an *Integer*.
 - In MongoDB, the *_id* field is usually a
   *[BSON](http://docs.mongodb.org/manual/reference/glossary/#term-bson)
   [ObjectId](http://docs.mongodb.org/manual/reference/glossary/#term-objectid)*.
 
 [Documentation Here] (https://docs.mongodb.com/manual/introduction/)
 
-### More complicated example of a `Restaurant` document:
+## Example of Document
 
 ```json
 {
@@ -130,24 +127,16 @@ What do you see in the data above?
 
 ## Collections 
 
-MongoDB stores documents in collections.
+A collection is simply a  group of docments. A collection has the following properties:
 
 - used to group documents that have a similiar purpose 
 - does **NOT** require its documents to have the same schema (format, shape)
-- can have multiple collections in a database
 
-Great, now that we have a high level understanding of what Mongo is and what
-purpose it serves, let's look at how to use it!
+Look up the documentation on Collection in the official MongoDB docs.
 
-## CLI: Create a Document 
+## Database
 
-![Mongo Cheatsheet](./images/cheatsheet.jpg)
+A database is simply a group of collections. A MongoDB server can host multiple databases
+where one would typically have database per project or task. 
 
-### Insert
-
-## Helpful References
-
-- [Mongo to SQL Mapping Chart](http://docs.mongodb.org/manual/reference/sql-comparison/)
-- [CRUD Intro](http://docs.mongodb.org/manual/core/crud-introduction/)
-- [CRUD Commands](http://docs.mongodb.org/manual/reference/crud/)
-- [bios Collection](http://docs.mongodb.org/manual/reference/bios-example-collection/)
+For this course you will only be using one DB per project.
