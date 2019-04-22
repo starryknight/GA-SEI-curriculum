@@ -7,8 +7,6 @@ You must meet all of the following requirements to pass project 1.
 - [ ] Project code is pushed to a public Git repository
 - [ ] Project is deployed on the internet
 - [ ] Uses HTML, CSS, and JS for game solution
-- [ ] Use Javascript vanilla API or jQuery API for DOM manipulation
-- [ ] Uses Event listening to handle user interaction
 
 ## Creativity and Interface
 
@@ -17,24 +15,21 @@ You must meet all of the following requirements to pass project 1.
 
 ## Code Quality
 
-- [ ] HTML, CSS, and JS are in seperate files
-- [ ] Names (variables, functions, HTML ids, HTML classes, etc.) follow a naming convention
-- [ ] Consistent indentation
+- [ ] Program structure is separated out into node modules
 
 ## Functionality
 
-- [ ] Render a game in the browser
-- [ ] User can play single iteration of game
-- [ ] User can win/tie when winning conditions are met
-- [ ] User can lose when losing conditions are met
+- [ ] App renders in browser
+- [ ] User can create an entity
+- [ ] User can update an entity
+- [ ] User can delete an entity
+- [ ] User can read multiple entities of a single model
+- [ ] User can read entities of multiple models
 
 ## Planning / Process / Submission
 
 - [ ] At least 30 git commits
-- [ ] Project board (Trello or Github Projects and Issues) are used throughout project week
-- [ ] Project board must have a minimum of 3 columns noting to-do, doing, and done tasks
-- [ ] Has Readme file
-- [ ] Readme file has link to deployed app  
-- [ ] Readme file has link to project board
-- [ ] Readme file has whiteboarding image
-- [ ] Readme file has wireframe images
+- [ ] Project planning board used throughout project
+- [ ] Has Readme file at the root of repository
+- [ ] Readme file has link to publicly deployed app  
+- [ ] Readme file has link to public project board
