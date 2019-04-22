@@ -294,6 +294,11 @@
         "depends": []
     },
     {
+        "name": "sei-linkedLists-exercise",
+        "sequence": "2.22.3",
+        "depends": []
+    },
+    {
         "name": "project-2",
         "sequence": "2.24.1",
         "depends": []
