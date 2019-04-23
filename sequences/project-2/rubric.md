@@ -1,35 +1,25 @@
 # Project Evaluation
 
-You must meet all of the following requirements to pass project 1.
+You must meet all of the following requirements to pass project 2.
 
-## Technical Requirements
+## Project Requirements
 
 - [ ] Project code is pushed to a public Git repository
-- [ ] Project is deployed on the internet
-- [ ] Uses HTML, CSS, and JS for game solution
-
-## Creativity and Interface
-
+- [ ] Git repo has at least 30 git commits
+- [ ] Project is deployed using heroku
+- [ ] Project planning board used throughout project
+- [ ] Uses Mongoose, Express, and Handlebars
+- [ ] Uses HTML, CSS, and JS
 - [ ] Uses CSS to style DOM elements
 - [ ] Uses CSS to structure DOM element layout on screen
-
-## Code Quality
-
+- [ ] Uses MVC architecture to structure program design
 - [ ] Program structure is separated out into node modules
-
-## Functionality
-
+- [ ] Model architecture uses at least 3 schemas
 - [ ] App renders in browser
-- [ ] User can create an entity
+- [ ] User can create an entity for all models
+- [ ] User can read   an entity for all models
 - [ ] User can update an entity
-- [ ] User can delete an entity
-- [ ] User can read multiple entities of a single model
-- [ ] User can read entities of multiple models
-
-## Planning / Process / Submission
-
-- [ ] At least 30 git commits
-- [ ] Project planning board used throughout project
-- [ ] Has Readme file at the root of repository
-- [ ] Readme file has link to publicly deployed app  
-- [ ] Readme file has link to public project board
+- [ ] User can delete an entity for all models
+- [ ] Has readme.md file at the root of repository
+- [ ] readme.md file has link to publicly deployed app  
+- [ ] readme.md file has link to public project board
