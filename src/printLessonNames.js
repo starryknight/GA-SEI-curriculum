@@ -1,3 +1,12 @@
+/* Consumes given schedule JSON file and generates list of sequences to stdout
+ * in the following format:
+ *
+ * <sequence-number> [<lesson-name>]
+ *
+ * This is intended to be consumed by a program that converts this to a markdown table
+ *
+ */
+
 const SchedulerFileApi = require('./scheduleFile.js');
 const Sequence = require('./sequence.js');
 
