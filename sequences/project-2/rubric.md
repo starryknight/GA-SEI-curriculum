@@ -9,7 +9,6 @@ You must meet all of the following requirements to pass project 2.
 - [ ] Project is deployed using heroku
 - [ ] Project planning board used throughout project
 - [ ] Uses Mongoose, Express, and Handlebars
-- [ ] Uses HTML, CSS, and JS
 - [ ] Uses CSS to style DOM elements
 - [ ] Uses CSS to structure DOM element layout on screen
 - [ ] Uses MVC architecture to structure program design
