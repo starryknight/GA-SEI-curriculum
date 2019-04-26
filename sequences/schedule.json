@@ -460,10 +460,12 @@
           "sequence": "3.36.2",
           "depends": []
       },
+      {
           "name": "react-diagnostic-exercise",
           "sequence": "3.36.3",
           "depends": []
       },
+      {
           "name": "react-diagnostic-exercise",
           "sequence": "3.36.4",
           "depends": []
