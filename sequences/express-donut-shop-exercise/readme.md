@@ -11,8 +11,6 @@ In this assignment, you will create a full CRUD MEHN (Mongo, Express, Handlebars
 - Gain more practice with Handlebars
 
 ## Setup
-1. Fork and Clone this repository.
-
 2. In the `donut_mongoose` directory, go ahead and run `npm install` to install all of the app's dependencies.
 
 3. Run `npm run dev` to start the development server.
