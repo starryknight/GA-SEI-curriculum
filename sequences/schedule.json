@@ -456,7 +456,7 @@
           "depends": []
       },
       {
-          "name": "react-diagnostic-exercise"
+          "name": "react-diagnostic-exercise",
           "sequence": "3.36.2",
           "depends": []
       },
@@ -468,8 +468,7 @@
           "sequence": "3.36.4",
           "depends": []
       },
-  
-      {
+    {
           "name": "agile-intro-practice",
           "sequence": "3.37.1",
           "depends": []
