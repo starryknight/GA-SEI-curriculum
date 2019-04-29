@@ -443,21 +443,35 @@
       ]
     },
     {
-      "name": "sei-recu",
+      "name": "sei-bigonotation-lesson",
       "sequence": "3.30.4",
       "depends": [
         
       ]
     },
     {
-      "name": "review-recursion-and-big-O ",
+      "name": "sei-recursion-lesson",
+      "sequence": "3.30.4",
+      "depends": [
+        
+      ]
+    },
+    {
+      "name": "sei-bigonotation-exercise",
       "sequence": "3.31.1",
       "depends": [
         
       ]
     },
     {
-      "name": "react-intro-thinking-and-jsx",
+      "name": "sei-recursion-exercise",
+      "sequence": "3.31.1",
+      "depends": [
+        
+      ]
+    },
+    {
+      "name": "react-intro-lesson",
       "sequence": "3.31.2",
       "depends": [
         
@@ -478,7 +492,7 @@
       ]
     },
     {
-      "name": "styling-in-react",
+      "name": "react-styling-lesson",
       "sequence": "3.32.1",
       "depends": [
         
@@ -499,14 +513,21 @@
       ]
     },
     {
-      "name": "linked-list-and-hardware-store",
+      "name": "sei-linkedlists-lesson",
       "sequence": "3.32.4",
       "depends": [
         
       ]
     },
     {
-      "name": "review-linked-list",
+      "name": "react-state-practise",
+      "sequence": "3.32.4",
+      "depends": [
+        
+      ]
+    },
+    {
+      "name": "sei-linkedlists-lesson",
       "sequence": "3.33.1",
       "depends": [
         
@@ -527,14 +548,28 @@
       ]
     },
     {
-      "name": "intro-to-sorting-and-basic-sorting",
+      "name": "sei-intro-to-sorting-lesson",
       "sequence": "3.33.4",
       "depends": [
         
       ]
     },
     {
-      "name": "review-intro-to-sorting-and-basic-sorting",
+      "name": "sei-basic-sorts-lesson",
+      "sequence": "3.33.4",
+      "depends": [
+        
+      ]
+    },
+    {
+      "name": "sei-intro-to-sorting-lesson",
+      "sequence": "3.34.1",
+      "depends": [
+        
+      ]
+    },
+    {
+      "name": "sei-basic-sorts-lesson",
       "sequence": "3.34.1",
       "depends": [
         
@@ -569,7 +604,7 @@
       ]
     },
     {
-      "name": "ajax-lesson-and-react-lifestyle",
+      "name": "ajax-intro-lesson",
       "sequence": "3.35.2",
       "depends": [
         
@@ -646,7 +681,7 @@
       ]
     },
     {
-      "name": "search-algorithms",
+      "name": "sei-searchalgorithms-lesson",
       "sequence": "3.38.1",
       "depends": [
         
@@ -674,7 +709,7 @@
       ]
     },
     {
-      "name": "design-patterns",
+      "name": "sei-designpatterns-lesson",
       "sequence": "3.39.1",
       "depends": [
         
