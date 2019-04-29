@@ -33,11 +33,7 @@ React is a client-side library created by Facebook and is currently the most pop
 
 While many other frameworks focus on the flow of data within a front-end application, React is narrower in focus.  Instead, React focuses solely on building dynamic UIs that are updated efficiently.  We will do this using JavaScript, an extension called JSX, and a build tool called Webpack.  This means no more Handlebars to handle our views!
 
-> “You will become better at JavaScript because React doesn’t come with a templating system. Instead, React pushes you to use the full power of JavaScript to build your user interface. You are going to practice using parts of functional programming with map and filter and also encouraged to use the latest features of JavaScript (including ES6). By not abstracting away data management, React will force you to think about how to architect your app and encourage you to consider concepts like immutability.”
->
-> -- Christopher Chedeau, React Engineer @ Facebook
 
-> **Selling Point:** By modeling small compatible components that focus on just rendering a view, we can move business logic out of the DOM, and therefore improve our app's performance, maintainability, modularity and readability.
 
 #### React Dev Tools
 
@@ -143,17 +139,6 @@ As you're drawing this out, think about the following questions...
 * Where do you see "nested components"? Where do you not?
 * Are there any components that share the same structure?
 * Of these similar components, what is different about them?
-
-## Apps Built with React (partially or completely)
-
-- [Khan Academy](https://www.khanacademy.org/math/algebra/introduction-to-algebra/overview-hist-alg/v/origins-of-algebra)
-- [Codecademy](https://www.codecademy.com/learn/all)
-- [Facebook](https://www.facebook.com)
-- [Instagram](https://www.instagram.com)
-- [Netflix](https://www.netflix.com)
-  - Great write-up about why Netflix uses React [here](https://medium.com/netflix-techblog/netflix-likes-react-509675426db)
-- [The New York Times](https://www.nytimes.com/interactive/2014/02/02/fashion/red-carpet-project.html)
-- Plenty of examples at [React.Rocks](https://react.rocks/)
 
 ## Initial Setup (20 min)
 
@@ -286,7 +271,7 @@ Until now, we have been using the Node-friendly `module.exports = ThingToExport;
 >
 > (https://youtu.be/O7oD_oX-Gio?t=5s)
 
-Let's talk about the value that the render method returns. It looks an awful lot like an HTML heading, but it's not. We often write out React components in JSX.
+Let's talk about the value that the render method returns. It looks an awful lot like an HTML heading, but it's not. We often write out React components in JSX.  We will be taking a deeper dive into JSX.
 
 JSX is [a language that compiles to Javascipt](http://blog.yld.io/2015/06/10/getting-started-with-react-and-node-js/#.V8eDk5MrJPN) that allows us to write code that strongly resembles HTML. It is eventually compiled to lightweight JavaScript objects.
 
@@ -516,13 +501,13 @@ class Post extends Component {
   }
 }
 
+```
 
-////JSX
+## Break
 
-# JSX Overviews and Gotchas
+### JSX Overviews and Gotchas
 
 ### Objectives
-*After this lesson, students will be able to:*
 
 - Understand what JSX is and why it is different than HTML.
 - Identify differences in syntax between HTML and JSX.
@@ -531,7 +516,6 @@ class Post extends Component {
 - Insert data from `props` to JSX
 
 ### Preparation
-*Before this lesson, students should already be able to:*
 
 - Create a React application using `create-react-app`.
 - Write HTML and be familiar DOM manipulation in JavaScript
