@@ -1,0 +1,41 @@
+#!/usr/bin/env bash
+
+# Converts the given schedule JSON file to markdown format and prints to stdout
+
+function makeMardownRow {
+  lesson=$1
+
+  shift
+
+  url="$@"
+  
+  if test ! -d "sequences/$url"; then
+    url=""
+  fi
+
+  echo "$lesson | [$@]($url)"
+}
+
+echo    "_Note: see below the table for details on Sequence_"
+echo    "<!-- __DO NOT MANUALLY EDIT__ Instead use \`index.js\` -->"
+echo    "<!-- Generated on: $(date) -->"
+echo -e "\nSequence (Unit.Day.Block.Subblock) | Link"
+echo    "--- | ---"
+
+node ./src/printLessonNames.js "$1" | while read l; do makeMardownRow $l; done
+
+echo -e "\n### Sequences "
+echo    "Sequences are semantic strings describing when a part of the course is to occur. The format is: \`Unit.Day.Block\` where:"
+echo -e "\nSequence Part | Meaning"
+echo    "--- | ---"
+echo    "Unit | Scale: 1-4, the unit the lesson is taught in"
+echo    "Day | Scale: 1-infinity, the day with respect to the start of the course the lesson is taught in"
+echo    "Block | Scale: 1-4, the time block the lesson is taught in"
+echo    "Subblock | 1-2 the first and second halves of a block (rarely used)"
+echo -e "\nWhere block is has the following values"
+echo -e "\nBlock Number | Meaning"
+echo    "--- | ---"
+echo    "1 | Morning Excersises"
+echo    "2 | Session 1"
+echo    "3 | Session 2"
+echo    "4 | Homework"
