@@ -19,7 +19,7 @@ competencies: Front-end frameworks
 
 ## Starter Code
 
-Checkout the `react-sample-project/` directory for starter code for this
+Checkout the `react-state-sample-project/` directory for starter code for this
 lesson.  If you checkout that directory on the `solution` branch you'll see a
 fully working solution.
 
