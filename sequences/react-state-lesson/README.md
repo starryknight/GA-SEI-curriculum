@@ -17,6 +17,11 @@ competencies: Front-end frameworks
 * Discuss the need to share `state` across different parts of the application
 * Share state across multiple React components
 
+## Starter Code
+
+Checkout the `react-state-sample-project/` directory for starter code for this
+lesson.  If you checkout that directory on the `solution` branch you'll see a
+fully working solution.
 
 ## What is "State"? (5 minutes, 0:05)
 
@@ -900,4 +905,20 @@ Let's create a ShopView to show our product info in a different way.
 
 ## You Do: Start On Exercise!
 
-[Add a shopping cart to our hardware store](./hardware-store-shopping-cart.md)
+# Hardware Store Shopping Cart
+
+Let's add a shopping cart to our Hardware Store. Starting with the code from today's lab:
+
+* Create a CartView component that displays all of the items in our cart.
+* Within ShopView, add a `Add to Cart` button that will add an item to the shopping cart
+* For each Product in our cart, show a button that allows us to remove the product from the cart.
+
+* **BONUS: If an item already exists in the cart, add a "quantity" display and increment it when "Add To Cart" is clicked again.**
+
+Your end result should look something like this.
+![https://i.imgur.com/XjX70FQ.png](https://i.imgur.com/XjX70FQ.png)
+
+# Turning In
+
+* Create a new Git repository with your solution.
+* Submit a link to the Git repository on GA-Grader.
