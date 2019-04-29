@@ -1,6 +1,5 @@
-/// Thinking in react
 
-### Thinking In React
+# Thinking In React
 
 React requires us to think about our web applications in a very specific way. No longer will we have a dense, monolithic front-end application. Instead we should think of a page as the sum of as many small, distinct components as we can build. This way of thinking has been branded by the React team as **"Thinking In React"**.
 
@@ -505,7 +504,7 @@ class Post extends Component {
 
 ## Break
 
-### JSX Overviews and Gotchas
+# JSX Overviews and Gotchas
 
 ### Objectives
 
