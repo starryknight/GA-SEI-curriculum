@@ -2,11 +2,11 @@
 
 # Purpose 
 
-__Provides a "what to mutate" for when a lesson is mutated.__
+__Provides a "what to update" for when a lesson is updated.__
 
 This has 3 side effects: 
 
-1. Makes instruction team prep time more efficient and therefor valuable
+1. Makes instruction team prep time more efficient and therefore valuable
 1. Provides a measurement when evaluating changes.
 1. Keeps instruction team unified on our delivery
 
@@ -23,7 +23,7 @@ content, and naming:
 
 Lesson Objectives should:
 
-1. be axiomatic (as small as possible and no smaller)
+1. be atomic (as small as possible and no smaller)
 1. abstract enough to be re-usable
 1. concrete enough to be demonstrable
 1. be concept focused.
@@ -45,7 +45,7 @@ Lesson objectives should not:
 
 Lesson content should:
 
-1. expound on (but not outlined by) the lesson objectives, no more, no less.
+1. expound on the lesson objectives, no more, no less.
 1. have zero external dependencies.
 1. contain multiple, small, quick, CFUs
 
@@ -53,7 +53,7 @@ From this the following corollaries follow.
 
 Lesson content should:
 
-1. Be as minimal content heavy as possible
+1. Be as minimal as possible to teach the content
 1. Be easy to maintain
 
 # Lesson Naming
