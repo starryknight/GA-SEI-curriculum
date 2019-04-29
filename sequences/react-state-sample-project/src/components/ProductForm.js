@@ -1,19 +1,13 @@
 import React, { Component } from 'react'
 
 class ProductForm extends Component {
-  constructor () {
-    super()
-
-    this.state = {
-      newProduct: {}
-    }
-  }
+  //set class instance state variable
 
   handleNewProductChange = (event) => {
     const attributeName = event.target.name
     const attributeValue = event.target.value
 
-    const newProduct = { ...this.state.newProduct }
+    const newProduct = { /* spread of state's newProduct item */ }
     newProduct[attributeName] = attributeValue
 
     this.setState({ newProduct })
@@ -22,7 +16,7 @@ class ProductForm extends Component {
   addNewProduct = (event) => {
     event.preventDefault()
 
-    this.props.addNewProductToProductList(this.state.newProduct)
+    this.props.addNewProductToProductList(/* state's newProduct item */)
   };
 
   render () {
