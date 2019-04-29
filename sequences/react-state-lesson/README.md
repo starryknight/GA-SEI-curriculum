@@ -17,6 +17,11 @@ competencies: Front-end frameworks
 * Discuss the need to share `state` across different parts of the application
 * Share state across multiple React components
 
+## Starter Code
+
+Checkout the `react-sample-project/` directory for starter code for this
+lesson.  If you checkout that directory on the `solution` branch you'll see a
+fully working solution.
 
 ## What is "State"? (5 minutes, 0:05)
 
