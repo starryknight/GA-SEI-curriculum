@@ -135,7 +135,7 @@ At this point, you might observe the extra code, additional method calls, and st
 ## 💅 styled-components
 There are plenty of libraries available on Github that attempt to make it as easy as possible to style React components.  Some common options are [Aphrodite](https://github.com/Khan/aphrodite), [Radium](https://github.com/FormidableLabs/radium), and [JSS](https://github.com/cssinjs/react-jss).  While these are all decent libraries, they all have a lot of library specific rules.  
 
-Thats why a group of developers got together around January of last year and committed to making the easiest and most stress free way of styling React components.  The result is a library called [💅 styled-components](https://github.com/styled-components/styled-components).  In the year that the library has been out, it has widely become the go-to option for styling in React.  
+Thats why a group of developers got together a few years ago and committed to making the easiest and most stress free way of styling React components.  The result is a library called [💅 styled-components](https://github.com/styled-components/styled-components).  In the year that the library has been out, it has widely become the go-to option for styling in React.  
 
 Styled components uses a feature of ES6 known as tagged template literals to allow you to write actual CSS code that gets converted into a component.  Let's take a look at our button component re-written with `styled-components`.
 
