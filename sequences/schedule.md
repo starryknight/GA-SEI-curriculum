@@ -1,6 +1,6 @@
 _Note: see below the table for details on Sequence_
 <!-- __DO NOT MANUALLY EDIT__ Instead use `index.js` -->
-<!-- Generated on: Mon Apr 29 17:40:36 EDT 2019 -->
+<!-- Generated on: Tue Apr 30 16:44:09 EDT 2019 -->
 
 Sequence (Unit.Day.Block.Subblock) | Link
 --- | ---
@@ -120,21 +120,21 @@ Sequence (Unit.Day.Block.Subblock) | Link
 2.29.2 | [TBD](TBD)
 2.29.3 | [TBD](TBD)
 2.29.4 | [TBD](TBD)
-3.30.1 | [js-higher-order-functions-lesson]()
+3.30.1 | [js-higher-order-functions-lesson](js-higher-order-functions-lesson)
 3.30.2 | [js-oop-lesson](js-oop-lesson)
 3.30.3 | [js-oop-exercise](js-oop-exercise)
 3.30.4 | [CONFLICT:sei-bigonotation-lesson sei-recursion-lesson]()
-3.31.1 | [CONFLICT:sei-bigonotation-exercise sei-recursion-exercise]()
+3.31.1 | [CONFLICT:sei-bigonotation-lesson sei-recursion-lesson]()
 3.31.2 | [react-intro-lesson](react-intro-lesson)
 3.31.3 | [react-props-lesson](react-props-lesson)
 3.31.4 | [react-jsx-exercise](react-jsx-exercise)
 3.32.1 | [react-styling-lesson]()
 3.32.2 | [react-state-lesson](react-state-lesson)
 3.32.3 | [react-state-practice](react-state-practice)
-3.32.4 | [CONFLICT:sei-linkedlists-lesson react-state-practise]()
+3.32.4 | [CONFLICT:sei-linkedlists-lesson react-state-practice]()
 3.33.1 | [sei-linkedlists-lesson](sei-linkedlists-lesson)
-3.33.2 | [CONFLICT:study-day study-day]()
-3.33.3 | [CONFLICT:outcomes outcomes]()
+3.33.2 | [study-day](study-day)
+3.33.3 | [outcomes](outcomes)
 3.33.4 | [CONFLICT:sei-intro-to-sorting-lesson sei-basic-sorts-lesson]()
 3.34.1 | [CONFLICT:sei-intro-to-sorting-lesson sei-basic-sorts-lesson]()
 3.34.2 | [react-router-lesson](react-router-lesson)
@@ -152,7 +152,7 @@ Sequence (Unit.Day.Block.Subblock) | Link
 3.37.2 | [project-3](project-3)
 3.37.3 | [project-3](project-3)
 3.37.4 | [project-3](project-3)
-3.38.1 | [sei-searchalgorithms-lesson]()
+3.38.1 | [sei-searchalgorithms-lesson](sei-searchalgorithms-lesson)
 3.38.2 | [CONFLICT:project-3 study-day]()
 3.38.3 | [CONFLICT:project-3 outcomes]()
 3.38.4 | [project-3](project-3)
