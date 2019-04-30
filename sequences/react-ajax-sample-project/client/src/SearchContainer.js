@@ -36,10 +36,12 @@ class SearchContainer extends Component {
       <div>
         {
           this.state.hasSearched
-            ? <Results
-                movies={this.state.movies}
-                handleSearchAgain={this.handleSearchAgain}
-            />
+            ?  <div>
+                <button onClick={this.handleSearchAgain}>Search Again</button>
+                <Results
+                  movies={this.state.movies}
+                />
+              </div>
             : <Search
                 query={this.state.query}
                 handleInputChange={this.handleInputChange}

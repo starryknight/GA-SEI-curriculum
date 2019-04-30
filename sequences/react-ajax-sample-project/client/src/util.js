@@ -10,3 +10,12 @@ export function queryTVMazeAPI (query) {
             return response.data
         })
 }
+
+export function addFavoriteMovie(movie) {
+  return axios.post('/favorites', movie);
+}
+
+export function getFavorites() {
+  return axios.get('/favorites')
+    .then(results => results.data);
+}
