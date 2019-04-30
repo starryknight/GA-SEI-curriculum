@@ -67,7 +67,7 @@ class HomePage extends Component {
 
             <div>
               {
-                this.state.editSaleItem ? <div>
+                /* state's edit sale item boolean */ ? <div>
                   <input
                     onChange={this.handleItemCurrentlyOnSaleChange}
                     value={//state's item currently on sale}
