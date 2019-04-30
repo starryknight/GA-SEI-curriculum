@@ -534,20 +534,6 @@
       ]
     },
     {
-      "name": "",
-      "sequence": "3.33.2",
-      "depends": [
-        
-      ]
-    },
-    {
-      "name": "",
-      "sequence": "3.33.3",
-      "depends": [
-        
-      ]
-    },
-    {
       "name": "sei-intro-to-sorting-lesson",
       "sequence": "3.33.4",
       "depends": [
