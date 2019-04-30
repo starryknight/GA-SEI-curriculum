@@ -97,9 +97,7 @@ class HomePage extends Component {
         <div id="view-container">
           {/* state's showAdminView boolean */ ? adminView : shopView}
 
-          <CartView
-            productList={//state's cart list}
-            removeProductFromCart={this.removeProductFromCart}/>
+          /* Call CartView Component Here */
         </div>
       </div>
     )
