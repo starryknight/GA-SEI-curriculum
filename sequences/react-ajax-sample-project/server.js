@@ -18,7 +18,6 @@ app.get('/favorites', (req,res) => {
 });
 
 app.post('/favorites', (req,res) => {
-  console.log("fav: " + req.body.id);
   movieApi.addFavoriteMovie(req.body);
   res.status(201).end();
 });
