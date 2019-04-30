@@ -9,7 +9,7 @@ function Results(props) {
         <div className="results">
             {
                 props.movies.map((movie) => {
-                    const {name, image, id} = movie.show
+                    const {name, image, id} = movie
                     return (
                         <Result
                             key={id}
