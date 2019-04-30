@@ -4,7 +4,7 @@ import { addFavoriteMovie } from './util.js'
 export default class extends React.Component {
 
   addFavorite = () => {
-    addFavoriteMovie(this.props.movie);
+    //TODO: add favorite movie
   }
 
   render() {

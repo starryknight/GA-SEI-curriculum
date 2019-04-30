@@ -8,10 +8,7 @@ export default class extends React.Component {
   }
 
   componentDidMount() {
-    getFavorites()
-      .then(favorites => {
-        this.setState({favorites});
-      });
+    //TODO: get list of favorite movies
   }
 
   render() {

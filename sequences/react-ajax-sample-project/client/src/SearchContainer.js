@@ -15,12 +15,7 @@ class SearchContainer extends Component {
   };
 
   handleSubmitQuery = () => {
-    queryTVMazeAPI(this.state.query).then((movies)=>{
-      this.setState({
-        movies,
-        hasSearched: true
-      })
-    })
+    //TODO: query for movies and set the hasSearched state to true
   }
 
   handleSearchAgain = () => {
