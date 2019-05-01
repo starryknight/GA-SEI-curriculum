@@ -24,7 +24,7 @@ remainder of your time.
 Your app must:
 
 * Use React as a front-end library
-* Have at _least_ 2 models (more if makes sense)
+* Have at _least_ 3 models (more if makes sense)
     - Remember that many-to-many relationships are difficult in MongoDB and focus on one-to-many relationships for your MVP
 * Have full CRUD on at _least_ one of your models
 * Be able to Add/Delete on any remaining models

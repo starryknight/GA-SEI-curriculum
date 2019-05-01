@@ -1,28 +1,28 @@
-# Evaluation Criteria
+# Project Evaluation
 
-| Score | Definition  |
-| ----- | ----------- |
-| 0     | Incomplete  |
-| 1     | Progressing |
-| 2     | Performing  |
-| 3     | Excelling   |
+You must meet all of the following requirements to pass project 3.
 
-## Hard Requirements
+## Project Requirements
 
-The following must be true of your project for it to be considered complete:
-
-- The app is deployed to Heroku
-- A new repo with the student's project is included in the submission
-
-## Evaluation Requirements
-
-We will evaluate your project to the following requirements. While you must achieve at least
-"Progressing" for each category, we strongly encourage you to aim for "Performing" or "Excelling".
-
-| Category                        | Incomplete                                                                                                                    | Progressing                                                                                                                                                                                           | Performing                                                                                                                                                             | Excelling                                                                                                                                                                                                          |
-| ------------------------------- | ----------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| Back-end Technology             | No back-end present or unable to persist data and return JSON                                                                 | Lacking more than one model                                                                                                                                                                           | Includes 2 models                                                                                                                                                      | Includes 2 or more well-structured models, and advanced functionality such as authorization, 3rd-party API integration(s), or other technology not covered in class                                                |
-| Front-end Technology            | No use of React                                                                                                               | Basic front-end built with a few React components                                                                                                                                                     | Front-end makes appropriate use of React and React Router.                                                                                                             | In addition to appropriate use of React and React Router, the application includes 1 advanced React topic or material not covered in class.                                                                        |
-| Code Quality                    | Minimal functional code is present                                                                                            | Code lacks proper formatting, includes commented out or non-functional code, or otherwise contains major issues of quality (DRY, naming, etc)                                                         | Code is well-formatted, well-named, and contains few style / quality issues                                                                                            | No major code quality issues, and follows React best practices such as container/presentation component separation                                                                                                 |
-| Deployment and Functionality    | Application is not deployed, and/or contains minimal functionality                                                            | Application contains minimal functionality, but deployment is non-functional, or application contains major errors when used                                                                          | Application contains no major errors, is deployed, and contains a sufficient amount of functionality.                                                                  | App has advanced functionality that works with minimal errors, and may make use of advanced tools such as APIs, plugins, etc. App may be deployed to a service other than Heroku (e.g. Digital Ocean).             |
-| Planning / Process / Submission | No submission received, or submission does not contain basic documentation of planning (ERD, wireframes, commit history, etc) | App is submitted, with basic evidence of planning. Documentation exists, but lacks common areas such as setup instructions, description of application functionality and link to deployed application | Submission contains clear evidence of planning, adequate documentation, include all from previous category, as well as additional information such as unsolved issues. | Submission includes everything in previous category, as well as evidence of proper teamwork, such as feature branching, code review, github issue / user story tracking, and justification of technical decisions. |
+- [ ] Project code is pushed to a public Git repository
+- [ ] Git repo has at least 30 git commits
+- [ ] Project is deployed using heroku
+- [ ] Project planning board used throughout project
+- [ ] Uses Mongoose, Express, and React Components
+- [ ] Uses AJAX Request to Get entities from server
+- [ ] Uses AJAX Request to Update entities from server
+- [ ] Uses AJAX Request to Create entities from server
+- [ ] Uses AJAX Request to Delete entities from server
+- [ ] Uses CSS to style DOM elements
+- [ ] Uses CSS to structure DOM element layout on screen
+- [ ] Uses MVC architecture to structure program design
+- [ ] Program structure is separated out into node modules
+- [ ] Model architecture uses at least 3 schemas
+- [ ] App renders in browser
+- [ ] User can create an entity for all models
+- [ ] User can read   an entity for all models
+- [ ] User can update an entity
+- [ ] User can delete an entity for all models
+- [ ] Has readme.md file at the root of repository
+- [ ] readme.md file has link to publicly deployed app  
+- [ ] readme.md file has link to public project board
