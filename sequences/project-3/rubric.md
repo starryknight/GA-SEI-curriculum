@@ -8,7 +8,7 @@ You must meet all of the following requirements to pass project 3.
 - [ ] Git repo has at least 30 git commits
 - [ ] Project is deployed using heroku
 - [ ] Project planning board used throughout project
-- [ ] Uses Mongoose, Express, and React Components
+- [ ] Uses Mongoose, Express, and React
 - [ ] Uses AJAX Request to Get entities from server
 - [ ] Uses AJAX Request to Update entities from server
 - [ ] Uses AJAX Request to Create entities from server
@@ -17,7 +17,7 @@ You must meet all of the following requirements to pass project 3.
 - [ ] Uses CSS to structure DOM element layout on screen
 - [ ] Uses MVC architecture to structure program design
 - [ ] Program structure is separated out into node modules
-- [ ] Model architecture uses at least 3 schemas
+- [ ] Model architecture uses at least 2 schemas
 - [ ] App renders in browser
 - [ ] User can create an entity for all models
 - [ ] User can read   an entity for all models
