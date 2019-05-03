@@ -13,8 +13,8 @@ You must meet all of the following requirements to pass project 3.
 - [ ] Uses AJAX Request to Update entities from server
 - [ ] Uses AJAX Request to Create entities from server
 - [ ] Uses AJAX Request to Delete entities from server
-- [ ] Uses CSS to style DOM elements
-- [ ] Uses CSS to structure DOM element layout on screen
+- [ ] Uses CSS to style application 
+- [ ] Uses CSS to structure application layout on screen
 - [ ] Uses MVC architecture to structure program design
 - [ ] Program structure is separated out into node modules
 - [ ] Model architecture uses at least 2 schemas
