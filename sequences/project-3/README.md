@@ -7,42 +7,12 @@ MERN stack. ​ Use your imagination! You get to create whatever you want for th
 Everyone will get a chance to be creative, and work through some really tough 
 programming challenges.
 
-You'll need to run your user stories, wireframes, and database design by your 
-instructors to get their feedback and approval before you begin coding! Remember 
-to keep things small and focus on mastering the fundamentals – scope 
-creep/feature creep is the biggest pitfall for any project!
-
 Identify what you need to build and accomplish to meet project expectations and 
 identify everything else as stretch goals. If you meet your MVP (Minimum Viable 
 Product) ahead of schedule, you can decide which reach goals to focus on for the 
 remainder of your time.
 
 ---
-
-### Technical Requirements
-
-Your app must:
-
-* Use React as a front-end library
-* Have at _least_ 3 models (more if makes sense)
-    - Remember that many-to-many relationships are difficult in MongoDB and focus on one-to-many relationships for your MVP
-* Have full CRUD on at _least_ one of your models
-* Be able to Add/Delete on any remaining models
-* Use the Mongoose library to write Mongo queries
-* Have high quality code:
-    - Follow accepted naming conventions
-    - Consistent indentation
-    - Well-structured and readable code
-    - Semantic naming of variables, functions, CSS classes, etc.
-    - Short and clear functions that _do one thing_
-    - Efficient code- if you have your MVP, refactor
-    - DRY (Don't Repeat Yourself) code
-* Be deployed on Heroku
-
-#### Stretch Goals (awarded only after all other technical requirements are met)
-* 3rd model
-* Full CRUD on all models
-* External API
 
 ### Documentation
 * A `README.md` file containing:
