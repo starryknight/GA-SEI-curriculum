@@ -653,7 +653,7 @@ your laptop.
 
 ## Contributors
 
-Original content from [DC](git.generalassemb.ly/dc-wdi-python-django/intro-to-python) at [f27b68](https://git.generalassemb.ly/dc-wdi-python-django/intro-to-python/commit/f27b680488450195e58440931ffccf50a4f0f817).
+Original content from [DC](git.generalassemb.ly/dc-wdi-python-django/intro-to-python) at [f27b68](https://git.generalassemb.ly/dc-wdi-python-django/intro-to-python/commit/f27b680488450195e58440931ffccf50a4f0f817). Original contributors can be found in that repository's history. Recent contributors can be found in this repository's history.
 
 ## [License](LICENSE)
 
