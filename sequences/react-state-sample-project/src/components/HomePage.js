@@ -1,7 +1,7 @@
 import React, {Component} from 'react'
 
 import AdminView from './AdminView'
-import ShopView from './ShopView'
+/* Import ShopView component here */
 /* Import CartView component here */
 
 class HomePage extends Component {
