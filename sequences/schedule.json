@@ -835,15 +835,8 @@
       ]
     },
     {
-      "name": "project-3-retro",
+      "name": "sei-stacks-and-queues",
       "sequence": "4.44.1",
-      "depends": [
-        
-      ]
-    },
-    {
-      "name": "python-install-lesson",
-      "sequence": "4.44.2",
       "depends": [
         
       ]
@@ -852,47 +845,51 @@
       "name": "python-intro-lesson",
       "sequence": "4.44.2",
       "depends": [
-        
-      ]
-    },
-    {
-      "name": "python-intro-exercise",
-      "sequence": "4.44.3",
-      "depends": [
-        
       ]
     },
     {
       "name": "python-intro-practice",
-      "sequence": "4.44.4",
+      "sequence": "4.44.3",
       "depends": [
-        
+        "python-intro-lesson"
       ]
     },
     {
-      "name": "edabit",
+      "name": "python-intro-exercise",
+      "sequence": "4.44.4",
+      "depends": [
+        "python-intro-lesson"
+      ]
+    },
+    {
+      "name": "sei-binary-trees-lesson",
       "sequence": "4.45.1",
       "depends": [
-        
+      ]
+    },
+    {
+      "name": "sei-binary-trees-lesson",
+      "sequence": "4.45.2",
+      "depends": [
       ]
     },
     {
       "name": "python-oop-lesson",
-      "sequence": "4.45.2",
+      "sequence": "4.45.3",
       "depends": [
-        
+        "python-intro-lesson"
       ]
     },
     {
-      "name": "python-oop-practice",
+      "name": "python-oop-exercise",
       "sequence": "4.45.4",
       "depends": [
-        
+        "python-oop-lesson" 
       ]
     },
     {
-      "name": "eddabit",
-      "sequence": "4.46.1",
+      "name": "sei-graphs-lesson",
+      "sequence": "4.46.2",
       "depends": [
         
       ]
@@ -901,61 +898,59 @@
       "name": "sql-intro-lesson",
       "sequence": "4.46.2",
       "depends": [
-        
-      ]
-    },
-    {
-      "name": "sql-modeling-lesson",
-      "sequence": "4.46.3",
-      "depends": [
-        
-      ]
-    },
-    {
-      "name": "sql-joins-lesson",
-      "sequence": "4.46.3",
-      "depends": [
-        
       ]
     },
     {
       "name": "sql-intro-exercise",
+      "sequence": "4.46.3",
+      "depends": [
+        
+      ]
+    },
+    {
+      "name": "sql-hashtables-lesson",
       "sequence": "4.46.4",
       "depends": [
         
       ]
     },
     {
-      "name": "Morning Exercise - SQL Zoo",
+      "name": "sql-hashtables-lesson",
       "sequence": "4.47.1",
       "depends": [
         
       ]
     },
     {
-      "name": "django-intro-lesson",
-      "sequence": "4.47.2",
-      "depends": [
-        
-      ]
-    },
-    {
-      "name": "django-models-lesson",
-      "sequence": "4.47.3",
-      "depends": [
-        
-      ]
-    },
-    {
-      "name": "django-intro-practice",
+      "name": "sei-sets-lesson",
       "sequence": "4.47.4",
       "depends": [
         
       ]
     },
     {
-      "name": "react-review-exercise",
+      "name": "sei-sets-lesson",
       "sequence": "4.48.1",
+      "depends": [
+        
+      ]
+    },
+    {
+      "name": "django-views-and-templates-lesson",
+      "sequence": "4.48.2",
+      "depends": [
+      ]
+    },
+    {
+      "name": "django-models-lesson",
+      "sequence": "4.48.3",
+      "depends": [
+        
+      ]
+    },
+    {
+      "name": "django-practice",
+      "sequence": "4.48.4",
       "depends": [
         
       ]
