@@ -1021,14 +1021,13 @@
       "name": "git-branching-lesson",
       "sequence": "4.51.1",
       "depends": [
-        
+        "git-intro-lesson"
       ]
     },
     {
       "name": "",
       "sequence": "4.51.2",
       "depends": [
-        
       ],
       "duration": 2
     },
