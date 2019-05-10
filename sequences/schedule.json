@@ -1025,8 +1025,14 @@
       ]
     },
     {
-      "name": "sei-interview-workshop",
+      "name": "django-team-exercise",
       "sequence": "4.51.2",
+      "depends": [
+      ]
+    },
+    {
+      "name": "sei-interview-workshop",
+      "sequence": "4.52.2",
       "depends": [
       ],
       "duration": 2
