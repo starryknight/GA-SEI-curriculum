@@ -114,11 +114,11 @@ Why props
 1. modify TodoList to render a list of items
 
 ```
-const flavors = ['Guacamole', 'Beef', 'Bean'];
+const todoItems = [{author: "bob", description: "...", ...];
 return (
   <div>
-    {flavors.map((flavor, i) => {
-      return; <Taco; key={i}; flavor={flavor}>
+    {todoItems.map((item, i) => {
+      return <TodoItem key={i} TodoItem={item}>
     })}
   </div>;
 ```
