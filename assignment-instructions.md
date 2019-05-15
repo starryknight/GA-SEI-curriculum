@@ -10,14 +10,14 @@ __This is to only be done once for the entire course__
 copy and paste the below commands in your terminal and press enter:
 
 ```
-mkdir sei-21
-cd sei-21
+mkdir ga-sei
+cd ga-sei
 curl "https://raw.git.generalassemb.ly/gist/nharvey/09ffe7ebb9939c5eeded3ece2ddbbb62/raw/26d0192789e6782427f7a86e0919d161ebc07050/lessonClone" > lessonClone
 chmod +x ./lessonClone
 basename $(pwd)
 ```
 
-If this prints out `sei-21` then you're done with this step.
+If this prints out `ga-sei` then you're done with this step.
 
 ## Create A New Repo For Your Homework
 
@@ -29,7 +29,7 @@ If this prints out `sei-21` then you're done with this step.
     * go to https://help.github.com/en/articles/creating-a-new-repository
 1. Download the lesson's repo
 
-  * `cd sei-21`
+  * `cd ga-sei`
   * `./lessonClone <lesson-name>` for example (`./lessonClone git-intro-lesson`)
   * `cd <lesson-name>`
   * `git init`
