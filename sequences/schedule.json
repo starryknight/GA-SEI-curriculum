@@ -908,14 +908,14 @@
       ]
     },
     {
-      "name": "sql-hashtables-lesson",
+      "name": "sei-hashtables-lesson",
       "sequence": "4.46.4",
       "depends": [
         
       ]
     },
     {
-      "name": "sql-hashtables-lesson",
+      "name": "sei-hashtables-lesson",
       "sequence": "4.47.1",
       "depends": [
         
