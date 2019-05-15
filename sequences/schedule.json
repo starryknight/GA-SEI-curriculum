@@ -1046,6 +1046,22 @@
       "duration": 28
     },
     {
+      "name": "sei-divide-conquer-sorting-algorithms-lesson",
+      "sequence": "4.54.4",
+      "depends": [
+        
+      ],
+      "duration": 1
+    },
+    {
+      "name": "sei-divide-conquer-sorting-algorithms-lesson",
+      "sequence": "4.55.1",
+      "depends": [
+        
+      ],
+      "duration": 1
+    },
+    {
       "name": "project-4-presentations",
       "sequence": "4.60.1",
       "depends": [
