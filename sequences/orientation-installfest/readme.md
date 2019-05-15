@@ -166,9 +166,11 @@ Post a `hello world` message once you get access.
     sudo mkdir -p /data/db
     sudo chown $(whoami) /data/db
     ```
-1. Verify you've installed mongodb:
+1. To load and start the MongoDB background service, run the following commands:
 
     ```bash
+    brew tap homebrew/services
+    brew services start mongodb
     mongo
     ```
 1. press `ctrl+c` to quit the shell.
