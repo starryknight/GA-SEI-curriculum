@@ -20,6 +20,7 @@
     - MongoDB
     - Postgresql
     - Create React App
+    - React Dev Tools Chrome Extension
 
 __IMPORTANT: THIS IS AN EXERCISE IN FOLLOWING INSTRUCTIONS__. This guide is _NOT_ a
 lesson. Please do not try and understand everything that you are doing. Most of
@@ -204,6 +205,11 @@ Post a `hello world` message once you get access.
     ```bash
     create-react-app --version
     ```
+
+## React Dev Tools
+1. To install the React Dev Tools Chrome extension, go to the following link and click 'Add to Chrome':
+
+    [React Dev Tools](https://chrome.google.com/webstore/detail/react-developer-tools/fmkadmapgofadopljbjfkapdkoienihi?hl=en)
 
 # Extra
 
