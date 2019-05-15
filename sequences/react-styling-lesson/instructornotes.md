@@ -8,16 +8,15 @@ How to style in react - I will show you two ways.
 
 
 In-line styles - let’s create a Button.js in our component’s folder
-Copy the code from the read me, I adjusted a couple of things
-Export the button and import into the App.js file
+Copy the code from the read me, I adjusted a couple of things.  Make sure you export the button at the button of Button.js and import into the App.js file.
 
 
 ## Why do we used styled-components:
  
 Styled components allows you to write plain CSS in your components without worrying about collisions with class names
  
-Let's install styled components:
-On your command line inside of your project folder, run the following commands: npm install styled components
+Let's install styled-components:
+On your command line inside of your project folder, run the following commands: npm install styled-components
 Now, within the component you built, underneath your import React from 'React', you want to add the following line:
  
 import 'styled-components' from styled-components
