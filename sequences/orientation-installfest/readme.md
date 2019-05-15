@@ -99,7 +99,7 @@ Post a `hello world` message once you get access.
     brew cask install iterm2
     ```
 1. Close your Terminal program
-1. Open iTerm2 (see the [section above](#open-terminal); use "iterm2" instead
+1. Open iTerm2 (see the [section above](#open-terminal); use "iterm" instead
    of "terminal")
 
 ## NodeJs
@@ -166,9 +166,11 @@ Post a `hello world` message once you get access.
     sudo mkdir -p /data/db
     sudo chown $(whoami) /data/db
     ```
-1. Verify you've installed mongodb:
+1. To load and start the MongoDB background service, run the following commands:
 
     ```bash
+    brew tap homebrew/services
+    brew services start mongodb
     mongo
     ```
 1. press `ctrl+c` to quit the shell.
