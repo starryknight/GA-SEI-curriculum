@@ -493,7 +493,7 @@
   {
     "sequence": "3.33.3",
     "name": "react-router-exercise",
-    "url": "https://git.generalassemb.ly/atl-wdi/react-router-lesson#lab-adding-debits-and-credits",
+    "url": "",
     "depends": [
       
     ]
@@ -789,7 +789,7 @@
   {
     "sequence": "4.50.4",
     "name": "react-refresh-exercise",
-    "url": "Finish Todo List React App",
+    "url": "",
     "depends": [
       
     ]
@@ -804,7 +804,7 @@
   },
   { "sequence": "4.52.1",
     "name": "interview-workshop",
-    "url": "Description:https://git.generalassemb.ly/ga-wdi-exercises/interview-workshop",
+    "url": "https://git.generalassemb.ly/ga-wdi-exercises/interview-workshop",
     "depends": [
 
     ]

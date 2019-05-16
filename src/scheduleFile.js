@@ -1,3 +1,12 @@
+/* Provides an API for reading schedule JSON file, parsing it, and generating
+ * a full timeline of sequences. 
+ *
+ * This API consumes a given time API (see ./src/timeSequence.js) and a scheduler
+ * (see ./src/scheduler.js) and binds their concepts with the data format of
+ * a sequence.
+ *
+ */
+
 //NOTE: since 2019-03-18, fs.promises is experimental
 const fs = require('fs');
 const Sequence = require('./sequence.js');

@@ -1,5 +1,7 @@
 #!/usr/bin/env bash
 
+# Converts the given schedule JSON file to markdown format and prints to stdout
+
 function makeMardownRow {
   lesson=$1
 
