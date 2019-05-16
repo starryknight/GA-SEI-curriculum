@@ -1,6 +1,6 @@
 _Note: see below the table for details on Sequence_
 <!-- __DO NOT MANUALLY EDIT__ Instead use `index.js` -->
-<!-- Generated on: Tue May 14 10:22:28 EDT 2019 -->
+<!-- Generated on: Thu May 16 12:15:17 EDT 2019 -->
 
 Sequence (Unit.Day.Block.Subblock) | Link
 --- | ---
@@ -184,11 +184,11 @@ Sequence (Unit.Day.Block.Subblock) | Link
 4.45.2 | [sei-binary-trees-lesson]()
 4.45.3 | [python-oop-lesson](python-oop-lesson)
 4.45.4 | [python-oop-exercise](python-oop-exercise)
-4.46.1 | [TBD](TBD)
-4.46.2 | [CONFLICT:sei-graphs-lesson sql-intro-lesson]()
+4.46.1 | [sei-graphs-lesson]()
+4.46.2 | [sql-intro-lesson](sql-intro-lesson)
 4.46.3 | [sql-intro-exercise](sql-intro-exercise)
-4.46.4 | [sql-hashtables-lesson]()
-4.47.1 | [sql-hashtables-lesson]()
+4.46.4 | [sei-hashtables-lesson]()
+4.47.1 | [sei-hashtables-lesson]()
 4.47.2 | [TBD](TBD)
 4.47.3 | [TBD](TBD)
 4.47.4 | [sei-sets-lesson]()
@@ -196,8 +196,8 @@ Sequence (Unit.Day.Block.Subblock) | Link
 4.48.2 | [CONFLICT:django-views-and-templates-lesson study-day]()
 4.48.3 | [CONFLICT:django-models-lesson outcomes]()
 4.48.4 | [django-intro-exercise](django-intro-exercise)
-4.49.1 | [sei-distribution-sort-lesson]()
-4.49.2 | [sei-distribution-sort-lesson]()
+4.49.1 | [sei-distribution-sort-lesson](sei-distribution-sort-lesson)
+4.49.2 | [sei-distribution-sort-lesson](sei-distribution-sort-lesson)
 4.49.3 | [django-debugging-exercise](django-debugging-exercise)
 4.49.4 | [django-fullstack-exercise](django-fullstack-exercise)
 4.50.1 | [django-fullstack-exercise](django-fullstack-exercise)
@@ -219,8 +219,8 @@ Sequence (Unit.Day.Block.Subblock) | Link
 4.54.1 | [project-4-intro](project-4-intro)
 4.54.2 | [project-4-intro](project-4-intro)
 4.54.3 | [project-4-intro](project-4-intro)
-4.54.4 | [project-4-intro](project-4-intro)
-4.55.1 | [project-4-intro](project-4-intro)
+4.54.4 | [CONFLICT:project-4-intro sei-divide-conquer-sorting-algorithms-lesson]()
+4.55.1 | [CONFLICT:project-4-intro sei-divide-conquer-sorting-algorithms-lesson]()
 4.55.2 | [project-4-intro](project-4-intro)
 4.55.3 | [project-4-intro](project-4-intro)
 4.55.4 | [project-4-intro](project-4-intro)
