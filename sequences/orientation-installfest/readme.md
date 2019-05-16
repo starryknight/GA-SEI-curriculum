@@ -19,6 +19,7 @@
     - Spectacle
     - MongoDB
     - Postgresql
+    - Create React App
 
 __IMPORTANT: THIS IS AN EXERCISE IN FOLLOWING INSTRUCTIONS__. This guide is _NOT_ a
 lesson. Please do not try and understand everything that you are doing. Most of
@@ -99,7 +100,7 @@ Post a `hello world` message once you get access.
     brew cask install iterm2
     ```
 1. Close your Terminal program
-1. Open iTerm2 (see the [section above](#open-terminal); use "iterm2" instead
+1. Open iTerm2 (see the [section above](#open-terminal); use "iterm" instead
    of "terminal")
 
 ## NodeJs
@@ -166,9 +167,11 @@ Post a `hello world` message once you get access.
     sudo mkdir -p /data/db
     sudo chown $(whoami) /data/db
     ```
-1. Verify you've installed mongodb:
+1. To load and start the MongoDB background service, run the following commands:
 
     ```bash
+    brew tap homebrew/services
+    brew services start mongodb
     mongo
     ```
 1. press `ctrl+c` to quit the shell.
@@ -188,6 +191,19 @@ Post a `hello world` message once you get access.
     psql
     ```
 1. Exit `psql` by typing `\q` and pressing `Enter`
+
+## Create React App
+1. Run the following command
+
+    ```bash
+    npm install --global create-react-app
+    ```
+
+1. Verify you've installed create-react-app by running
+
+    ```bash
+    create-react-app --version
+    ```
 
 # Extra
 
