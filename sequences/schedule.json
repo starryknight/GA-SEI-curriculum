@@ -87,6 +87,7 @@
     {
       "name": "html-staticsite-exercise",
       "sequence": "1.3.3",
+      "duration": 2,
       "depends": [
         
       ]
