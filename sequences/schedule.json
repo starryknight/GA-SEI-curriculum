@@ -236,6 +236,7 @@
     {
       "name": "jquery-dom-exercise",
       "sequence": "1.10.3",
+      "duration": 2,
       "depends": [
         
       ]
