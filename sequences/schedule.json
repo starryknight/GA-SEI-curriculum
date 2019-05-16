@@ -244,6 +244,7 @@
     {
       "name": "js-diagnostic-exercise",
       "sequence": "1.11.2",
+      "duration": 2,
       "depends": [
         
       ]
