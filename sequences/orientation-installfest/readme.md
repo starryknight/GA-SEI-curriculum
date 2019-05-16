@@ -54,10 +54,7 @@ Post a `hello world` message once you get access.
 1. Go to https://classroom.google.com
 1. Sign into your Google account _NOTE:_ If you don't have one please register
    for a new Google Account.
-1. Join the class room using this classroom code
-    ```
-    d8cnllj
-    ```
+1. Your instructor will share the code for you to join the Google Classroom
 
 ## Github
 
