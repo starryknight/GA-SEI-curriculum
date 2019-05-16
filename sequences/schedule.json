@@ -835,15 +835,8 @@
       ]
     },
     {
-      "name": "project-3-retro",
+      "name": "sei-stacks-and-queues",
       "sequence": "4.44.1",
-      "depends": [
-        
-      ]
-    },
-    {
-      "name": "python-install-lesson",
-      "sequence": "4.44.2",
       "depends": [
         
       ]
@@ -852,46 +845,50 @@
       "name": "python-intro-lesson",
       "sequence": "4.44.2",
       "depends": [
-        
-      ]
-    },
-    {
-      "name": "python-intro-exercise",
-      "sequence": "4.44.3",
-      "depends": [
-        
       ]
     },
     {
       "name": "python-intro-practice",
-      "sequence": "4.44.4",
+      "sequence": "4.44.3",
       "depends": [
-        
+        "python-intro-lesson"
       ]
     },
     {
-      "name": "edabit",
+      "name": "python-intro-exercise",
+      "sequence": "4.44.4",
+      "depends": [
+        "python-intro-lesson"
+      ]
+    },
+    {
+      "name": "sei-binary-trees-lesson",
       "sequence": "4.45.1",
       "depends": [
-        
+      ]
+    },
+    {
+      "name": "sei-binary-trees-lesson",
+      "sequence": "4.45.2",
+      "depends": [
       ]
     },
     {
       "name": "python-oop-lesson",
-      "sequence": "4.45.2",
+      "sequence": "4.45.3",
       "depends": [
-        
+        "python-intro-lesson"
       ]
     },
     {
-      "name": "python-oop-practice",
+      "name": "python-oop-exercise",
       "sequence": "4.45.4",
       "depends": [
-        
+        "python-oop-lesson" 
       ]
     },
     {
-      "name": "eddabit",
+      "name": "sei-graphs-lesson",
       "sequence": "4.46.1",
       "depends": [
         
@@ -901,134 +898,168 @@
       "name": "sql-intro-lesson",
       "sequence": "4.46.2",
       "depends": [
-        
-      ]
-    },
-    {
-      "name": "sql-modeling-lesson",
-      "sequence": "4.46.3",
-      "depends": [
-        
-      ]
-    },
-    {
-      "name": "sql-joins-lesson",
-      "sequence": "4.46.3",
-      "depends": [
-        
       ]
     },
     {
       "name": "sql-intro-exercise",
+      "sequence": "4.46.3",
+      "depends": [
+        
+      ]
+    },
+    {
+      "name": "sei-hashtables-lesson",
       "sequence": "4.46.4",
       "depends": [
         
       ]
     },
     {
-      "name": "Morning Exercise - SQL Zoo",
+      "name": "sei-hashtables-lesson",
       "sequence": "4.47.1",
       "depends": [
         
       ]
     },
     {
-      "name": "django-intro-lesson",
-      "sequence": "4.47.2",
-      "depends": [
-        
-      ]
-    },
-    {
-      "name": "django-models-lesson",
-      "sequence": "4.47.3",
-      "depends": [
-        
-      ]
-    },
-    {
-      "name": "django-intro-practice",
+      "name": "sei-sets-lesson",
       "sequence": "4.47.4",
       "depends": [
         
       ]
     },
     {
-      "name": "react-review-exercise",
+      "name": "sei-sets-lesson",
       "sequence": "4.48.1",
       "depends": [
         
       ]
     },
     {
-      "name": "python-debugging-exercise",
-      "sequence": "4.48.4",
+      "name": "django-views-and-templates-lesson",
+      "sequence": "4.48.2",
       "depends": [
-        
+      ]
+    },
+    {
+      "name": "django-models-lesson",
+      "sequence": "4.48.3",
+      "depends": [
+        "django-views-and-templates-lesson" 
       ]
     },
     {
       "name": "django-intro-exercise",
+      "sequence": "4.48.4",
+      "depends": [
+        "django-models-lesson"
+      ]
+    },
+    {
+      "name": "sei-distribution-sort-lesson",
       "sequence": "4.49.1",
       "depends": [
         
       ]
     },
     {
-      "name": "django-auth-lesson",
+      "name": "sei-distribution-sort-lesson",
+      "sequence": "4.49.2",
+      "depends": [
+        
+      ]
+    },
+    {
+      "name": "django-debugging-exercise",
       "sequence": "4.49.3",
       "depends": [
-        
+        "django-views-and-templates-lesson",
+        "django-models-lesson"
       ]
     },
     {
-      "name": "django-intro-exercise",
+      "name": "django-fullstack-exercise",
       "sequence": "4.49.4",
       "depends": [
-        
+        "django-views-and-templates-lesson",
+        "django-models-lesson"
       ]
     },
     {
-      "name": "django-heroku-lesson",
+      "name": "django-fullstack-exercise",
       "sequence": "4.50.1",
       "depends": [
-        
+        "django-views-and-templates-lesson",
+        "django-models-lesson"
       ]
     },
     {
-      "name": "django-rest-lesson",
+      "name": "django-rest-framework-lesson",
       "sequence": "4.50.2",
       "depends": [
         
+        "django-views-and-templates-lesson",
+        "django-models-lesson"
       ]
     },
     {
-      "name": "react-refresh-exercise",
+      "name": "django-auth-lesson",
+      "sequence": "4.50.3",
+      "depends": [
+        
+      ]
+    },
+    {
+      "name": "django-fullstack-exercise",
       "sequence": "4.50.4",
       "depends": [
-        
+        "django-views-and-templates-lesson",
+        "django-models-lesson"
       ]
     },
     {
-      "name": "django-react-exercise",
+      "name": "git-branching-lesson",
       "sequence": "4.51.1",
       "depends": [
-        
+        "git-intro-lesson"
       ]
     },
     {
-      "name": "interview-workshop",
-      "sequence": "4.52.1",
+      "name": "django-team-exercise",
+      "sequence": "4.51.2",
       "depends": [
-        
       ]
+    },
+    {
+      "name": "sei-interview-workshop",
+      "sequence": "4.52.2",
+      "depends": [
+      ],
+      "duration": 2
     },
     {
       "name": "project-4-intro",
       "sequence": "4.53.1",
       "depends": [
         
-      ]
+      ],
+      "duration": 28
+    },
+    {
+      "name": "sei-divide-conquer-sorting-algorithms-lesson",
+      "sequence": "4.54.4",
+      "depends": [
+        
+      ],
+      "duration": 1
+    },
+    {
+      "name": "sei-divide-conquer-sorting-algorithms-lesson",
+      "sequence": "4.55.1",
+      "depends": [
+        
+      ],
+      "duration": 1
     },
     {
       "name": "project-4-presentations",

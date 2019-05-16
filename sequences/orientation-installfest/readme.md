@@ -19,6 +19,8 @@
     - Spectacle
     - MongoDB
     - Postgresql
+    - Create React App
+    - React Dev Tools Chrome Extension
 
 __IMPORTANT: THIS IS AN EXERCISE IN FOLLOWING INSTRUCTIONS__. This guide is _NOT_ a
 lesson. Please do not try and understand everything that you are doing. Most of
@@ -53,10 +55,7 @@ Post a `hello world` message once you get access.
 1. Go to https://classroom.google.com
 1. Sign into your Google account _NOTE:_ If you don't have one please register
    for a new Google Account.
-1. Join the class room using this classroom code
-    ```
-    d8cnllj
-    ```
+1. Your instructor will share the code for you to join the Google Classroom
 
 ## Github
 
@@ -99,7 +98,7 @@ Post a `hello world` message once you get access.
     brew cask install iterm2
     ```
 1. Close your Terminal program
-1. Open iTerm2 (see the [section above](#open-terminal); use "iterm2" instead
+1. Open iTerm2 (see the [section above](#open-terminal); use "iterm" instead
    of "terminal")
 
 ## NodeJs
@@ -166,9 +165,11 @@ Post a `hello world` message once you get access.
     sudo mkdir -p /data/db
     sudo chown $(whoami) /data/db
     ```
-1. Verify you've installed mongodb:
+1. To load and start the MongoDB background service, run the following commands:
 
     ```bash
+    brew tap homebrew/services
+    brew services start mongodb
     mongo
     ```
 1. press `ctrl+c` to quit the shell.
@@ -188,6 +189,24 @@ Post a `hello world` message once you get access.
     psql
     ```
 1. Exit `psql` by typing `\q` and pressing `Enter`
+
+## Create React App
+1. Run the following command
+
+    ```bash
+    npm install --global create-react-app
+    ```
+
+1. Verify you've installed create-react-app by running
+
+    ```bash
+    create-react-app --version
+    ```
+
+## React Dev Tools
+1. To install the React Dev Tools Chrome extension, go to the following link and click 'Add to Chrome':
+
+    [React Dev Tools](https://chrome.google.com/webstore/detail/react-developer-tools/fmkadmapgofadopljbjfkapdkoienihi?hl=en)
 
 # Extra
 

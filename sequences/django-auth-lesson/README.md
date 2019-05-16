@@ -2,21 +2,6 @@
 
 # Authentication in Django
 
-## Prerequisites
-
-* Python
-* Django
-* Virtual Environments
-
-## Objectives
-
-By the end of this, developers should be able to:
-
-* Implement Authentication in Django
-* Make some routes require login
-
-## Introduction
-
 Authentication comes built in to Django, so there's no need for something like
 Passport! The built-in authentication system will handle user accounts, groups,
 and permissions. There are also some view-helpers for common authentication
@@ -24,223 +9,282 @@ related forms. The default configuration will work great for most projects, but
 Django's authentication system is also flexible and adaptable for larger
 projects.
 
+## Objectives
+
+By the end of this, developers should be able to:
+
+- Implement Authentication in a Django project
+- Make some routes require login
+
+## Introduction
+
 The Django authentication system handles both authentication and authorization.
 What's the difference?
 
-* Authentication: verifying a user is who they say they are
-* Authorization: determining what a user is allowed to do
+- Authentication: verifying a user is who they say they are
+- Authorization: determining what a user is allowed to do
 
 We'll start by integrating Authentication and include Authorization at the end
 of the lesson.
 
+## Setup
+
+- Activate virtual env
+- Create new app
+- add app to settings.py
+- Creating a user through the Django shell
+
 ## Authentication
 
-Authentication comes built in to Django, so all we have to do is configure it.
-What a relief!
+Django's authentication system is very flexible, giving you a range of
+implementation options. For instance, you can:
 
-Django's auth lives inside the module `django.contrib.auth` and is by default
-uses the `User` object. Setting up login/logout functionality is really
-straightforward, so we'll start there. After that, we'll implement signing users
-up.
+- Use their off-the-shelf authentication system, which may work for quick
+  prototypes and hackathons
+- Write your own `User` model and implement an entirely custom authentication
+  system
+- Use the collection of methods and forms provided to implement a mostly custom
+  authentication system, as a good middle ground
 
-## Login Views
+We'll start with the off-the-shelf system and then modify it so that we can use
+custom templates.
 
-While we can build out our on views and templates for logging users in and out
-of our application (i.e. do it by hand), Django offers us helpers that make it
-much easier:
+### Getting Started
 
-In the base project url config (`tunr_django/urls.py`) let's add the following:
+We need to start by creating a new app inside our Django project for
+authentication. Generally, each app should have a single function or cover a
+single piece of functionality for our project.
+
+```sh
+pipenv run django-admin startapp accounts
+```
+
+> NOTE: we can't call it `auth`, because that's the name of the app where Django
+> keeps all the authentication functionality (we can't have two apps with the
+> same name).
+
+Once our app is created, we need to:
+
+1. Add it to our list of `INSTALLED_APPS` in `settings.py`
+1. Add `LOGIN_REDIRECT_URL = '/'` to `settings.py`
+1. Include the `accounts` app urls in `tunr_django/urls.py`
+1. Create a `urls.py` inside of the `accounts` app
+
+## Log In and Log Out
+
+Let's start by implementing log in and log out.
+
+Django provides a set of views that we can used inside of
+`'django.contrib.auth.urls'`, all we need to do is set up our `accounts/urls.py`
+file to use it:
 
 ```python
+# accounts/urls.py
 from django.urls import path
-from django.conf.urls import include
-from django.contrib import admin
+from django.contrib.auth import views as auth_views
 
 urlpatterns = [
-    path('artist/', include('tunr.urls')),
-    path('admin/', admin.site.urls),
-    path('accounts/', include('django.contrib.auth.urls')),
+    # Login / Log Out
+    path('accounts/login/', auth_views.login,
+         {'template_name': 'accounts/login.html'}, name='login'),
+    path('accounts/logout/', auth_views.logout,
+         {'template_name': 'accounts/logged_out.html'}, name='logout'),
 ]
 ```
 
-Django provides us with a set of pre-made
-[authentication views](https://docs.djangoproject.com/en/2.0/topics/auth/default/#module-django.contrib.auth.views).
-That one line replaces all of these:
+We're creating two routes here, one for logging in and one for logging out. The
+`auth_views` variable holds all of the views provided by Django for handling
+authentication functionality. We're passing in an explicit reference to the
+template that we'd like to use (`login.html` and `logged_out.html`).
 
-```python
-accounts/login/ [name='login']
-accounts/logout/ [name='logout']
-accounts/password_change/ [name='password_change']
-accounts/password_change/done/ [name='password_change_done']
-accounts/password_reset/ [name='password_reset']
-accounts/password_reset/done/ [name='password_reset_done']
-accounts/reset/<uidb64>/<token>/ [name='password_reset_confirm']
-accounts/reset/done/ [name='password_reset_complete']
-```
+Our next step is to create those two templates:
 
-Only a few things are changing here: we are importing the auth views and then
-adding urls for them. This will give us all of the login/logout functionality!
+1. Make a `templates/` directory inside of your `accounts` app (i.e.
+   `accounts/templates/`)
+1. Create an `accounts/` directory inside of the `templates/` directory (i.e.
+   `accounts/templates/accounts`)
+1. Create two html files: `login.html` and `logout.html`.
 
-> Run the server and navigate to `http://localhost:8000/accounts/login/`
+Here is the source code for the two html files you just created.
 
-Let's add a login form. Let's create a new template folder in `tunr/templates`
-called `registration` (following Django convention). Let's add a `login.html`
-file within our new directory. The form should look like this:
+The login template:
 
 ```html
-{% extends 'tunr/base.html' %} {% block content %}
-<h2>Login</h2>
-<form method="post">
-  {% csrf_token %} {{ form.as_p }} <button type="submit">Login</button>
-</form>
+<!-- templates/accounts/login.html -->
+{% extends "tunr/base.html" %}
+
+{% block content %}
+
+  {% if form.errors %}
+    <p>Your username and password didn't match. Please try again.</p>
+  {% endif %}
+
+  <form method="post" action="{% url 'login' %}">
+    {% csrf_token %}
+    {{form.as_p}}
+
+    <input type="submit" value="login" />
+  </form>
+
 {% endblock %}
 ```
 
-Let's update our `base.html` `<nav>` element to link to the login page if a user
-is not signed in and the logout page if the user is signed in:
+The logged out template, which will be displayed to the user when they log out:
 
 ```html
-<nav>
-  <a href="/songs">Songs</a> <a href="/">Artists</a>
-  <div class="user-info">
-    {% if user.is_authenticated %} Welcome, {{ user.username }}
-    <a href="{% url 'logout' %}">Signout</a> {% else %}
-    <a href="{% url 'login' %}">Login</a> {% endif %}
-  </div>
-</nav>
+<!-- templates/accounts/logout.html -->
+{% extends "tunr/base.html" %}
+
+{% block content %}
+  <p>Logged out!</p>
+  <a href="{% url 'login' %}">Click here to login again.</a>
+{% endblock %}
 ```
 
-The `user` variable is accessible to us in any template in Django. We just have
-to check if the user is authenticated to determine which link is rendered. The
-`is_authenticated` property is set automatically, so all we have to do is check
-and see if it's truthy or not.
+### Testing the Views
 
-We should have access to this `user` object anywhere in our templates. Take a
-look at all the (other properties we have access to [ here ](https://docs.djangoproject.com/en/2.1/ref/contrib/auth/#django.contrib.auth.models.User))
+Let's test out our views and templates. Make sure your app is running and visit
+`/accounts/login/`. You should see our login page! Try to log in with the user
+you created in the previous lesson. Alternatively, create a new user in the
+Django admin panel and try to sign in with this new user.
 
-Final step! Let's edit our configuration in `tunr_django/settings.py` to
-determine which page logged in users should be redirected to:
+Once you're able to log in, try logging out by visiting `/accounts/logout/`. You
+should see the `logout` template we just created.
+
+We can't ask our users to manually navigate to the sign in page. We want to show
+them, in the UI! Let's update the header menu in
+`tunr/templates/tunr/base.html`:
+
+```html
+<!-- tunr/templates/tunr/base.html -->
+<!-- ... -->
+        <nav>
+            <a href="{% url 'song_list' %}">Songs</a>
+            <a href="/">Artists</a>
+            <div class="user-info">
+                {% if user.is_authenticated %}
+                    Welcome, {{ user.username }}
+                    <a href="{% url 'logout' %}">Signout</a>
+                {% else %}
+                    <a href="{% url 'login' %}">Login</a>
+                    <a href="{% url 'signup' %}">Signup</a>
+                {% endif %}
+            </div>
+        </nav>
+<!-- ... -->
+```
+
+We're updating the `<nav>` element in the `base` template so that it changes
+based on whether or not a user is logged in. If a user is logged in, they'll see
+a welcome message and a link to log out. If they are not logged in, they'll see
+links to log in or sign up.
+
+Only one catch! We have no way for users to sign up! Let's implement that next.
+
+## Sign Up
+
+Back in `accounts/urls.py`, we want to add a view and url for users to sign up
+and create an account. Django provides most of what we'll need to implement
+authentication, but generally assumes that you'll create users through the Admin
+panel. That's not helpful for us, we want users to be able to create accounts on
+their own. To do so, we'll need to implement a custom view.
+
+Inside `accounts/urls.py`, add the following route:
+
+```diff
+# accounts/urls.py
+from django.urls import path
+from django.contrib.auth import views as auth_views
++from . import views
+
+
+urlpatterns = [
+    # Login / Log Out
+    path('accounts/login/', auth_views.login,
+         {'template_name': 'accounts/login.html'}, name='login'),
+    path('accounts/logout/', auth_views.logout,
+         {'template_name': 'accounts/logged_out.html'}, name='logout'),
++    # Sign Up
++    path('accounts/signup', views.sign_up, name="signup")
+]
+```
+
+We're adding a route for `accounts/signup` that will use the `sign_up` view
+we're about to create.
+
+Navigate to `accounts/views.py`:
 
 ```python
-LOGIN_REDIRECT_URL = ''
-```
-
-This constant says that when a user logs in, we want them to go to the
-"artist_list" view.
-
-Now try to login! You can use the same username and password you created for the
-Django admin panel!
-
-> Did you forget your password to the admin panel? run
-> `manage.py changepassword <user_name>` to update it!
-
-## Django Makes It Easy!
-
-We've implemented a page for logging in and logging out, which is a great first
-step for our user authentication. Now, we just have to implement the following
-views and templates:
-
-* Change Password
-* Change Password Confirmation
-* Reset Password
-* Reset Password Confirmation
-
-Seems like a lot. Also seems like something most applications would need. Maybe
-Django makes that easy somehow... it does!
-
-Try going to:
-
-```
-localhost:8000/accounts/password_change
-```
-
-## Signing Up
-
-At the moment, all users have to be created through the admin panel. This seems
-like an odd default for an authentication system, but it has to do with how the
-`User` object works. Django doesn't make any distinction between instances of
-the `User` class, so all users (including superusers) are instances of the
-`User` class. Because of this, we have to be careful with how we assign
-privileges!
-[Read more about it here](https://docs.djangoproject.com/en/2.0/topics/auth/default/#id6).
-
-Implementing user-friendly sign up is similar to performing CRUD on any other
-model, with some Django helpers to make it easier. Django's auth system includes
-a form class for creating users, called `UserCreationForm`. We'll then use the
-`create_user`, `login`, and `authenticate` methods in our views.
-
-First, let's update our `urlpatterns` in `tunr_django/urls.py`:
-
-Add this to the top of the file:
-
-```python
-from tunr import views as tunr_views
-```
-
-And add this to the `urlpatterns` list:
-
-```python
-path('accounts/signup/', tunr_views.sign_up, name='signup'),
-```
-
-We're importing the views from our `tunr` app and adding a url for
-`accounts/signup` that will use a `sign_up` view function we're about to create.
-
-Next, open up your `tunr/views.py`. Add the following to the top of the file:
-
-```python
+from django.shortcuts import render, redirect
 from django.contrib.auth import login, authenticate
 from django.contrib.auth.forms import UserCreationForm
-```
 
-And add the following view function:
+# Create your views here.
 
-```python
+
 def sign_up(request):
     if request.method == 'POST':
         form = UserCreationForm(request.POST)
         if form.is_valid():
-            form.save()
-            username = form.cleaned_data.get('username')
-            raw_password = form.cleaned_data.get('password')
-            user = authenticate(username=username, password=raw_password)
+            user = form.save()
             login(request, user)
             return redirect('artist_list')
     else:
         form = UserCreationForm()
-    return render(request, 'registration/signup.html', {'form': form})
+    return render(request, 'accounts/signup.html', {'form': form})
 ```
 
-We're first importing the `login` and `authenticate` authentication helper
-methods, as well as the `UserCreationForm` class (the class for the form for
-creating new users).
+> Take 5 minutes to read through this code and understand what it does. Write
+> down any questions you have about this code block and we will discuss them
+> when 5 minutes is up.
 
-After that, we're defining our `sign_up` view function. If the user is making a
-`GET` request, then we'll create an instance of the `UserCreationForm` class and
-render it in the `registration/signup.html` template. If the user is making a
-`POST` request (i.e. they're submitting the user creation form), then we're
-checking to make sure the form is valid and saving it. Once it's saved, we're
-pulling the username and password from the form and using `authenticate` to
-authenticate the new user. Once the user is authenticated, we log them in with
-the `login` method.
+We have our sign up view in place, now we need to implement the template. Create
+a new file at `accounts/templates/accounts/signup.html` and add the following:
+
+```html
+{% extends "tunr/base.html" %}
+
+{% block content %}
+
+<form method="post" action="{% url 'signup' %}">
+    {% csrf_token %}
+    {{form.as_p}}
+
+    <input type="submit" value="Sign Up" />
+</form>
+
+{% endblock %}
+```
+
+Give it a shot! You should be able to sign up as a new user and sign in and out
+as that user.
 
 ## Authorization
 
-Now let's make it a requirement to be logged in to see some views -- maybe the
-create, update and delete ones. Add the following to the top of `tunr/views.py`:
+Now that users can sign up for our application and sign in and out of the
+account they've created, let's make it so that some routes require being
+authorized (signed in) in order to visit them.
+
+Django makes this relatively straightforward for us.
+
+### Requiring Authentication
+
+To make a view require a user be authenticated, we just need to import the
+`login_required` decorator that Django provides. Add the following to the top of
+`tunr/views.py` to import the `login_required` decorator:
 
 ```python
+# tunr/views.py
 from django.contrib.auth.decorators import login_required
 ```
 
-This will allow us to use what is called a `decorator` on our chosen functions.
-A decorator is a function called on a function in order to change its behavior.
-In this case, it adds an if statement to each function: if the user is logged in
-continue with the view logic, if not then redirect to the login page. Let's look
-at the syntax for using them:
+What's a decorator? A decorator is a function called on a function in order to
+change it's behavior. In this case, it adds an if statement to each function: if
+the user is logged in, continue with the view logic, otherwise redirect them to
+the login page. The syntax looks like this:
 
-```python
-@login_required
+```diff
++@login_required
 def artist_create(request):
     if request.method == 'POST':
         form = ArtistForm(request.POST)
@@ -252,52 +296,106 @@ def artist_create(request):
     return render(request, 'tunr/artist_form.html', {'form': form})
 ```
 
-All we added was the `@login_required`!
+Go ahead and add the decorator (`@login_required`) to every create, update, and
+delete path.
 
-Go ahead and add it to the five other views we want secured!
+Now when you try to visit any of the create/edit forms, you should be redirected
+to the login page. (Unless you're logged in, which is the point!)
 
-## Making sure authentication works
+### Updating our Views
 
-Now let's log out of the system and see if we can visit those routes that we've
-marked as `login_required`.
+We're almost finished - one last finishing touch!
 
-At the homepage, we see the list of artists. This is great, and should work.
+When you get redirected to the login page, two things happen:
 
-Click the `(+)` next to the `Artists` header. What happens?
+1. You don't see a message explaining why you were sent to the login page
+1. When you login, you get redirected back to the homepage (rather than the page
+   you were trying to visit in the first place)
 
-Now back up and click on an artist. You should be able to see the detail about
-that artist (photo and a list of songs).
+These are relatively small issues but they're also small and easy to fix, so
+let's fix them. We're going to update both `login.html` and `signup.html`.
 
-Click on `(edit)` next to the artist name. What happens?
+First, make the following additions to `login.html`:
 
-Now login using your admin username/password, then try and do the same things.
+```diff
+{% extends "tunr/base.html" %}
 
-PRETTY NEATO RIGHT?! So much easier than express and passport.
+{% block content %}
 
-Another cool thing - if you're logged out and try to visit a protected route,
-django prompts you to login, then redirects you back to the original route you
-were trying to access. Very nice!
+  {% if form.errors %}
+    <p>Your username and password didn't match. Please try again.</p>
+  {% endif %}
 
-![borat](https://media.giphy.com/media/l0ErFafpUCQTQFMSk/giphy.gif)
++  {% if next %}
++      <p>Please login to see this page.</p>
++  {% endif %}
+
+  <form method="post" action="{% url 'login' %}">
+    {% csrf_token %}
+    {{form.as_p}}
+
+    <input type="submit" value="login" />
++  <input type="hidden" name="next" value="{{ next }}" />
+  </form>
+{% endblock %}
+```
+
+Take a minute to read through and understand these additions before moving on.
+
+Next, make the following addition to `signup.html`:
+
+```diff
+{% extends "tunr/base.html" %}
+
+{% block content %}
+
+  <form method="post" action="{% url 'signup' %}">
+      {% csrf_token %}
+      {{form.as_p}}
+
+      <input type="submit" value="Sign Up" />
++      <input type="hidden" name="next" value="{{ next }}" />
+  </form>
+
+{% endblock %}
+```
+
+We're all set! We've added basic authentication, so that users can sign up for
+an account in our application and then log in and out of the account they
+create.
+
+Django's authentication system is very powerful and we've only scratched the
+surface here. A number of things that are normally very tricky to implement are
+made very simple, like creating groups of users and assigning users different
+permissions. For more, check out the documentation in the
+[Additional Resources](#additional-resources) section!
 
 ## Social Authentication
+
+Now that we have a basic authentication setup in place, let's expand on it so
+that users can sign in using their favorite social media app.
 
 Social Authentication is using social media platforms (like Facebook and
 Twitter) for your authentication. For the remainder of class, work on getting
 social authentication working in tunr using
 [`social-auth-app-django`](https://github.com/python-social-auth/social-app-django).
 
-Use the [documentation](https://python-social-auth.readthedocs.io/en/latest/configuration/django.html) or
+Use the [documentation](http://python-social-auth.readthedocs.io/en/latest/) or
 [this walkthrough](https://simpleisbetterthancomplex.com/tutorial/2016/10/24/how-to-add-social-login-to-django.html).
 
 ## Additional Resources
 
-* [User Authentication in Django](https://docs.djangoproject.com/en/2.0/topics/auth/)
-* [Using the Django Authentication system](https://docs.djangoproject.com/en/2.0/topics/auth/default/)
-* [How to Create User Sign Up View](https://simpleisbetterthancomplex.com/tutorial/2017/02/18/how-to-create-user-sign-up-view.html#basic-sign-up)
+- [User Authentication in Django](https://docs.djangoproject.com/en/2.0/topics/auth/)
+- [Using the Django Authentication system](https://docs.djangoproject.com/en/2.0/topics/auth/default/)
+- [Customizing Authentication in Django](https://docs.djangoproject.com/en/2.1/topics/auth/customizing/)
+- [How to Create User Sign Up View](https://simpleisbetterthancomplex.com/tutorial/2017/02/18/how-to-create-user-sign-up-view.html#basic-sign-up)
+
+## Contributors
+
+Original content from [DC at e7cc51](https://git.generalassemb.ly/dc-wdi-python-django/django-auth/commit/e7cc514ec9620352e9a6f2129e1ee3e3b6816cd6). Original contributors can be found in that repository's history. Recent contributors can be found in this repository's history.
 
 ## [License](LICENSE)
 
 1. All content is licensed under a CC­BY­NC­SA 4.0 license.
 1. All software code is licensed under GNU GPLv3. For commercial use or
-    alternative licensing, please contact legal@ga.co.
+   alternative licensing, please contact legal@ga.co.
