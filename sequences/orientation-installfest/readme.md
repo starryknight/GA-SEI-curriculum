@@ -21,6 +21,7 @@
     - Postgresql
     - Create React App
     - React Dev Tools Chrome Extension
+    - Postman
 
 __IMPORTANT: THIS IS AN EXERCISE IN FOLLOWING INSTRUCTIONS__. This guide is _NOT_ a
 lesson. Please do not try and understand everything that you are doing. Most of
@@ -207,6 +208,11 @@ Post a `hello world` message once you get access.
 1. To install the React Dev Tools Chrome extension, go to the following link and click 'Add to Chrome':
 
     [React Dev Tools](https://chrome.google.com/webstore/detail/react-developer-tools/fmkadmapgofadopljbjfkapdkoienihi?hl=en)
+
+## Postman
+1. Go to the following link and click the 'Download' button:
+
+    [Postman download](https://www.getpostman.com/downloads/)
 
 # Extra
 
