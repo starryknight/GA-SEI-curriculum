@@ -109,6 +109,7 @@
     {
       "name": "html-portfolioSite-exercise",
       "sequence": "1.4.3",
+      "duration": 2,
       "depends": [
         
       ]
