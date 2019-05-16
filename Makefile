@@ -1,4 +1,5 @@
-out=./bin
+out=./sequences
+in=./sequences
 scheduleMarkdown=$(out)/schedule.md
 
 .PHONY: clean mono
@@ -11,5 +12,5 @@ $(out):
 clean:
 	rm -r $(out)
 
-$(scheduleMarkdown): ./sequences/schedule.json ./src/makeSchedule $(out)
-	./src/makeSchedule ./sequences/schedule.json > $(out)/schedule.md
+$(scheduleMarkdown): $(in)/schedule.json ./src/makeSchedule $(out)
+	./src/makeSchedule $(in)/schedule.json > $(out)/schedule.md
