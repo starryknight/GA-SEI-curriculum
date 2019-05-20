@@ -1,7 +1,6 @@
 ## Learning Objectives
 We started learning the fundamentals yesterday(components, props)
 How to style in react - I will show you two ways.
- Let's use continue with our TodoList that Noah built out for us.
  
 ## Separation of Concerns:
 -Defined in React: building small components that house a single elements structure, styling, and logic within one file.
