@@ -23,6 +23,7 @@
     - React Dev Tools Chrome Extension
     - Python
     - Postman
+    - Heroku CLI
 
 __IMPORTANT: THIS IS AN EXERCISE IN FOLLOWING INSTRUCTIONS__. This guide is _NOT_ a
 lesson. Please do not try and understand everything that you are doing. Most of
@@ -225,6 +226,11 @@ Post a `hello world` message once you get access.
 1. Go to the following link and click the 'Download' button:
 
     [Postman download](https://www.getpostman.com/downloads/)
+
+## Heroku CLI
+1. Go to the link below and follow the download instructions for Heroku CLI.
+
+    [Heroku CLI download](https://devcenter.heroku.com/articles/heroku-cli#download-and-install)
 
 # Extra
 
