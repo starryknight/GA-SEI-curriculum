@@ -18,7 +18,7 @@ Create a personal portfolio page and deploy it to [Github pages](https://pages.g
 
 ### Submission
 
-Your submission should contain a link to the **repo** you created -- not the webpage. So your issue should contain `http://github.com/your-username/your-username.github.io`, for example, and **not** `http://your-username.github.io`.
+Your submission should contain a link to the **repo** you created -- not the webpage. So your submission should contain `http://github.com/your-username/your-username.github.io`, for example, and **not** `http://your-username.github.io`.
 
 ## Pairing with Others
 
